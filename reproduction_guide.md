@@ -1,48 +1,76 @@
-# OpenNPU-Lite复现操作指南
+# OpenNPU-Lite 复现操作指南
 
-本指南对应本地交付候选 opennpu_lite_41971，支持依次核对文件、执行PC软件、准备仿真/构建，并按现场合同复做板测。本交付包含第十一版公开设计报告、工具报告、BIT/HWH及历史实板原件；来源、范围与本轮文档派生差异见 provenance。
+本指南从公开下载开始，先完成 PC 文件核验和软件复现，再介绍 RTL 仿真、完整构建与板端复做。设计原理见[详细报告](report/design_report.pdf)，现有实测见[板端原件](board/readme.md)，各层验证使用同一份已封工程。
 
-## 1 取得正确输入
+## 1 下载正式工程
 
-本审阅包已包含本次完整提交工程；单独取得报告时，还须一并取得该工程目录。完整树包含`src`、`sim`、`build`、`board`、`data`、`skill`、`report`及`provenance`，文件集合以本交付 manifest.json 为准。顶层manifest SHA256为：
+打开[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971)，取得两个附件：
 
-```text
-<manifest_sha256_from_external_checksums>
-```
+| 附件 | 用途 |
+|---|---|
+| `opennpu_lite_41971_source.zip` | 可直接解压使用的完整工程 |
+| `checksums.txt` | 工程清单与源码 ZIP 的发布校验值 |
 
-项目获取入口为https://github.com/cpfbx/OpenNPU-Lite-FPGA；本次按公开仓库准备。工程自有及第三方资产的许可见provenance/third_party_notices.md。取得工程后先核对外部清单SHA，再执行以下步骤。
-
-建议解压到短路径，例如`D:\OpenNPULite\opennpu_lite_41971`；保留其原有文件名与内部相对路径，运行产物写到另一个目录。本指南中的路径变量只需按接收者实际位置填写一次。
-
-## 2 PC环境与文件核验
-
-已测组合为Windows x86-64、Python3.12.14、NumPy2.3.5。统一入口要求Python3.12+，包括Windows junction识别。先准备可信Python及一个独立环境；以下是供接收者执行的环境准备命令，本轮写作没有安装这些依赖：
+下面的 PowerShell 命令完成下载、校验与解压。工作目录尚不存在时再运行；目录已存在就另选新路径，保留此前结果。需要能够访问 GitHub Releases。
 
 ```powershell
-$pythonBase = 'C:\Python312\python.exe'  # 换为实际Python3.12路径
-$exportRoot = 'D:\OpenNPULite\opennpu_lite_41971'
-$runParent = 'D:\OpenNPULite\runs'
-$envRoot = 'D:\OpenNPULite\python_env_01' # 尚不存在
-
-if (Test-Path -LiteralPath $envRoot) { throw '环境目录已存在，请另选新目录。' }
-& $pythonBase -m venv $envRoot
-if ($LASTEXITCODE -ne 0) { throw '创建环境失败。' }
-$python = Join-Path $envRoot 'Scripts\python.exe'
-& $python -m pip install 'numpy==2.3.5'
-if ($LASTEXITCODE -ne 0) { throw '依赖安装失败，保留日志。' }
-& $python -I -B -c "import sys,numpy; print(sys.version); print(numpy.__version__)"
-if ($LASTEXITCODE -ne 0) { throw '环境检查失败。' }
-
-& $python -I -B "$exportRoot\reproduce.py" `
-  --manifest-sha '<manifest_sha256_from_external_checksums>'
-if ($LASTEXITCODE -ne 0) { throw '文件核验失败，停止。' }
+$ErrorActionPreference = 'Stop'
+$releaseBase = 'https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/download/submission-41971'
+$workspace = Join-Path $env:USERPROFILE 'opennpu_reproduction'
+if (Test-Path -LiteralPath $workspace) { throw '工作目录已存在，请另选新目录。' }
+$inputDir = Join-Path $workspace 'inputs'
+New-Item -ItemType Directory -Path $inputDir | Out-Null
+$checksumFile = Join-Path $inputDir 'checksums.txt'
+$sourceZip = Join-Path $inputDir 'opennpu_lite_41971_source.zip'
+Invoke-WebRequest "$releaseBase/checksums.txt" -UseBasicParsing -OutFile $checksumFile
+Invoke-WebRequest "$releaseBase/opennpu_lite_41971_source.zip" -UseBasicParsing -OutFile $sourceZip
+$checksums = Get-Content -LiteralPath $checksumFile -Raw
+$manifestMatches = [regex]::Matches($checksums, '(?m)^([0-9a-f]{64})  manifest\.json\r?$')
+$zipMatches = [regex]::Matches($checksums, '(?m)^([0-9a-f]{64})  opennpu_lite_41971_source\.zip\r?$')
+if ($manifestMatches.Count -ne 1 -or $zipMatches.Count -ne 1) { throw '校验值缺失或重复。' }
+$manifestSha = $manifestMatches[0].Groups[1].Value
+$sourceZipSha = $zipMatches[0].Groups[1].Value
+if ((Get-FileHash -LiteralPath $sourceZip -Algorithm SHA256).Hash.ToLowerInvariant() -ne $sourceZipSha) {
+    throw '源码ZIP校验失败，请保留下载件并核对来源。'
+}
+Expand-Archive -LiteralPath $sourceZip -DestinationPath $workspace
+$exportRoot = Join-Path $workspace 'opennpu_lite_41971'
+if (-not (Test-Path -LiteralPath (Join-Path $exportRoot 'manifest.json'))) { throw '解压结构不完整。' }
 ```
 
-安装需要接收者可访问适用包源，离线环境应事先在相同OS/架构准备匹配wheel及SHA，再通过`--no-index --find-links`安装。安装目录独立于工程，不能在封包内生成虚拟环境或缓存。
+继续使用同一 PowerShell 窗口，后续命令沿用 `$workspace`、`$exportRoot` 和 `$manifestSha`。`checksums.txt` 位于工程外的 `inputs` 中，校验值也在公开下载页可取。清单索引 README，因此不把清单自身哈希写回 README，避免自引用。
 
-成功输出应有`operation_success=true`、`files` 与交付清单一致、`inference_executed=false`、`board_access=false`。该步校验清单内全部索引文件及完整文件集合；文件数以本版manifest与入口输出为准，未运行模型。
+工程根目录应包含 `src/`、`sim/`、`build/`、`board/`、`data/`、`skill/`、`report/` 和 `provenance/`。虚拟环境、下载附件与运行输出均保存在工程外。
 
-## 3 PC核验入口
+熟悉 Git 的使用者也可获取 `submission-41971` 标签。严格字节核验要求关闭换行转换，并从 Git 导出不含 `.git` 的工程目录；推荐首次复现直接使用上面的正式源码 ZIP。自行生成的 ZIP 压缩字节可以不同，工程文件仍按发布的 manifest 哈希及完整清单核验。
+
+## 2 准备 PC 环境并核对文件
+
+已验证的 PC 组合是 Windows x86-64、Python 3.12.14、NumPy 2.3.5。统一入口要求 Python 3.12+。先在本机安装可信 Python，使 `python --version` 可用，再创建工程外的独立环境：
+
+```powershell
+python -I -B -c "import sys; assert sys.version_info >= (3, 12), 'Python 3.12+ required'; print(sys.version)"
+if ($LASTEXITCODE -ne 0) { throw '请先安装Python 3.12或更新版本。' }
+$envRoot = Join-Path $workspace 'python_env'
+if (Test-Path -LiteralPath $envRoot) { throw '环境目录已存在，请另选新目录。' }
+python -m venv $envRoot
+if ($LASTEXITCODE -ne 0) { throw '创建环境失败。' }
+$python = Join-Path $envRoot 'Scripts\python.exe'
+& $python -m pip install -r (Join-Path $exportRoot 'requirements.txt')
+if ($LASTEXITCODE -ne 0) { throw '依赖安装失败，请检查网络和安装日志。' }
+& $python -I -B -c "import sys,numpy; print(sys.version); print(numpy.__version__)"
+if ($LASTEXITCODE -ne 0) { throw '环境检查失败。' }
+& $python -I -B "$exportRoot\reproduce.py" --manifest-sha $manifestSha
+if ($LASTEXITCODE -ne 0) { throw '工程核验失败，停止。' }
+$runParent = Join-Path $workspace 'runs'
+```
+
+正常输出应包含 `operation_success=true`、`inference_executed=false` 和 `board_access=false`。`files` 为清单索引文件数，不包含 `manifest.json` 自身，比工程总文件数少1。默认入口检查文件集合、大小和 SHA256，不会运行模型。
+
+安装依赖需要可用的包源。离线环境可先在相同操作系统和架构准备匹配的 wheel，再使用 `--no-index --find-links` 安装；保留依赖版本及校验值。
+
+
+## 3 PC 核验入口
 
 先创建包外输出的父目录，输出目录本身必须不存在。继续使用第2步同一PowerShell窗口里的变量：
 
@@ -53,7 +81,7 @@ if (-not (Test-Path -LiteralPath $runParent)) {
 $pcOut = Join-Path $runParent 'pc_01'
 if (Test-Path -LiteralPath $pcOut) { throw '输出目录已存在，不覆盖。' }
 & $python -I -B "$exportRoot\reproduce.py" `
-  --manifest-sha '<manifest_sha256_from_external_checksums>' `
+  --manifest-sha $manifestSha `
   --profile pc --enable-offline --output $pcOut
 if ($LASTEXITCODE -ne 0) { throw 'PC核验失败，检查新输出目录。' }
 Get-Content -LiteralPath (Join-Path $pcOut 'receipt.json')
@@ -61,7 +89,7 @@ Get-Content -LiteralPath (Join-Path $pcOut 'receipt.json')
 
 检查`receipt.json`实际子进程退出0及`immutable_export_verified_after=true`，再查看`stdout.txt`、`stderr.txt`和`results`。内部核验包括保留共享链算术、Skill和补充cleanup；Windows已有5项平台跳过单列，不能改写成0skip。单个方法多次执行不累加为新的独立测试。
 
-## 4 完整KWS离线计算
+## 4 完整 KWS 离线计算
 
 先运行一窗，再按需要运行固定12窗。`hybrid-smoke`与`hybrid12`由既有统一入口调取固定候选与前置包：
 
@@ -69,14 +97,14 @@ Get-Content -LiteralPath (Join-Path $pcOut 'receipt.json')
 $smokeOut = Join-Path $runParent 'hybrid_smoke_01'
 if (Test-Path -LiteralPath $smokeOut) { throw '冒烟输出已存在。' }
 & $python -I -B "$exportRoot\reproduce.py" `
-  --manifest-sha '<manifest_sha256_from_external_checksums>' `
+  --manifest-sha $manifestSha `
   --profile hybrid-smoke --enable-offline --output $smokeOut
 if ($LASTEXITCODE -ne 0) { throw '一窗失败，保留现场，不继续12窗。' }
 
 $twelveOut = Join-Path $runParent 'hybrid12_01'
 if (Test-Path -LiteralPath $twelveOut) { throw '12窗输出已存在。' }
 & $python -I -B "$exportRoot\reproduce.py" `
-  --manifest-sha '<manifest_sha256_from_external_checksums>' `
+  --manifest-sha $manifestSha `
   --profile hybrid12 --enable-offline --output $twelveOut
 if ($LASTEXITCODE -ne 0) { throw '12窗失败，保留stdout、stderr及回执。' }
 ```
@@ -85,18 +113,26 @@ if ($LASTEXITCODE -ne 0) { throw '12窗失败，保留stdout、stderr及回执�
 
 原始输入位于`data/packages/kws_prerequisites.zip`，完整图候选位于`kws_full_hybrid_return.zip`。解包器先校原清单，再解到包外目录；不能手动修改包内模型、名单或黄金后继续使用旧pin。
 
-## 5 RTL仿真
+## 5 RTL 仿真
 
-`sim/d075`保存固定D075 commit的RTL、TB、约束和仿真入口。接收者在独立可写副本运行，避免封包内部增加工具输出。已有脚本为`sim/run_regression.ps1`，接受`-VivadoRoot`和`-WorkLibrary`，需要`xvlog.bat`、`xelab.bat`、`xsim.bat`。
+`sim/d075`保存固定D075 commit的RTL、TB、约束和仿真入口。接收者在独立可写副本运行，避免封包内部增加工具输出。该副本内脚本为`sim/run_regression.ps1`（公开工程中的完整路径为`sim/d075/sim/run_regression.ps1`），接受`-VivadoRoot`和`-WorkLibrary`，需要`xvlog.bat`、`xelab.bat`、`xsim.bat`。
 
-示例：先将`sim/d075`复制到新目录`D:\OpenNPULite\sim_run_01`，保留全部内部结构，在该目录调用：
+下面将`sim/d075`完整复制到工程外的新目录，并在副本中运行；Vivado安装路径按本机情况填写：
 
 ```powershell
-& '.\sim\run_regression.ps1' -VivadoRoot 'C:\AMDDesignTools\2026.1\Vivado'
+$simWork = Join-Path $workspace 'sim_run_01'
+if (Test-Path -LiteralPath $simWork) { throw '仿真目录已存在，请另选新目录。' }
+Copy-Item -LiteralPath (Join-Path $exportRoot 'sim\d075') -Destination $simWork -Recurse
+Push-Location $simWork
+try {
+    & '.\sim\run_regression.ps1' -VivadoRoot 'C:\AMDDesignTools\2026.1\Vivado'
+} finally {
+    Pop-Location
+}
 if ($LASTEXITCODE -ne 0) { throw '仿真入口非零，保留完整日志。' }
 ```
 
-Vivado路径按实际安装填写，PowerShell策略按操作者既有配置处理，指南不修改持久策略。脚本异常同样视为失败。成功还须核对各测试台输出及断言，不能将一个旧UART测试通过当作全部GEMM回归通过。该入口本轮仅检查源码参数，未运行Vivado。
+Vivado路径按实际安装填写，PowerShell策略按操作者既有配置处理，指南不修改持久策略。脚本异常同样视为失败。成功还须核对各测试台输出及断言，不能将一个旧UART测试通过当作全部GEMM回归通过。既有原生仿真日志及波形见下方结果入口；重新运行将产生接收者自己的仿真结果。
 
 ## 6 完整硬件构建
 
@@ -110,7 +146,7 @@ Vivado路径按实际安装填写，PowerShell策略按操作者既有配置处�
 
 ```powershell
 $hardware = Join-Path $exportRoot 'src\hardware'
-$hardwarePin = '05d8f20549cf799ee4bacff2f375cd1f17ba78e66d4e3c1f6e0ec6b89c05b4b7'
+$hardwarePin = 'dd285240f410598ef0d26612b4c15c97833ef515600bd5de6dd65bd9abfb2838'
 & $python -I -B "$hardware\verify_kit.py" --manifest-sha $hardwarePin
 if ($LASTEXITCODE -ne 0) { throw '硬件包身份失败。' }
 & $python -I -B "$hardware\rebuild.py" check --manifest-sha $hardwarePin
@@ -133,7 +169,7 @@ if ($LASTEXITCODE -ne 0) { throw '完整构建非零，保留日志及claim，�
 
 ## 7 板端复做与原件回读
 
-本轮补充[板端完整命令模板](board/quickstart.md)，从包校验、当前环境预检到新plan、单次run及readback/archive逐步列出。所需原运行包、BIT/HWH和两组历史原件已并入[工程board目录](board/readme.md)。模板现场值重新读取，操作者与环境条件沿用原合同；本轮未执行。
+[板端完整命令模板](board/quickstart.md)，从包校验、当前环境预检到新plan、单次run及readback/archive逐步列出。所需原运行包、BIT/HWH和两组历史原件已并入[工程board目录](board/readme.md)。模板现场值重新读取，操作者与环境条件沿用原合同。
 
 板端分为新的实验执行与旧实验的只读回读。回读已有归档不需要接板；新执行需要实际操作者核原接线、UTC、空闲及电源，确认当前包和本次范围后才进行。每次均使用新目录、新preflight和plan，沿用规范锁`/tmp/opennpu-kws-chain.lock`。
 
@@ -165,7 +201,7 @@ if ($LASTEXITCODE -ne 0) { throw '完整构建非零，保留日志及claim，�
 
 ## 查看已有仿真与协作记录
 
-仿真原始输出与WDB/VCD见[sim/results/native_20261030](sim/results/native_20261030/readme.md)；负责人代码级要求与模型修订见[技术交互节选](report/collaboration_interactions.md)。本轮复现退出码单列在包外验证摘要。
+仿真原始输出与WDB/VCD见[sim/results/native_20261030](sim/results/native_20261030/readme.md)；负责人代码级要求与模型修订见[技术交互节选](report/collaboration_interactions.md)。发布获取与PC复现回执另行保存于发布验收资料。
 
 
 ## 提交路径与工具入口
