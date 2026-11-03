@@ -1,0 +1,66 @@
+{
+  "schema": "submission-document-anonymity-revision-v1",
+  "date": "2026-11-03",
+  "parent_commit": "00f0a246c6a05196d2104e53afac9e3f02bbd7de",
+  "scope": "System PDF and demonstration video anonymity; seven-point official requirement cross-check; Word source repair",
+  "changed": {
+    "readme.md": {
+      "before": {
+        "bytes": 9819,
+        "sha256": "27918a1f91ff198f1b61f8100539566f65232b60619e70a4c9a6123bf832eef9"
+      },
+      "after": {
+        "bytes": 9849,
+        "sha256": "298b71af64c609c9ceca0288b2d012f1e0080ccc027fce4e13bbeebdfc9108a3"
+      }
+    },
+    "report/design_report.pdf": {
+      "before": {
+        "bytes": 4098351,
+        "sha256": "e1f692059c4bf9a318b07f6647b0d4606f8263c459f380557280029164470bcc"
+      },
+      "after": {
+        "bytes": 4098450,
+        "sha256": "2f21da8e772cb16bdb263e67cf172abdff3bd34d5b5e2b821a06a232be1986a0"
+      }
+    },
+    "report/requirements_checklist.md": {
+      "before": {
+        "bytes": 4889,
+        "sha256": "9439e6e16fec07d6ac04cf02e7345fc686a58e18665bbe9fc86476419a802281"
+      },
+      "after": {
+        "bytes": 6108,
+        "sha256": "2db5e6f7d72881f6f7c40e19712787299de5a98ad2d4bc767d7d50c24a59fcfb"
+      }
+    },
+    "report/system_report.pdf": {
+      "before": {
+        "bytes": 3055647,
+        "sha256": "3be5699530c9f9f856d61f6a309aebdeb1f144696d899ef9f4632b369a6fea41"
+      },
+      "after": {
+        "bytes": 3055367,
+        "sha256": "80d8c7dca9356d304e155f9a6762287ffc92c4819d2326ef739e1ecec1f88f5e"
+      }
+    },
+    "reproduction_guide.md": {
+      "before": {
+        "bytes": 14514,
+        "sha256": "ac2a3899917a35746caa3a3317f905011d01684e8a0d3889833add52769c0b2c"
+      },
+      "after": {
+        "bytes": 14544,
+        "sha256": "72eaeb5692b96f486917b7a5ff2f2d587d8fc6d59b5f08e2eb5454b31b716485"
+      }
+    }
+  },
+  "technical_sources_unchanged": true,
+  "historical_evidence_unchanged": true,
+  "system_report_pages": 30,
+  "design_report_pages": 47,
+  "system_video_duration_seconds": 179.033333,
+  "public_video_included": false,
+  "board_access": false,
+  "system_uploaded": false
+}
