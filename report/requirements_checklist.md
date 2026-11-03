@@ -47,17 +47,9 @@
 
 ## 交付条件与待办
 
-报告内容已覆盖七项重点及系统模板五部分。工程通过公开仓库及[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971)提供，发布提交及新目录获取核验回执保存在工程包外。签字授权书已另做单页扫描PDF，单独交付；最终系统上传由负责人完成。海报和演示视频按已审内容交付。
+报告内容已覆盖七项重点及系统模板五部分。工程通过公开仓库及[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-final)提供，发布提交及新目录获取核验回执保存在工程包外。签字授权书已另做单页扫描PDF，单独交付；最终系统上传由负责人完成。海报和演示视频按已审内容交付。
 工程源码、仿真或验证结果、完整实现及资源/时序报告、BIT/HWH和运行原件、重建及复现脚本由配套代码包提供。Skill说明入口为skill/README.md，三个Skill直接位于skill/下一层；历史评测布局移至src/skill_validation。历史文件名及规范入口例外在provenance/canonical_filename_exceptions.json逐项列明；不能把保留历史名称说明写成全部文档均为运行依赖。
 公开WAV等第三方资产的许可与分发按工程provenance/third_party_notices.md办理。完整私人会话未并入，所选技术提示词和回答已列入E43；归并后的提示词采用统一编辑说明，后续发现按实际先后记录。
-
-## 公开仓库访问与命名
-
-首页提供作品能力、实测口径、实物与架构图，并对应指南的src/sim/build/board/data/skill/report七类目录。复现指南从公开Release附件下载开始，明确依赖、可复制命令、预期输出及板端条件。发布校验值置于工程外，下载者可直接获取。标准README.md、SKILL.md入口保留；其余实际目录和文件名小写。
-
-## 公开仓库访问与命名
-
-首页提供作品能力、实测口径、实物与架构图，并对应指南的src/sim/build/board/data/skill/report七类目录。复现指南从公开Release附件下载开始，明确依赖、可复制命令、预期输出及板端条件。发布校验值置于工程外，下载者可直接获取。标准README.md、SKILL.md入口保留；其余实际目录和文件名小写。
 
 ## 公开仓库访问与命名
 

@@ -6,7 +6,7 @@
 
 Hextech · 团队编号 41971 · 初级组自主选题
 
-[设计报告](report/design_report.pdf) · [系统技术报告](report/system_report.pdf) · [下载工程](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971) · [开始复现](reproduction_guide.md) · [验证 Skill](skill/README.md)
+[设计报告](report/design_report.pdf) · [系统技术报告](report/system_report.pdf) · [下载工程](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-final) · [开始复现](reproduction_guide.md) · [验证 Skill](skill/README.md)
 
 </div>
 
@@ -57,13 +57,13 @@ OpenNPU-Lite 在小型 FPGA 上构建尺寸可配置的整数矩阵计算平台�
 
 ## 下载后先运行什么
 
-1. 从[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971)下载 `opennpu_lite_41971_source.zip`，解压到短路径。
+1. 从[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-final)下载 `opennpu_lite_41971_source.zip`，解压到短路径。
 2. 按[环境准备](reproduction_guide.md#2-准备-pc-环境并核对文件)安装 Python 3.12+ 和 NumPy 2.3.5，环境及输出目录放在工程外。
 3. 在解压后的工程根目录打开 PowerShell，运行下面的文件核验。命令从正式下载页获取校验值，无需寻找本地“外部文件”或替换哈希占位符。
 
 ```powershell
 $ErrorActionPreference = 'Stop'
-$releaseBase = 'https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/download/submission-41971'
+$releaseBase = 'https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/download/submission-41971-final'
 $checksums = Invoke-RestMethod "$releaseBase/checksums.txt"
 $manifestMatches = [regex]::Matches($checksums, '(?m)^([0-9a-f]{64})  manifest\.json\r?$')
 if ($manifestMatches.Count -ne 1) { throw '发布校验文件不完整，请重新下载。' }
