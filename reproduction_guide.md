@@ -4,7 +4,7 @@
 
 ## 1 下载正式工程
 
-打开[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-anonymous-20261103)，取得两个附件：
+打开[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-source-only-20261103)，取得两个附件：
 
 | 附件 | 用途 |
 |---|---|
@@ -15,7 +15,7 @@
 
 ```powershell
 $ErrorActionPreference = 'Stop'
-$releaseBase = 'https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/download/submission-41971-anonymous-20261103'
+$releaseBase = 'https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/download/submission-41971-source-only-20261103'
 $workspace = Join-Path $env:USERPROFILE 'opennpu_reproduction'
 if (Test-Path -LiteralPath $workspace) { throw '工作目录已存在，请另选新目录。' }
 $inputDir = Join-Path $workspace 'inputs'
@@ -42,7 +42,7 @@ if (-not (Test-Path -LiteralPath (Join-Path $exportRoot 'manifest.json'))) { thr
 
 工程根目录应包含 `src/`、`sim/`、`build/`、`board/`、`data/`、`skill/`、`report/` 和 `provenance/`。虚拟环境、下载附件与运行输出均保存在工程外。
 
-熟悉 Git 的使用者也可获取 `submission-41971-anonymous-20261103` 标签。严格字节核验要求关闭换行转换，并从 Git 导出不含 `.git` 的工程目录；推荐首次复现直接使用上面的正式源码 ZIP。自行生成的 ZIP 压缩字节可以不同，工程文件仍按发布的 manifest 哈希及完整清单核验。
+熟悉 Git 的使用者也可获取 `submission-41971-source-only-20261103` 标签。严格字节核验要求关闭换行转换，并从 Git 导出不含 `.git` 的工程目录；推荐首次复现直接使用上面的正式源码 ZIP。自行生成的 ZIP 压缩字节可以不同，工程文件仍按发布的 manifest 哈希及完整清单核验。
 
 ## 2 准备 PC 环境并核对文件
 
