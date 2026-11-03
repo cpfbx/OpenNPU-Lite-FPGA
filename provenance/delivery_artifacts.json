@@ -1,0 +1,27 @@
+{
+  "scope": "Published board assets; locally recomputed sizes and SHA256, not new source-origin authentication",
+  "files": {
+    "board/hardware/opennpu_gemm_accelerator.bit": {
+      "bytes": 4045769,
+      "sha256": "47ae0a3640ef6d31db467118fd1822c04d465cd31171275fc04824824a20451c"
+    },
+    "board/hardware/opennpu_gemm_accelerator.hwh": {
+      "bytes": 288097,
+      "sha256": "d727688adc43d526b853e158648023f230fab081dd84e2c8e86437c60d747294"
+    },
+    "board/originals/panel72_evidence.tar.gz": {
+      "bytes": 6031992,
+      "sha256": "79a6640a0ac8e938e982b83a280eff8e39617a432753c32946d52487c9238a78"
+    },
+    "board/originals/shared12_evidence.tar.gz": {
+      "bytes": 1956826,
+      "sha256": "7786d5eee69b1cd17c1296beee522d324ca5d7fff9cc3e6e1a3aea39010651b7"
+    },
+    "board/packages/pynq_kws_shared12_launch_20261026_v1.zip": {
+      "bytes": 6374135,
+      "sha256": "68a39ff1994851f2c169fdd388ce7346929e60dc6930bcffb2d64fd19f3f7c16"
+    }
+  },
+  "source_index": "../report/technical_source_index.csv",
+  "board_access": false
+}

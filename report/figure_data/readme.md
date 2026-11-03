@@ -17,3 +17,6 @@
 5. kws_evidence_scopes.mmd分开PC完整动态接线和真实板端共享中段；历史VAD不写成新前端实测，CPU420质量/实时限制继续单列。
 
 各CSV的source列指report/evidence中原始复算；读数单位为ms、J或资源数量，见列名。正式图应取适当显示精度，源数据不因排版截断覆盖。初版自动核数见导出树外content_verification_01.json；本次微调核数与只读check见alignment_03/validation.json。
+
+
+`development_milestones.csv`补充从K-major到请求复用及10/31复现的阶段索引。各行含单位、测量范围及独立基线，不用于跨版本累计收益；原始同场表保持不变。

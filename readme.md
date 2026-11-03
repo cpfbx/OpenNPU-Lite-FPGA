@@ -6,7 +6,7 @@
 
 Hextech · 团队编号 41971 · 初级组自主选题
 
-[设计报告](report/design_report.pdf) · [系统技术报告](report/system_report.pdf) · [下载工程](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-final) · [开始复现](reproduction_guide.md) · [验证 Skill](skill/README.md)
+[设计报告](report/design_report.pdf) · [系统技术报告](report/system_report.pdf) · [下载工程](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-20261103) · [开始复现](reproduction_guide.md) · [验证 Skill](skill/README.md)
 
 </div>
 
@@ -36,18 +36,29 @@ OpenNPU-Lite 在小型 FPGA 上构建尺寸可配置的整数矩阵计算平台�
 
 目标器件为 **xc7z020clg400-1**，完整实现工作于 **100 MHz**，使用 **26,762 LUT、27,575 FF、11 BRAM Tile、72 DSP**，setup 与 hold 时序收敛。完整数据见[资源及时序报告](build/readme.md)。
 
-## 实测结果
+## 从原理到应用的研发成果
 
-| 测量内容 | 结果 | 资料入口 |
+平台沿着**可编程阵列 → 硬件供数与重叠 → 主机完整请求 → KWS动态接线 → 工程复现**推进。下面各行对应独立实验，展示每一步解决的成本；它们不是可以连乘的加速序列。
+
+| 阶段 | 做了什么 | 对应结果与证据 |
 |---|---|---|
-| 512³ 纯 PL 有效吞吐 | 4.467 GMAC/s | [设计报告](report/design_report.pdf)第4章 |
-| 同 BIT、MODE11 的 512³ DMA+PL | 36.221 → 31.262 ms | [设计报告](report/design_report.pdf)第4章 |
-| 10/21 主机路径优化，512³ 完整请求 | 272.1126 → 242.8221 ms，减少10.76% | [同场数据](report/figure_data/complete_request.csv) |
-| 10/22 连续面板优化，512³ 完整请求 | 266.9771 → 241.5096 ms，减少9.54% | [同场数据](report/figure_data/complete_request.csv) |
-| 固定12窗真实共享中段 | 24次 Pointwise 调用、48 jobs、12次 ARM DW3；768,000个标量检查点零差异 | [实板返回原件](board/originals/shared12_evidence.tar.gz) |
-| 完整 KWS 计算图的 PC 离线验证 | 公共 WAV 动态计算至 INT8 logits 与门控结果，固定12窗与冻结参考一致 | [运行方法](reproduction_guide.md#4-完整-kws-离线计算) |
+| 可编程计算基础 | 8×8物理阵列、64×64逻辑分块、K维归约及运行时尺寸配置 | D075完整实现100 MHz，setup/hold收敛；[原理与原生波形](sim/results/native_20261030/readme.md) |
+| K-major供数 | 按阵列消费顺序组织输入 | 同BIT MODE3→MODE5，512³ DMA+PL **106.687→63.972 ms**；接收计数降至约1/9。[E02](report/evidence/e02.md) |
+| 首K覆写、输入预取 | 去掉独立清零；在计算期间准备下一面板 | 512³配对总周期分别减少 **262,144**、**459,200 cycles**。[E03](report/evidence/e03.md)、[E04](report/evidence/e04.md) |
+| 双C-bank与MODE11 | 计算和另一银行结果排出重叠 | 同BIT MODE10→MODE11，512³ DMA+PL **36.221→31.262 ms**；纯PL有效吞吐 **4.467 GMAC/s**。[E05](report/evidence/e05.md) |
+| 请求内面板与布局复用 | 降低主机重复构造成本 | 512³完整请求 **714.535→284.216 ms，减少60.22%**；DMA+PL基本不变。[E06](report/evidence/e06.md) |
+| flat与连续面板 | 继续优化任务及字节组织 | 10/21、10/22两场512³请求分别减少 **10.76%、9.54%**；后者256³减少 **10.32%**。[同场数据](report/figure_data/complete_request.csv) |
+| 动态KWS应用链 | CPU420、单层映射、共享中段及完整PC图逐级接通 | **真实共享12窗：24次Pointwise请求、48 jobs、12次ARM DW3，768,000检查点零差异**；完整WAV到分类结果另有PC动态验证。[应用结果](report/development_results.md#3-从单算子到动态kws链路) |
+| 工程复现与取舍 | 完整构建、异机核验、原生波形、故障反例与验证Skill | 10/31连续拍摄重现矩阵改善并顺序完成共享链；原生候选退化、CPU对照与旧版本长稳分别保留。[全链条结果](report/development_results.md) |
 
-两场主机优化各有自己的同场双线程 OpenBLAS 基线，收益分别报告。纯 PL、DMA+PL 和完整请求对应不同计时窗口；CPU 对照与 `native_prepared` 负结果保留在报告中。完整 KWS 图采用 PC 夹具验证，真实 ARM/PL 共享会话覆盖 Op2 → CPU depthwise3 → Op4 中段。单组 ABBA 能量观察另见设计报告第7章。
+### 怎样理解最终表现
+
+- **计算核：** 512³纯PL为4.467 GMAC/s；DMA+PL约31 ms。它们与包含主机构帧、校验和重建的完整请求分别计时。
+- **完整请求：** 10/22候选在256³/512³分别为52.672/241.510 ms，同场双线程OpenBLAS为25.342/171.555 ms。10/31独立复现得到51.742/238.188 ms，方向与量级一致，原场次数据保留。
+- **应用覆盖：** ARM CPU420完成前处理及完整CPU参考；真实ARM/PL共享会话覆盖Op2→CPU depthwise3→Op4；完整KWS图从公共WAV到分类结果在PC硬件夹具中验证。完整混合模型实板部署和实时音频仍是后续工作。
+- **能量取舍：** 单组ABBA完整保存包络约低1.4%，同时记录请求延迟与处理器时间，详见设计报告第5章。
+
+[按阶段查看机制、全部对照与来源](report/development_results.md) · [详细设计报告](report/design_report.pdf) · [证据导航](report/evidence/readme.md)
 
 <p align="center">
   <img src="report/photos/board_oblique.jpg" alt="接有USB供电及以太网的PYNQ-Z2开发板实拍" width="480">
@@ -57,13 +68,13 @@ OpenNPU-Lite 在小型 FPGA 上构建尺寸可配置的整数矩阵计算平台�
 
 ## 下载后先运行什么
 
-1. 从[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-final)下载 `opennpu_lite_41971_source.zip`，解压到短路径。
+1. 从[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-20261103)下载 `opennpu_lite_41971_source.zip`，解压到短路径。
 2. 按[环境准备](reproduction_guide.md#2-准备-pc-环境并核对文件)安装 Python 3.12+ 和 NumPy 2.3.5，环境及输出目录放在工程外。
 3. 在解压后的工程根目录打开 PowerShell，运行下面的文件核验。命令从正式下载页获取校验值，无需寻找本地“外部文件”或替换哈希占位符。
 
 ```powershell
 $ErrorActionPreference = 'Stop'
-$releaseBase = 'https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/download/submission-41971-final'
+$releaseBase = 'https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/download/submission-41971-20261103'
 $checksums = Invoke-RestMethod "$releaseBase/checksums.txt"
 $manifestMatches = [regex]::Matches($checksums, '(?m)^([0-9a-f]{64})  manifest\.json\r?$')
 if ($manifestMatches.Count -ne 1) { throw '发布校验文件不完整，请重新下载。' }

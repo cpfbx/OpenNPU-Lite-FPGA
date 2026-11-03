@@ -1,0 +1,13 @@
+experiment,evidence,measurement_scope,shape,unit,baseline,candidate,comparison_note
+k_major,E02,DMA+PL,512^3,ms,106.6868,63.9716,same BIT MODE3/MODE5
+first_k_overwrite,E03,PL cycles,512^3,cycles,4239808,3977664,same BIT MODE7/MODE9
+prefetch,E04,PL cycles,512^3,cycles,3977664,3518464,paired prefetch experiment
+dual_c_bank_mode11,E05,DMA+PL,512^3,ms,36.221124,31.261776,same BIT MODE10/MODE11; 20 pairs
+request_local_reuse,E06,complete request,512^3,ms,714.535,284.216,483-call experiment; original FPGA/cached FPGA
+flat_20261021,E09,complete request,256^3,ms,57.29627125,57.69278225,old/flat; formal n=8
+flat_20261021,E09,complete request,512^3,ms,272.112641875,242.822111875,old/flat; formal n=8
+contiguous_20261022,E10,complete request,256^3,ms,58.732557,52.671870875,flat/contiguous; formal n=8
+contiguous_20261022,E10,complete request,512^3,ms,266.977107875,241.509612,flat/contiguous; formal n=8
+replication_20261031,E42,complete request,256^3,ms,57.601183875,51.741560625,independent filming take; formal n=8
+replication_20261031,E42,complete request,512^3,ms,261.115337375,238.18777425,independent filming take; formal n=8
+native_prepared,E08,complete request,512^3,ms,283.486,416.921,rejected candidate; first complete calls; not formal series

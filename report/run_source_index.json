@@ -1,0 +1,49 @@
+[
+  {
+    "output": "run_assets/matrix_native_255s.png",
+    "frame_seconds": 255,
+    "source_video_sha256": "90dfc461458659aa04c438244b67330dbc527b6a62aad6f938302e5de8525d1e",
+    "sha256": "c8d868c627a956f2a5f756796d15165dbf86dbd08c97294f77356762b4053eb3",
+    "pixels": "original extracted frame, no annotations",
+    "document_view_crop": [
+      174,
+      932,
+      1560,
+      1478
+    ]
+  },
+  {
+    "output": "run_assets/shared_native_579s.png",
+    "frame_seconds": 579,
+    "source_video_sha256": "90dfc461458659aa04c438244b67330dbc527b6a62aad6f938302e5de8525d1e",
+    "sha256": "c54771c51aedf73f2fec9fe53c620de85edfa0625328bd0cec4d2fce7f125d19",
+    "pixels": "original extracted frame, no annotations",
+    "document_view_crop": [
+      174,
+      1065,
+      1560,
+      1479
+    ]
+  },
+  {
+    "output": "run_assets/result_native_610s.png",
+    "frame_seconds": 610,
+    "source_video_sha256": "90dfc461458659aa04c438244b67330dbc527b6a62aad6f938302e5de8525d1e",
+    "sha256": "aa3f7de7b1430f884b98f548d1d3435901cacdb420dd178a8c7461ecff330631",
+    "pixels": "original extracted frame, no annotations",
+    "document_view_crop": [
+      174,
+      1098,
+      1560,
+      1478
+    ]
+  },
+  {
+    "output": "run_assets/system_oblique_phone_568s.png",
+    "frame_seconds": 568,
+    "source_video_sha256": "43ae6906842346e07b220de32d55b6e5805bf153b56b0b68ef1d03aa63ca22ac",
+    "sha256": "321a78135321ab18ffabaea75fa85f25a2c4e60b8b6c3652dde4be6f3805e58f",
+    "pixels": "3840x2160 native frame with standard display rotation; no annotations",
+    "document_view_crop": null
+  }
+]
