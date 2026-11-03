@@ -1,0 +1,34 @@
+{
+  "count": 7,
+  "files": [
+    {
+      "path": "skill/engineering-evidence-review/SKILL.md",
+      "reason": "Skill加载器使用的标准入口；此处保留指令文件名。"
+    },
+    {
+      "path": "skill/pynq-dma-validation/SKILL.md",
+      "reason": "Skill加载器使用的标准入口；此处保留指令文件名。"
+    },
+    {
+      "path": "skill/pynq-gemm-validation/SKILL.md",
+      "reason": "Skill加载器使用的标准入口；此处保留指令文件名。"
+    },
+    {
+      "path": "skill/README.md",
+      "reason": "比赛指南3.3.5.2明确要求的Skill说明入口。"
+    },
+    {
+      "path": "src/skill_validation/skill/engineering-evidence-review/SKILL.md",
+      "reason": "Skill加载器使用的标准入口；此处保留指令文件名。"
+    },
+    {
+      "path": "src/skill_validation/skill/pynq-dma-validation/SKILL.md",
+      "reason": "Skill加载器使用的标准入口；此处保留指令文件名。"
+    },
+    {
+      "path": "src/skill_validation/skill/pynq-gemm-validation/SKILL.md",
+      "reason": "Skill加载器使用的标准入口；此处保留指令文件名。"
+    }
+  ],
+  "policy": "README.md采用指南明确入口；SKILL.md采用标准技能入口；其余实际提交文件名均为小写ASCII。历史原件归档内名称保持原身份。"
+}

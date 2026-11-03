@@ -1,0 +1,477 @@
+{
+  "source_archive_sha256": "79a6640a0ac8e938e982b83a280eff8e39617a432753c32946d52487c9238a78",
+  "archive_files": 90,
+  "round_indexed_files": 78,
+  "checked_timing_rows": 72,
+  "formal_rows": 48,
+  "warmup_rows": 24,
+  "checked_os_children": 12,
+  "checked_fpga_metric_and_output_sha_rows": 48,
+  "pc_int64_bank_checks": [
+    {
+      "dimension": 256,
+      "input_id": 42,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "dimension": 256,
+      "input_id": 43,
+      "sha256": "25afb557e0a0a07f45970d75b5d988738504b1471926a2d76352fe55e077a64b"
+    },
+    {
+      "dimension": 512,
+      "input_id": 42,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "dimension": 512,
+      "input_id": 43,
+      "sha256": "8e74ffe97ea4f44912cbd38dbc68201319b780eb425e6783f18a8070d4177201"
+    }
+  ],
+  "retained_full_output_checks": [
+    {
+      "block": 0,
+      "dimension": 256,
+      "input_id": 42,
+      "bytes": 262144,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "block": 1,
+      "dimension": 256,
+      "input_id": 42,
+      "bytes": 262144,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "block": 2,
+      "dimension": 256,
+      "input_id": 42,
+      "bytes": 262144,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "block": 3,
+      "dimension": 256,
+      "input_id": 42,
+      "bytes": 262144,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "block": 4,
+      "dimension": 256,
+      "input_id": 42,
+      "bytes": 262144,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "block": 5,
+      "dimension": 256,
+      "input_id": 42,
+      "bytes": 262144,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "block": 6,
+      "dimension": 512,
+      "input_id": 42,
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "block": 7,
+      "dimension": 512,
+      "input_id": 42,
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "block": 8,
+      "dimension": 512,
+      "input_id": 42,
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "block": 9,
+      "dimension": 512,
+      "input_id": 42,
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "block": 10,
+      "dimension": 512,
+      "input_id": 42,
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "block": 11,
+      "dimension": 512,
+      "input_id": 42,
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    }
+  ],
+  "retained_int32_positions": 1966080,
+  "groups": [
+    {
+      "dimension": 256,
+      "backend": "fpga_flat_baseline",
+      "formal_n": 8,
+      "wall_ns": {
+        "n": 8,
+        "mean": 58732557.0,
+        "median": 58516341.5,
+        "min": 58105889,
+        "max": 59939970
+      },
+      "process_cpu_ns": {
+        "n": 8,
+        "mean": 55364457.25,
+        "median": 55263851.0,
+        "min": 54851971,
+        "max": 56197478
+      },
+      "nested_attribution_ms": {
+        "stages": {
+          "transaction_generation": "18.509996875",
+          "owned_submission": "24.75758325",
+          "record_reconstruction": "7.58705475",
+          "output_unpack": "4.916077125"
+        },
+        "chain_total": "9.968495500046969875000",
+        "dma_pl": "4.8713454999784745000",
+        "owned_minus_chain": "14.789087749953030125000",
+        "four_stage_sum": "55.770712000",
+        "complete_minus_four_stages": "2.961845000",
+        "input_copy_inside_chain": "1.42758999997738555000"
+      }
+    },
+    {
+      "dimension": 256,
+      "backend": "fpga_flat_contiguous",
+      "formal_n": 8,
+      "wall_ns": {
+        "n": 8,
+        "mean": 52671870.875,
+        "median": 52700240.0,
+        "min": 52130369,
+        "max": 53037256
+      },
+      "process_cpu_ns": {
+        "n": 8,
+        "mean": 49325557.125,
+        "median": 49394664.5,
+        "min": 48865990,
+        "max": 49620807
+      },
+      "nested_attribution_ms": {
+        "stages": {
+          "transaction_generation": "12.440476125",
+          "owned_submission": "24.663010625",
+          "record_reconstruction": "7.638627",
+          "output_unpack": "4.970059375"
+        },
+        "chain_total": "9.8544638749729075000",
+        "dma_pl": "4.8151769999549288125000",
+        "owned_minus_chain": "14.8085467500270925000",
+        "four_stage_sum": "49.712173125",
+        "complete_minus_four_stages": "2.959697750",
+        "input_copy_inside_chain": "1.4271337499707214875000"
+      }
+    },
+    {
+      "dimension": 256,
+      "backend": "openblas_2t",
+      "formal_n": 8,
+      "wall_ns": {
+        "n": 8,
+        "mean": 25341813.875,
+        "median": 25272519.5,
+        "min": 25019625,
+        "max": 25719551
+      },
+      "process_cpu_ns": {
+        "n": 8,
+        "mean": 46295986.25,
+        "median": 44957102.0,
+        "min": 44514345,
+        "max": 54918260
+      }
+    },
+    {
+      "dimension": 512,
+      "backend": "fpga_flat_baseline",
+      "formal_n": 8,
+      "wall_ns": {
+        "n": 8,
+        "mean": 266977107.875,
+        "median": 264517522.5,
+        "min": 263714172,
+        "max": 275745046
+      },
+      "process_cpu_ns": {
+        "n": 8,
+        "mean": 241236438.875,
+        "median": 239756412.0,
+        "min": 239007232,
+        "max": 246837449
+      },
+      "nested_attribution_ms": {
+        "stages": {
+          "transaction_generation": "95.454032875",
+          "owned_submission": "112.83195675",
+          "record_reconstruction": "32.18218525",
+          "output_unpack": "19.129592375"
+        },
+        "chain_total": "50.36107999998762375000",
+        "dma_pl": "30.848539999993818375000",
+        "owned_minus_chain": "62.47087675001237625000",
+        "four_stage_sum": "259.597767250",
+        "complete_minus_four_stages": "7.379340625",
+        "input_copy_inside_chain": "9.388289375010572000"
+      }
+    },
+    {
+      "dimension": 512,
+      "backend": "fpga_flat_contiguous",
+      "formal_n": 8,
+      "wall_ns": {
+        "n": 8,
+        "mean": 241509612.0,
+        "median": 241525126.0,
+        "min": 240544086,
+        "max": 242479360
+      },
+      "process_cpu_ns": {
+        "n": 8,
+        "mean": 216572760.625,
+        "median": 216717754.0,
+        "min": 215781211,
+        "max": 217249541
+      },
+      "nested_attribution_ms": {
+        "stages": {
+          "transaction_generation": "71.131035",
+          "owned_submission": "111.715898",
+          "record_reconstruction": "32.092763",
+          "output_unpack": "19.219343875"
+        },
+        "chain_total": "49.9027489999832595000",
+        "dma_pl": "30.96583612500580825000",
+        "owned_minus_chain": "61.8131490000167405000",
+        "four_stage_sum": "234.159039875",
+        "complete_minus_four_stages": "7.350572125",
+        "input_copy_inside_chain": "9.218509000078256625000"
+      }
+    },
+    {
+      "dimension": 512,
+      "backend": "openblas_2t",
+      "formal_n": 8,
+      "wall_ns": {
+        "n": 8,
+        "mean": 171554654.375,
+        "median": 165868231.0,
+        "min": 165391667,
+        "max": 208433981
+      },
+      "process_cpu_ns": {
+        "n": 8,
+        "mean": 330332147.375,
+        "median": 332786081.0,
+        "min": 323617237,
+        "max": 336395623
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "dimension": 256,
+      "baseline_ms": "58.732557",
+      "contiguous_ms": "52.671870875",
+      "cpu_2t_ms": "25.341813875",
+      "contiguous_time_reduction_vs_baseline_pct": "10.319125259606865064635275457188080539384655090021",
+      "baseline_over_contiguous_speedup": "1.1150649487917966422528370082316731454054317374767",
+      "contiguous_time_excess_vs_cpu_pct": "107.84570171183139115372419252290006016785173788196"
+    },
+    {
+      "dimension": 512,
+      "baseline_ms": "266.977107875",
+      "contiguous_ms": "241.509612",
+      "cpu_2t_ms": "171.554654375",
+      "contiguous_time_reduction_vs_baseline_pct": "9.5392058434178586218981453935641110255622136643838",
+      "baseline_over_contiguous_speedup": "1.1054512723700620246949011702275435728827223655181",
+      "contiguous_time_excess_vs_cpu_pct": "40.777067739640567242406535261337470197680843306470"
+    }
+  ],
+  "blocks": [
+    {
+      "block": 0,
+      "dimension": 256,
+      "backend": "fpga_flat_baseline",
+      "child_pid": 2170,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 58.294249,
+        "median": 58.2941505,
+        "min": 58.105889,
+        "max": 58.482806
+      }
+    },
+    {
+      "block": 1,
+      "dimension": 256,
+      "backend": "fpga_flat_contiguous",
+      "child_pid": 2213,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 52.439503,
+        "median": 52.4925355,
+        "min": 52.130369,
+        "max": 52.642572
+      }
+    },
+    {
+      "block": 2,
+      "dimension": 256,
+      "backend": "openblas_2t",
+      "child_pid": 2238,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 25.357188,
+        "median": 25.344788,
+        "min": 25.019625,
+        "max": 25.719551
+      }
+    },
+    {
+      "block": 3,
+      "dimension": 256,
+      "backend": "openblas_2t",
+      "child_pid": 2258,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 25.32643975,
+        "median": 25.2725195,
+        "min": 25.100474,
+        "max": 25.660246
+      }
+    },
+    {
+      "block": 4,
+      "dimension": 256,
+      "backend": "fpga_flat_contiguous",
+      "child_pid": 2278,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 52.90423875,
+        "median": 52.9108955,
+        "min": 52.757908,
+        "max": 53.037256
+      }
+    },
+    {
+      "block": 5,
+      "dimension": 256,
+      "backend": "fpga_flat_baseline",
+      "child_pid": 2302,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 59.170865,
+        "median": 59.0968065,
+        "min": 58.549877,
+        "max": 59.93997
+      }
+    },
+    {
+      "block": 6,
+      "dimension": 512,
+      "backend": "fpga_flat_baseline",
+      "child_pid": 2344,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 269.68932875,
+        "median": 269.300735,
+        "min": 264.410799,
+        "max": 275.745046
+      }
+    },
+    {
+      "block": 7,
+      "dimension": 512,
+      "backend": "fpga_flat_contiguous",
+      "child_pid": 2385,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 240.9753505,
+        "median": 241.013335,
+        "min": 240.544086,
+        "max": 241.330646
+      }
+    },
+    {
+      "block": 8,
+      "dimension": 512,
+      "backend": "openblas_2t",
+      "child_pid": 2428,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 166.51617375,
+        "median": 165.868231,
+        "min": 165.527341,
+        "max": 168.800892
+      }
+    },
+    {
+      "block": 9,
+      "dimension": 512,
+      "backend": "openblas_2t",
+      "child_pid": 2431,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 176.593135,
+        "median": 166.273446,
+        "min": 165.391667,
+        "max": 208.433981
+      }
+    },
+    {
+      "block": 10,
+      "dimension": 512,
+      "backend": "fpga_flat_contiguous",
+      "child_pid": 2451,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 242.0438735,
+        "median": 241.988264,
+        "min": 241.719606,
+        "max": 242.47936
+      }
+    },
+    {
+      "block": 11,
+      "dimension": 512,
+      "backend": "fpga_flat_baseline",
+      "child_pid": 2492,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 264.264887,
+        "median": 264.34099,
+        "min": 263.714172,
+        "max": 264.663396
+      }
+    }
+  ],
+  "originals_unchanged": true,
+  "readback_pass": true,
+  "board_access": false,
+  "new_hardware_execution": false,
+  "executed_archive_code": false,
+  "energy_evaluated": false,
+  "tail_latency_accepted": false,
+  "promotion": false
+}

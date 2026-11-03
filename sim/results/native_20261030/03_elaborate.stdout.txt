@@ -1,0 +1,24 @@
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/AMDFPGA/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_d007_c_buffer_real_overlap -L work -L xpm -debug all -s native_tb_d007_c_buffer_real_overlap 
+Multi-threading is on. Using 22 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3645] port 'external_keep_count' remains unconnected for this instance [D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb/tb_d007_c_buffer_real_overlap.sv:39]
+WARNING: [VRFC 10-3645] port 'mode11_output_commit' remains unconnected for this instance [D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb/tb_d007_c_buffer_real_overlap.sv:77]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.d007_result_fifo
+Compiling module xpm.xpm_memory_base(MEMORY_TYPE=1,ME...
+Compiling module xpm.xpm_memory_sdpram(MEMORY_SIZE=13...
+Compiling module work.c_accum_bram_xpm
+Compiling module work.requantize_int8_pipeline
+Compiling module work.PE
+Compiling module work.PE_array(ROWS=8,COLS=8)
+Compiling module work.axis_tile_gemm_core(ARRAY_ROWS=8...
+Compiling module work.d007_c_buffer_drain_experiment
+Compiling module work.tb_d007_c_buffer_real_overlap
+Built simulation snapshot native_tb_d007_c_buffer_real_overlap

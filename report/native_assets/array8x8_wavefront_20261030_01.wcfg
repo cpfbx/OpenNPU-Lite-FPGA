@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb_d007_c_buffer_real_overlap.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_d007_c_buffer_real_overlap" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="19" />
+   <wvobject type="divider" fp_name="divider1">
+      <obj_property name="label">CLOCK / COMPUTE</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/clk" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+      <obj_property name="label">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/start" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+      <obj_property name="label">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/compute_complete" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">compute_complete</obj_property>
+      <obj_property name="ObjectShortName">compute_complete</obj_property>
+      <obj_property name="label">compute_complete</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider5">
+      <obj_property name="label">PE INPUT PROPAGATION</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/u_array/\PE_logic[0].PE_matrix /west_act" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">west_act[7:0]</obj_property>
+      <obj_property name="ObjectShortName">west_act[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PE(0,0).west_act</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/u_array/\PE_logic[1].PE_matrix /west_act" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">west_act[7:0]</obj_property>
+      <obj_property name="ObjectShortName">west_act[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PE(0,1).west_act</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/u_array/\PE_logic[7].PE_matrix /west_act" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">west_act[7:0]</obj_property>
+      <obj_property name="ObjectShortName">west_act[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PE(0,7).west_act</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/u_array/\PE_logic[63].PE_matrix /west_act" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">west_act[7:0]</obj_property>
+      <obj_property name="ObjectShortName">west_act[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PE(7,7).west_act</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider10">
+      <obj_property name="label">PE MULTIPLY PIPELINE</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/u_array/\PE_logic[0].PE_matrix /multi_reg" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">multi_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">multi_reg[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PE(0,0).multi_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/u_array/\PE_logic[1].PE_matrix /multi_reg" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">multi_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">multi_reg[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PE(0,1).multi_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/u_array/\PE_logic[7].PE_matrix /multi_reg" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">multi_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">multi_reg[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PE(0,7).multi_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/u_array/\PE_logic[63].PE_matrix /multi_reg" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">multi_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">multi_reg[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PE(7,7).multi_reg</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider15">
+      <obj_property name="label">PE ACCUMULATORS</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/u_array/\PE_logic[0].PE_matrix /accum_reg" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">accum_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">accum_reg[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PE(0,0).accum_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/u_array/\PE_logic[1].PE_matrix /accum_reg" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">accum_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">accum_reg[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PE(0,1).accum_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/u_array/\PE_logic[7].PE_matrix /accum_reg" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">accum_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">accum_reg[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PE(0,7).accum_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/u_array/\PE_logic[63].PE_matrix /accum_reg" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">accum_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">accum_reg[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">PE(7,7).accum_reg</obj_property>
+   </wvobject>
+</wave_config>

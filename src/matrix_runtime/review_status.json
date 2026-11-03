@@ -1,0 +1,13 @@
+{
+  "board_runtime_executed": false,
+  "bootstrap_execution_requires_separate_bx_confirmation": true,
+  "bootstrap_unchanged": true,
+  "exact_board_activation_approved": false,
+  "linux_review_methods": 370,
+  "linux_review_zip_sha256": "103a5e6002fd19f35d443df74f03af51765df02cc5f7bbbdec81c2b37ddc711c",
+  "operator_material": "DATA-only original preparer; three explicit token/prefix/schema string substitutions",
+  "packaging_independently_reviewed": false,
+  "production_promoted": false,
+  "runtime_source_review_accepted": true,
+  "schema": "panel72-prepared-status-v1"
+}

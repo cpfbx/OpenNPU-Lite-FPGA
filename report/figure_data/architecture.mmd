@@ -1,0 +1,12 @@
+flowchart TB
+  A[ARM request and tiling] --> B[DDR CMA root buffers]
+  B --> C[AXI DMA MM2S]
+  C --> D[K major chain parser]
+  D --> E[8 x 8 OS array]
+  E --> F[Dual C banks and output scheduler]
+  F --> G[AXI DMA S2MM]
+  G --> B
+  A --> H[AXI Lite control and counters]
+  H --> D
+  F --> H
+  B --> I[ARM reconstruction and application]

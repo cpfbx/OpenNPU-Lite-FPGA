@@ -1,0 +1,13 @@
+experiment,dimension,backend,mean_ms,formal_n,window,source
+2026-10-21,256,fpga_flat,57.69278225,8,complete_request,e38.json
+2026-10-21,256,fpga_old,57.29627125,8,complete_request,e38.json
+2026-10-21,256,openblas_2t,25.16340075,8,complete_request,e38.json
+2026-10-21,512,fpga_flat,242.822111875,8,complete_request,e38.json
+2026-10-21,512,fpga_old,272.112641875,8,complete_request,e38.json
+2026-10-21,512,openblas_2t,172.240538125,8,complete_request,e38.json
+2026-10-22,256,fpga_flat_baseline,58.732557,8,complete_request,e39.json
+2026-10-22,256,fpga_flat_contiguous,52.671870875,8,complete_request,e39.json
+2026-10-22,256,openblas_2t,25.341813875,8,complete_request,e39.json
+2026-10-22,512,fpga_flat_baseline,266.977107875,8,complete_request,e39.json
+2026-10-22,512,fpga_flat_contiguous,241.509612,8,complete_request,e39.json
+2026-10-22,512,openblas_2t,171.554654375,8,complete_request,e39.json

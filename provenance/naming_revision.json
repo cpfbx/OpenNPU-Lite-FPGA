@@ -1,0 +1,121 @@
+{
+  "parent_manifest_sha256": "932f6178cb74557d2a0305e6953ca2d9a7087371180992fc60bac3348782ed44",
+  "revision": "submission_v5",
+  "date": "2026-11-02",
+  "human_owner": "bx",
+  "executor": "Codex/root",
+  "renamed_files": [
+    {
+      "before": "skill/engineering-evidence-review/LICENSE",
+      "after": "skill/engineering-evidence-review/license",
+      "original_sha256": "6f561a52e421fd36b13b9f042814df52376c361bfeb79d1b523dcd251d9933b8",
+      "same_content": true
+    },
+    {
+      "before": "skill/pynq-dma-validation/LICENSE",
+      "after": "skill/pynq-dma-validation/license",
+      "original_sha256": "6f561a52e421fd36b13b9f042814df52376c361bfeb79d1b523dcd251d9933b8",
+      "same_content": true
+    },
+    {
+      "before": "skill/pynq-gemm-validation/LICENSE",
+      "after": "skill/pynq-gemm-validation/license",
+      "original_sha256": "6f561a52e421fd36b13b9f042814df52376c361bfeb79d1b523dcd251d9933b8",
+      "same_content": true
+    },
+    {
+      "before": "src/hardware/README.md",
+      "after": "src/hardware/readme.md",
+      "original_sha256": "dd09790442f3b787fecf74757bd215e7d4be7cad1083677fe486e12aceadd87d",
+      "same_content": true
+    },
+    {
+      "before": "src/hardware/source/LICENSE",
+      "after": "src/hardware/source/license",
+      "original_sha256": "360ed4925f51bdd65f36b0c880e7d9998845bc3136c5badf8035f4556b1b865e",
+      "same_content": true
+    },
+    {
+      "before": "src/matrix_runtime/CONTRACT.md",
+      "after": "src/matrix_runtime/contract.md",
+      "original_sha256": "0ab7cae9cd87e10098f8e985d28626f7507e1fd389d19ae4dc26b4768f092855",
+      "same_content": true
+    },
+    {
+      "before": "src/matrix_runtime/OPERATOR.md",
+      "after": "src/matrix_runtime/operator.md",
+      "original_sha256": "eb47074a5e0c3a4ff158995641ac351af8a016676c97f5b69335109a8ebf96fa",
+      "same_content": true
+    },
+    {
+      "before": "src/matrix_runtime/REVIEW_STATUS.json",
+      "after": "src/matrix_runtime/review_status.json",
+      "original_sha256": "c06d1dbd5cd2d966a666d40f6958935ecf6bb67cccdc3bcba581f023d1a7e5cd",
+      "same_content": true
+    },
+    {
+      "before": "src/matrix_runtime/runtime/legacy/LICENSE",
+      "after": "src/matrix_runtime/runtime/legacy/license",
+      "original_sha256": "6f561a52e421fd36b13b9f042814df52376c361bfeb79d1b523dcd251d9933b8",
+      "same_content": true
+    },
+    {
+      "before": "src/matrix_runtime/runtime/legacy/README.md",
+      "after": "src/matrix_runtime/runtime/legacy/readme.md",
+      "original_sha256": "236a8ce564216d4d37b41160e8c4a675917b6bcbf7ee379584434257f37f2921",
+      "same_content": true
+    },
+    {
+      "before": "src/skill_validation/LICENSE",
+      "after": "src/skill_validation/license",
+      "original_sha256": "6f561a52e421fd36b13b9f042814df52376c361bfeb79d1b523dcd251d9933b8",
+      "same_content": true
+    },
+    {
+      "before": "src/skill_validation/README.md",
+      "after": "src/skill_validation/readme.md",
+      "original_sha256": "af4b0c86ef459ed7b6b24f3ce2d782c4c4596a0baea6ec99f51146020a9271f7",
+      "same_content": false
+    },
+    {
+      "before": "src/skill_validation/skill/engineering-evidence-review/LICENSE",
+      "after": "src/skill_validation/skill/engineering-evidence-review/license",
+      "original_sha256": "6f561a52e421fd36b13b9f042814df52376c361bfeb79d1b523dcd251d9933b8",
+      "same_content": true
+    },
+    {
+      "before": "src/skill_validation/skill/pynq-dma-validation/LICENSE",
+      "after": "src/skill_validation/skill/pynq-dma-validation/license",
+      "original_sha256": "6f561a52e421fd36b13b9f042814df52376c361bfeb79d1b523dcd251d9933b8",
+      "same_content": true
+    },
+    {
+      "before": "src/skill_validation/skill/pynq-gemm-validation/LICENSE",
+      "after": "src/skill_validation/skill/pynq-gemm-validation/license",
+      "original_sha256": "6f561a52e421fd36b13b9f042814df52376c361bfeb79d1b523dcd251d9933b8",
+      "same_content": true
+    },
+    {
+      "before": "src/skill_validation/skill/README.md",
+      "after": "src/skill_validation/skill/readme.md",
+      "original_sha256": "1a160d06e9b83382768227baac12ef147fdbedd82b04717762bab1a885cf3bca",
+      "same_content": true
+    }
+  ],
+  "markdown_link_updates": [
+    {
+      "file": "src/skill_validation/readme.md",
+      "old": "skill/README.md",
+      "new": "skill/readme.md"
+    }
+  ],
+  "remaining_canonical_names": 18,
+  "historical_source_ledgers_preserved": true,
+  "root_manifest_is_current_inventory": true,
+  "github_visibility_approved": "public",
+  "github_upload_performed": false,
+  "video_human_review": "bx approved on 2026-11-02",
+  "rtl_contents_changed": false,
+  "mathematics_changed": false,
+  "bit_hwh_changed": false
+}

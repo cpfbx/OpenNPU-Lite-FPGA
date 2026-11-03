@@ -1,0 +1,26 @@
+{
+  "schema": "comparison-cpu-originals-v1",
+  "files": [
+    {
+      "path": "runtime_cpu/blas_candidate.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/cpu/blas_candidate.py",
+      "bytes": 5657,
+      "sha256": "42a5ac0fe3b2d0cf4ea8471df3593f2cb407528f7e8cb7c758dc6fbad1571a27"
+    },
+    {
+      "path": "runtime_cpu/libmatrix_blas_arm.so",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/cpu/libmatrix_blas_arm.so",
+      "bytes": 86672,
+      "sha256": "a1ee68685946287785a55e07fb60089441252676fc78ee1756a28c3f5de29c3b"
+    },
+    {
+      "path": "runtime_cpu/license",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/cpu/LICENSE",
+      "bytes": 1548,
+      "sha256": "190b5a9c8d9723fe958ad33916bd7346d96fab3c5ea90832bb02d854f620fcff"
+    }
+  ]
+}

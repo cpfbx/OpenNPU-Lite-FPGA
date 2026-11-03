@@ -1,0 +1,9 @@
+{
+  "scope": "executor observation recorded by Codex after completion, not a digital signature",
+  "exec_session_id": 36546,
+  "actual_process_exit_code": 0,
+  "source": "tools.write_stdin completion returned exit_code=0 in this chat",
+  "command": "run_clean_rebuild.ps1",
+  "board_access": false,
+  "promotion": false
+}

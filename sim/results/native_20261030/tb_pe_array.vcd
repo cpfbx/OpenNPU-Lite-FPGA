@@ -1,0 +1,1222 @@
+$date
+   Fri Oct 30 14:51:18 2026
+$end
+
+$version
+  2026.1
+$end
+
+$timescale
+  1ps
+$end
+
+$scope module tb_pe_array $end
+$var reg 1 L" clk $end
+$var reg 1 M" rst_n $end
+$var reg 1 N" mode $end
+$var reg 1 O" weight_load $end
+$var reg 1 P" accum_out $end
+$var reg 1 Q" pe_clear $end
+$var reg 128 R" weight_in [127:0] $end
+$var reg 32 S" west_act_in [31:0] $end
+$var reg 128 T" north_data_in [127:0] $end
+$var wire 512 U" accum_OS_out [511:0] $end
+$var integer 32 V" pass_cnt [31:0] $end
+$var integer 32 W" fail_cnt [31:0] $end
+$var parameter 32 X" AW [31:0] $end
+$var parameter 32 Y" ACW [31:0] $end
+$var parameter 32 Z" R [31:0] $end
+$var parameter 32 [" C [31:0] $end
+$var parameter 32 \" N [31:0] $end
+$scope module dut $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 128 % weight_in [127:0] $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 512 ( accum_OS [511:0] $end
+$var wire 32 ) west_act_in [31:0] $end
+$var wire 32 * east_act_out [31:0] $end
+$var wire 128 + north_data_in [127:0] $end
+$var wire 128 , south_data_out [127:0] $end
+$var wire 640 - ROWS_connect [639:0] $end
+$var wire 160 . COLS_connect [159:0] $end
+$var integer 32 / \gen_col_delay[1].genblk1.k  [31:0] $end
+$var integer 32 0 \gen_col_delay[2].genblk1.k  [31:0] $end
+$var integer 32 1 \gen_col_delay[3].genblk1.k  [31:0] $end
+$var integer 32 2 \gen_row_delay[1].genblk1.k  [31:0] $end
+$var integer 32 3 \gen_row_delay[2].genblk1.k  [31:0] $end
+$var integer 32 4 \gen_row_delay[3].genblk1.k  [31:0] $end
+$var wire 32 5 \PE_logic[0].north_in  [31:0] $end
+$var wire 8 6 \PE_logic[0].west_in  [7:0] $end
+$var wire 8 7 \PE_logic[0].weight_pe  [7:0] $end
+$var wire 32 8 \PE_logic[0].south_out  [31:0] $end
+$var wire 8 9 \PE_logic[0].east_out  [7:0] $end
+$var wire 32 : \PE_logic[0].accum_pe  [31:0] $end
+$var wire 32 ; \PE_logic[1].north_in  [31:0] $end
+$var wire 8 < \PE_logic[1].west_in  [7:0] $end
+$var wire 8 = \PE_logic[1].weight_pe  [7:0] $end
+$var wire 32 > \PE_logic[1].south_out  [31:0] $end
+$var wire 8 ? \PE_logic[1].east_out  [7:0] $end
+$var wire 32 @ \PE_logic[1].accum_pe  [31:0] $end
+$var wire 32 A \PE_logic[2].north_in  [31:0] $end
+$var wire 8 B \PE_logic[2].west_in  [7:0] $end
+$var wire 8 C \PE_logic[2].weight_pe  [7:0] $end
+$var wire 32 D \PE_logic[2].south_out  [31:0] $end
+$var wire 8 E \PE_logic[2].east_out  [7:0] $end
+$var wire 32 F \PE_logic[2].accum_pe  [31:0] $end
+$var wire 32 G \PE_logic[3].north_in  [31:0] $end
+$var wire 8 H \PE_logic[3].west_in  [7:0] $end
+$var wire 8 I \PE_logic[3].weight_pe  [7:0] $end
+$var wire 32 J \PE_logic[3].south_out  [31:0] $end
+$var wire 8 K \PE_logic[3].east_out  [7:0] $end
+$var wire 32 L \PE_logic[3].accum_pe  [31:0] $end
+$var wire 32 M \PE_logic[4].north_in  [31:0] $end
+$var wire 8 N \PE_logic[4].west_in  [7:0] $end
+$var wire 8 O \PE_logic[4].weight_pe  [7:0] $end
+$var wire 32 P \PE_logic[4].south_out  [31:0] $end
+$var wire 8 Q \PE_logic[4].east_out  [7:0] $end
+$var wire 32 R \PE_logic[4].accum_pe  [31:0] $end
+$var wire 32 S \PE_logic[5].north_in  [31:0] $end
+$var wire 8 T \PE_logic[5].west_in  [7:0] $end
+$var wire 8 U \PE_logic[5].weight_pe  [7:0] $end
+$var wire 32 V \PE_logic[5].south_out  [31:0] $end
+$var wire 8 W \PE_logic[5].east_out  [7:0] $end
+$var wire 32 X \PE_logic[5].accum_pe  [31:0] $end
+$var wire 32 Y \PE_logic[6].north_in  [31:0] $end
+$var wire 8 Z \PE_logic[6].west_in  [7:0] $end
+$var wire 8 [ \PE_logic[6].weight_pe  [7:0] $end
+$var wire 32 \ \PE_logic[6].south_out  [31:0] $end
+$var wire 8 ] \PE_logic[6].east_out  [7:0] $end
+$var wire 32 ^ \PE_logic[6].accum_pe  [31:0] $end
+$var wire 32 _ \PE_logic[7].north_in  [31:0] $end
+$var wire 8 ` \PE_logic[7].west_in  [7:0] $end
+$var wire 8 a \PE_logic[7].weight_pe  [7:0] $end
+$var wire 32 b \PE_logic[7].south_out  [31:0] $end
+$var wire 8 c \PE_logic[7].east_out  [7:0] $end
+$var wire 32 d \PE_logic[7].accum_pe  [31:0] $end
+$var wire 32 e \PE_logic[8].north_in  [31:0] $end
+$var wire 8 f \PE_logic[8].west_in  [7:0] $end
+$var wire 8 g \PE_logic[8].weight_pe  [7:0] $end
+$var wire 32 h \PE_logic[8].south_out  [31:0] $end
+$var wire 8 i \PE_logic[8].east_out  [7:0] $end
+$var wire 32 j \PE_logic[8].accum_pe  [31:0] $end
+$var wire 32 k \PE_logic[9].north_in  [31:0] $end
+$var wire 8 l \PE_logic[9].west_in  [7:0] $end
+$var wire 8 m \PE_logic[9].weight_pe  [7:0] $end
+$var wire 32 n \PE_logic[9].south_out  [31:0] $end
+$var wire 8 o \PE_logic[9].east_out  [7:0] $end
+$var wire 32 p \PE_logic[9].accum_pe  [31:0] $end
+$var wire 32 q \PE_logic[10].north_in  [31:0] $end
+$var wire 8 r \PE_logic[10].west_in  [7:0] $end
+$var wire 8 s \PE_logic[10].weight_pe  [7:0] $end
+$var wire 32 t \PE_logic[10].south_out  [31:0] $end
+$var wire 8 u \PE_logic[10].east_out  [7:0] $end
+$var wire 32 v \PE_logic[10].accum_pe  [31:0] $end
+$var wire 32 w \PE_logic[11].north_in  [31:0] $end
+$var wire 8 x \PE_logic[11].west_in  [7:0] $end
+$var wire 8 y \PE_logic[11].weight_pe  [7:0] $end
+$var wire 32 z \PE_logic[11].south_out  [31:0] $end
+$var wire 8 { \PE_logic[11].east_out  [7:0] $end
+$var wire 32 | \PE_logic[11].accum_pe  [31:0] $end
+$var wire 32 } \PE_logic[12].north_in  [31:0] $end
+$var wire 8 ~ \PE_logic[12].west_in  [7:0] $end
+$var wire 8 !! \PE_logic[12].weight_pe  [7:0] $end
+$var wire 32 "! \PE_logic[12].south_out  [31:0] $end
+$var wire 8 #! \PE_logic[12].east_out  [7:0] $end
+$var wire 32 $! \PE_logic[12].accum_pe  [31:0] $end
+$var wire 32 %! \PE_logic[13].north_in  [31:0] $end
+$var wire 8 &! \PE_logic[13].west_in  [7:0] $end
+$var wire 8 '! \PE_logic[13].weight_pe  [7:0] $end
+$var wire 32 (! \PE_logic[13].south_out  [31:0] $end
+$var wire 8 )! \PE_logic[13].east_out  [7:0] $end
+$var wire 32 *! \PE_logic[13].accum_pe  [31:0] $end
+$var wire 32 +! \PE_logic[14].north_in  [31:0] $end
+$var wire 8 ,! \PE_logic[14].west_in  [7:0] $end
+$var wire 8 -! \PE_logic[14].weight_pe  [7:0] $end
+$var wire 32 .! \PE_logic[14].south_out  [31:0] $end
+$var wire 8 /! \PE_logic[14].east_out  [7:0] $end
+$var wire 32 0! \PE_logic[14].accum_pe  [31:0] $end
+$var wire 32 1! \PE_logic[15].north_in  [31:0] $end
+$var wire 8 2! \PE_logic[15].west_in  [7:0] $end
+$var wire 8 3! \PE_logic[15].weight_pe  [7:0] $end
+$var wire 32 4! \PE_logic[15].south_out  [31:0] $end
+$var wire 8 5! \PE_logic[15].east_out  [7:0] $end
+$var wire 32 6! \PE_logic[15].accum_pe  [31:0] $end
+$scope module PE_logic[0].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 7 weight_in [7:0] $end
+$var wire 8 6 west_act [7:0] $end
+$var reg 8 7! east_act [7:0] $end
+$var wire 32 5 north_data [31:0] $end
+$var reg 32 8! south_data [31:0] $end
+$var reg 32 9! accum_OS [31:0] $end
+$var reg 8 :! weight_reg [7:0] $end
+$var reg 32 ;! accum_reg [31:0] $end
+$var reg 32 <! multi_reg [31:0] $end
+$var reg 1 =! bypass $end
+$upscope $end
+$scope module PE_logic[1].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 = weight_in [7:0] $end
+$var wire 8 < west_act [7:0] $end
+$var reg 8 >! east_act [7:0] $end
+$var wire 32 ; north_data [31:0] $end
+$var reg 32 ?! south_data [31:0] $end
+$var reg 32 @! accum_OS [31:0] $end
+$var reg 8 A! weight_reg [7:0] $end
+$var reg 32 B! accum_reg [31:0] $end
+$var reg 32 C! multi_reg [31:0] $end
+$var reg 1 D! bypass $end
+$upscope $end
+$scope module PE_logic[2].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 C weight_in [7:0] $end
+$var wire 8 B west_act [7:0] $end
+$var reg 8 E! east_act [7:0] $end
+$var wire 32 A north_data [31:0] $end
+$var reg 32 F! south_data [31:0] $end
+$var reg 32 G! accum_OS [31:0] $end
+$var reg 8 H! weight_reg [7:0] $end
+$var reg 32 I! accum_reg [31:0] $end
+$var reg 32 J! multi_reg [31:0] $end
+$var reg 1 K! bypass $end
+$upscope $end
+$scope module PE_logic[3].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 I weight_in [7:0] $end
+$var wire 8 H west_act [7:0] $end
+$var reg 8 L! east_act [7:0] $end
+$var wire 32 G north_data [31:0] $end
+$var reg 32 M! south_data [31:0] $end
+$var reg 32 N! accum_OS [31:0] $end
+$var reg 8 O! weight_reg [7:0] $end
+$var reg 32 P! accum_reg [31:0] $end
+$var reg 32 Q! multi_reg [31:0] $end
+$var reg 1 R! bypass $end
+$upscope $end
+$scope module PE_logic[4].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 O weight_in [7:0] $end
+$var wire 8 N west_act [7:0] $end
+$var reg 8 S! east_act [7:0] $end
+$var wire 32 M north_data [31:0] $end
+$var reg 32 T! south_data [31:0] $end
+$var reg 32 U! accum_OS [31:0] $end
+$var reg 8 V! weight_reg [7:0] $end
+$var reg 32 W! accum_reg [31:0] $end
+$var reg 32 X! multi_reg [31:0] $end
+$var reg 1 Y! bypass $end
+$upscope $end
+$scope module PE_logic[5].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 U weight_in [7:0] $end
+$var wire 8 T west_act [7:0] $end
+$var reg 8 Z! east_act [7:0] $end
+$var wire 32 S north_data [31:0] $end
+$var reg 32 [! south_data [31:0] $end
+$var reg 32 \! accum_OS [31:0] $end
+$var reg 8 ]! weight_reg [7:0] $end
+$var reg 32 ^! accum_reg [31:0] $end
+$var reg 32 _! multi_reg [31:0] $end
+$var reg 1 `! bypass $end
+$upscope $end
+$scope module PE_logic[6].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 [ weight_in [7:0] $end
+$var wire 8 Z west_act [7:0] $end
+$var reg 8 a! east_act [7:0] $end
+$var wire 32 Y north_data [31:0] $end
+$var reg 32 b! south_data [31:0] $end
+$var reg 32 c! accum_OS [31:0] $end
+$var reg 8 d! weight_reg [7:0] $end
+$var reg 32 e! accum_reg [31:0] $end
+$var reg 32 f! multi_reg [31:0] $end
+$var reg 1 g! bypass $end
+$upscope $end
+$scope module PE_logic[7].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 a weight_in [7:0] $end
+$var wire 8 ` west_act [7:0] $end
+$var reg 8 h! east_act [7:0] $end
+$var wire 32 _ north_data [31:0] $end
+$var reg 32 i! south_data [31:0] $end
+$var reg 32 j! accum_OS [31:0] $end
+$var reg 8 k! weight_reg [7:0] $end
+$var reg 32 l! accum_reg [31:0] $end
+$var reg 32 m! multi_reg [31:0] $end
+$var reg 1 n! bypass $end
+$upscope $end
+$scope module PE_logic[8].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 g weight_in [7:0] $end
+$var wire 8 f west_act [7:0] $end
+$var reg 8 o! east_act [7:0] $end
+$var wire 32 e north_data [31:0] $end
+$var reg 32 p! south_data [31:0] $end
+$var reg 32 q! accum_OS [31:0] $end
+$var reg 8 r! weight_reg [7:0] $end
+$var reg 32 s! accum_reg [31:0] $end
+$var reg 32 t! multi_reg [31:0] $end
+$var reg 1 u! bypass $end
+$upscope $end
+$scope module PE_logic[9].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 m weight_in [7:0] $end
+$var wire 8 l west_act [7:0] $end
+$var reg 8 v! east_act [7:0] $end
+$var wire 32 k north_data [31:0] $end
+$var reg 32 w! south_data [31:0] $end
+$var reg 32 x! accum_OS [31:0] $end
+$var reg 8 y! weight_reg [7:0] $end
+$var reg 32 z! accum_reg [31:0] $end
+$var reg 32 {! multi_reg [31:0] $end
+$var reg 1 |! bypass $end
+$upscope $end
+$scope module PE_logic[10].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 s weight_in [7:0] $end
+$var wire 8 r west_act [7:0] $end
+$var reg 8 }! east_act [7:0] $end
+$var wire 32 q north_data [31:0] $end
+$var reg 32 ~! south_data [31:0] $end
+$var reg 32 !" accum_OS [31:0] $end
+$var reg 8 "" weight_reg [7:0] $end
+$var reg 32 #" accum_reg [31:0] $end
+$var reg 32 $" multi_reg [31:0] $end
+$var reg 1 %" bypass $end
+$upscope $end
+$scope module PE_logic[11].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 y weight_in [7:0] $end
+$var wire 8 x west_act [7:0] $end
+$var reg 8 &" east_act [7:0] $end
+$var wire 32 w north_data [31:0] $end
+$var reg 32 '" south_data [31:0] $end
+$var reg 32 (" accum_OS [31:0] $end
+$var reg 8 )" weight_reg [7:0] $end
+$var reg 32 *" accum_reg [31:0] $end
+$var reg 32 +" multi_reg [31:0] $end
+$var reg 1 ," bypass $end
+$upscope $end
+$scope module PE_logic[12].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 !! weight_in [7:0] $end
+$var wire 8 ~ west_act [7:0] $end
+$var reg 8 -" east_act [7:0] $end
+$var wire 32 } north_data [31:0] $end
+$var reg 32 ." south_data [31:0] $end
+$var reg 32 /" accum_OS [31:0] $end
+$var reg 8 0" weight_reg [7:0] $end
+$var reg 32 1" accum_reg [31:0] $end
+$var reg 32 2" multi_reg [31:0] $end
+$var reg 1 3" bypass $end
+$upscope $end
+$scope module PE_logic[13].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 '! weight_in [7:0] $end
+$var wire 8 &! west_act [7:0] $end
+$var reg 8 4" east_act [7:0] $end
+$var wire 32 %! north_data [31:0] $end
+$var reg 32 5" south_data [31:0] $end
+$var reg 32 6" accum_OS [31:0] $end
+$var reg 8 7" weight_reg [7:0] $end
+$var reg 32 8" accum_reg [31:0] $end
+$var reg 32 9" multi_reg [31:0] $end
+$var reg 1 :" bypass $end
+$upscope $end
+$scope module PE_logic[14].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 -! weight_in [7:0] $end
+$var wire 8 ,! west_act [7:0] $end
+$var reg 8 ;" east_act [7:0] $end
+$var wire 32 +! north_data [31:0] $end
+$var reg 32 <" south_data [31:0] $end
+$var reg 32 =" accum_OS [31:0] $end
+$var reg 8 >" weight_reg [7:0] $end
+$var reg 32 ?" accum_reg [31:0] $end
+$var reg 32 @" multi_reg [31:0] $end
+$var reg 1 A" bypass $end
+$upscope $end
+$scope module PE_logic[15].PE_matrix $end
+$var wire 1 ! clk $end
+$var wire 1 " rst_n $end
+$var wire 1 # mode $end
+$var wire 1 $ weight_load $end
+$var wire 1 & accum_out $end
+$var wire 1 ' pe_clear $end
+$var wire 8 3! weight_in [7:0] $end
+$var wire 8 2! west_act [7:0] $end
+$var reg 8 B" east_act [7:0] $end
+$var wire 32 1! north_data [31:0] $end
+$var reg 32 C" south_data [31:0] $end
+$var reg 32 D" accum_OS [31:0] $end
+$var reg 8 E" weight_reg [7:0] $end
+$var reg 32 F" accum_reg [31:0] $end
+$var reg 32 G" multi_reg [31:0] $end
+$var reg 1 H" bypass $end
+$upscope $end
+$upscope $end
+$scope task check_eq $end
+$var reg 32 I" got [31:0] $end
+$var reg 32 J" exp [31:0] $end
+$var reg 256 K" msg [255:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+b0 !!
+b0 !"
+0"
+b0 "!
+b0 ""
+0#
+b0 #!
+b0 #"
+0$
+b0 $!
+b0 $"
+b0 %
+b0 %!
+0%"
+0&
+b0 &!
+b0 &"
+0'
+b0 '!
+b0 '"
+b0 (
+b0 (!
+b0 ("
+b0 )
+b0 )!
+b0 )"
+b0 *
+b0 *!
+b0 *"
+b0 +
+b0 +!
+b0 +"
+b0 ,
+b0 ,!
+0,"
+b0 -
+b0 -!
+b0 -"
+b0 .
+b0 .!
+b0 ."
+b1 /
+b0 /!
+b0 /"
+b10 0
+b0 0!
+b0 0"
+b11 1
+b0 1!
+b0 1"
+b1 2
+b0 2!
+b0 2"
+b10 3
+b0 3!
+03"
+b11 4
+b0 4!
+b0 4"
+b0 5
+b0 5!
+b0 5"
+b0 6
+b0 6!
+b0 6"
+b0 7
+b0 7!
+b0 7"
+b0 8
+b0 8!
+b0 8"
+b0 9
+b0 9!
+b0 9"
+b0 :
+b0 :!
+0:"
+b0 ;
+b0 ;!
+b0 ;"
+b0 <
+b0 <!
+b0 <"
+b0 =
+0=!
+b0 ="
+b0 >
+b0 >!
+b0 >"
+b0 ?
+b0 ?!
+b0 ?"
+b0 @
+b0 @!
+b0 @"
+b0 A
+b0 A!
+0A"
+b0 B
+b0 B!
+b0 B"
+b0 C
+b0 C!
+b0 C"
+b0 D
+0D!
+b0 D"
+b0 E
+b0 E!
+b0 E"
+b0 F
+b0 F!
+b0 F"
+b0 G
+b0 G!
+b0 G"
+b0 H
+b0 H!
+0H"
+b0 I
+b0 I!
+b0 I"
+b0 J
+b0 J!
+b0 J"
+b0 K
+0K!
+b0 K"
+b0 L
+b0 L!
+0L"
+b0 M
+b0 M!
+0M"
+b0 N
+b0 N!
+0N"
+b0 O
+b0 O!
+0O"
+b0 P
+b0 P!
+0P"
+b0 Q
+b0 Q!
+0Q"
+b0 R
+0R!
+b0 R"
+b0 S
+b0 S!
+b0 S"
+b0 T
+b0 T!
+b0 T"
+b0 U
+b0 U!
+bz U"
+b0 V
+b0 V!
+b0 V"
+b0 W
+b0 W!
+b0 W"
+b0 X
+b0 X!
+b1000 X"
+b0 Y
+0Y!
+b100000 Y"
+b0 Z
+b0 Z!
+b100 Z"
+b0 [
+b0 [!
+b100 ["
+b0 \
+b0 \!
+b10000 \"
+b0 ]
+b0 ]!
+b0 ^
+b0 ^!
+b0 _
+b0 _!
+b0 `
+0`!
+b0 a
+b0 a!
+b0 b
+b0 b!
+b0 c
+b0 c!
+b0 d
+b0 d!
+b0 e
+b0 e!
+b0 f
+b0 f!
+b0 g
+0g!
+b0 h
+b0 h!
+b0 i
+b0 i!
+b0 j
+b0 j!
+b0 k
+b0 k!
+b0 l
+b0 l!
+b0 m
+b0 m!
+b0 n
+0n!
+b0 o
+b0 o!
+b0 p
+b0 p!
+b0 q
+b0 q!
+b0 r
+b0 r!
+b0 s
+b0 s!
+b0 t
+b0 t!
+b0 u
+0u!
+b0 v
+b0 v!
+b0 w
+b0 w!
+b0 x
+b0 x!
+b0 y
+b0 y!
+b0 z
+b0 z!
+b0 {
+b0 {!
+b0 |
+0|!
+b0 }
+b0 }!
+b0 ~
+b0 ~!
+$end
+
+#4000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+
+#8000
+0!
+0L"
+
+#12000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+
+#16000
+0!
+0L"
+
+#20000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+
+#24000
+0!
+0L"
+
+#28000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+
+#32000
+0!
+0L"
+
+#36000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+0M"
+
+#40000
+0!
+0L"
+
+#44000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+
+#48000
+0!
+0L"
+
+#52000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+
+#56000
+0!
+0L"
+
+#60000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+
+#64000
+0!
+0L"
+
+#68000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+
+#72000
+0!
+0L"
+
+#76000
+1!
+b1 !!
+1"
+1$
+b1000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001 %
+1%"
+b1 '!
+1,"
+b1 -!
+b10 0
+b11 1
+b10 3
+b1 3!
+13"
+b11 4
+b1 7
+1:"
+b1 =
+1=!
+1A"
+b1 C
+1D!
+1H"
+b1 I
+1K!
+1L"
+1M"
+b1 O
+1O"
+1R!
+b1000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001 R"
+b1 U
+1Y!
+b1 [
+1`!
+b1 a
+b1 g
+1g!
+b1 m
+1n!
+b1 s
+1u!
+b1 y
+1|!
+
+#80000
+0!
+0L"
+
+#84000
+1!
+b0 !!
+0$
+b0 %
+b0 '!
+b0 -!
+b10 0
+b11 1
+b10 3
+b0 3!
+b11 4
+b0 7
+b0 =
+b0 C
+b0 I
+1L"
+b0 O
+0O"
+b0 R"
+b0 U
+b0 [
+b0 a
+b0 g
+b0 m
+b0 s
+b0 y
+
+#88000
+0!
+0L"
+
+#92000
+1!
+b101 )
+b101 .
+b10 0
+b11 1
+b10 3
+b11 4
+b101 6
+1L"
+b101 S"
+
+#96000
+0!
+0L"
+
+#100000
+1!
+b10100000101 .
+b10 0
+b11 1
+b10 3
+b11 4
+b101 7!
+b101 9
+b101 <
+1L"
+
+#104000
+0!
+0L"
+
+#108000
+1!
+b1010000010100000101 .
+b10 0
+b11 1
+b10 3
+b11 4
+b101 >!
+b101 ?
+b101 B
+1L"
+
+#109000
+0"
+0%"
+0,"
+b101 .
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+03"
+b11 4
+b0 7!
+b0 9
+0:"
+b0 <
+0=!
+b0 >!
+b0 ?
+0A"
+b0 B
+0D!
+0H"
+0K!
+0M"
+0R!
+0Y!
+0`!
+0g!
+0n!
+0u!
+0|!
+
+#112000
+0!
+0L"
+
+#116000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+
+#120000
+0!
+0L"
+
+#124000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+
+#128000
+0!
+0L"
+
+#132000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+
+#136000
+0!
+0L"
+
+#140000
+1!
+b1 /
+b10 0
+b11 1
+b1 2
+b10 3
+b11 4
+1L"
+
+#144000
+0!
+0L"
+
+#148000
+1!
+1"
+1#
+1%"
+b1000000010000000100000001 )
+b11111111111111111111111111111111 +
+1,"
+b11111111111111111111111111111111 -
+b10000000000000000000000000000000000000001 .
+b10 0
+b11 1
+b10 3
+13"
+b11 4
+b11111111111111111111111111111111 5
+b1 6
+1:"
+1=!
+1A"
+1D!
+1H"
+1K!
+1L"
+1M"
+b1 N
+1N"
+1R!
+b1000000010000000100000001 S"
+b11111111111111111111111111111111 T"
+1Y!
+1`!
+1g!
+1n!
+1u!
+1|!
+
+#152000
+0!
+0L"
+
+#156000
+1!
+b1111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111111111111111111111 -
+b100000000000000000000000000000001000000010000000000000000000000000000000100000001 .
+b10 0
+b11 1
+b10 3
+b11 4
+b1 7!
+b11111111111111111111111111111111 8
+b11111111111111111111111111111111 8!
+b1 9
+b1 <
+b11111111111111111111111111111111 <!
+1L"
+b11111111111111111111111111111111 M
+b1 Q
+b1 S!
+b1 T
+b1 f
+
+#160000
+0!
+0L"
+
+#164000
+1!
+b111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111111111111111111111 -
+b1000000000000000000000000000000010000000100000000000000000000000100000001000000010000000000000000000000010000000100000001 .
+b10 0
+b11 1
+b10 3
+b11 4
+b11111111111111111111111111111111 ;!
+b1 >!
+b1 ?
+b1 B
+1L"
+b11111111111111111111111111111111 P
+b11111111111111111111111111111111 T!
+b1 W
+b11111111111111111111111111111111 X!
+b1 Z
+b1 Z!
+b11111111111111111111111111111111 e
+b1 i
+b1 l
+b1 o!
+b1 ~
+
+#168000
+0!
+0L"
+
+#172000
+1!
+b1 #!
+b1 &!
+b11111111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111111111111111111111 -
+b1 -"
+b100000001000000000000000000000001000000010000000100000000000000010000000100000001000000010000000000000001000000010000000100000001 .
+b10 0
+b11 1
+b10 3
+b11 4
+b11111111111111111111111111111110 ;!
+b1 E
+b1 E!
+b1 H
+1L"
+b11111111111111111111111111111111 W!
+b1 ]
+b1 `
+b1 a!
+b11111111111111111111111111111111 h
+b1 o
+b11111111111111111111111111111111 p!
+b1 r
+b11111111111111111111111111111111 t!
+b1 v!
+b11111111111111111111111111111111 }
+
+#176000
+0!
+0L"
+
+#180000
+1!
+b11111111111111111111111111111111 "!
+b1 )!
+b100000001 *
+b11111111111111111111111111111111 ,
+b1 ,!
+b1111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111111111111111111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000111111111111111111111111111111110000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001111111111111111111111111111111100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000011111111111111111111111111111111 -
+b10000000100000001000000000000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001 .
+b11111111111111111111111111111111 ."
+b10 0
+b11 1
+b11111111111111111111111111111111 2"
+b10 3
+b11 4
+b1 4"
+b11111111111111111111111111111101 ;!
+b1 K
+b1 L!
+1L"
+b11111111111111111111111111111110 W!
+b1 c
+b1 h!
+b11111111111111111111111111111111 s!
+b1 u
+b1 x
+b1 }!
+
+#184000
+0!
+0L"
+
+#188000
+1!
+b1 &"
+b10000000100000001 *
+b1000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001 .
+b1 /!
+b10 0
+b11 1
+b11111111111111111111111111111111 1"
+b1 2!
+b10 3
+b11 4
+b11111111111111111111111111111100 ;!
+b1 ;"
+1L"
+b11111111111111111111111111111101 W!
+b11111111111111111111111111111110 s!
+b1 {
+
+#189000
+b1 V"

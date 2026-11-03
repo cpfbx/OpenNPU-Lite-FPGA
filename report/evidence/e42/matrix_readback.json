@@ -1,0 +1,123 @@
+{
+  "calls": 72,
+  "canonical_lock": {
+    "device": 45826,
+    "inode": 214963,
+    "path": "/tmp/opennpu-kws-chain.lock"
+  },
+  "config_sha256": "5a58fa17428697be7e4c418e47ffd3303e61c19c51419f26ea801a5782ec7125",
+  "formal_calls": 48,
+  "groups": [
+    {
+      "backend": "fpga_flat_baseline",
+      "dimension": 256,
+      "formal_n": 8,
+      "process_cpu_ns": {
+        "max": 55358899,
+        "mean": 54293079.625,
+        "median": 54242318.5,
+        "min": 53410697
+      },
+      "wall_ns": {
+        "max": 58654142,
+        "mean": 57601183.875,
+        "median": 57570938.5,
+        "min": 56725920
+      }
+    },
+    {
+      "backend": "fpga_flat_contiguous",
+      "dimension": 256,
+      "formal_n": 8,
+      "process_cpu_ns": {
+        "max": 49252222,
+        "mean": 48439604.875,
+        "median": 48385378.5,
+        "min": 47684327
+      },
+      "wall_ns": {
+        "max": 52504289,
+        "mean": 51741560.625,
+        "median": 51774741.0,
+        "min": 50996794
+      }
+    },
+    {
+      "backend": "openblas_2t",
+      "dimension": 256,
+      "formal_n": 8,
+      "process_cpu_ns": {
+        "max": 54906327,
+        "mean": 47065654.125,
+        "median": 44912127.0,
+        "min": 43335644
+      },
+      "wall_ns": {
+        "max": 25265077,
+        "mean": 25073476.875,
+        "median": 25076591.0,
+        "min": 24814609
+      }
+    },
+    {
+      "backend": "fpga_flat_baseline",
+      "dimension": 512,
+      "formal_n": 8,
+      "process_cpu_ns": {
+        "max": 240670479,
+        "mean": 236017284.5,
+        "median": 234819851.0,
+        "min": 234275355
+      },
+      "wall_ns": {
+        "max": 265345328,
+        "mean": 261115337.375,
+        "median": 260083627.5,
+        "min": 259482634
+      }
+    },
+    {
+      "backend": "fpga_flat_contiguous",
+      "dimension": 512,
+      "formal_n": 8,
+      "process_cpu_ns": {
+        "max": 218207242,
+        "mean": 212654456.875,
+        "median": 211148752.0,
+        "min": 210352249
+      },
+      "wall_ns": {
+        "max": 242932695,
+        "mean": 238187774.25,
+        "median": 236375821.0,
+        "min": 235561741
+      }
+    },
+    {
+      "backend": "openblas_2t",
+      "dimension": 512,
+      "formal_n": 8,
+      "process_cpu_ns": {
+        "max": 334266708,
+        "mean": 330999073.875,
+        "median": 332587722.0,
+        "min": 323138137
+      },
+      "wall_ns": {
+        "max": 169975366,
+        "mean": 166294665.25,
+        "median": 165365907.5,
+        "min": 164733502
+      }
+    }
+  ],
+  "hardware_access": false,
+  "inference_reexecuted": false,
+  "live_lock_access": false,
+  "normal_cleanup_recorded": true,
+  "operation_success": true,
+  "outer_receipt_sha256": "9f5bf8862d8db8a98d5b27f516685962a41a19ab18df3e7b210626bd9de75f08",
+  "source_origin_authenticated": false,
+  "source_work": "/home/xilinx/jupyter_notebooks/panel72_run_meg7n0xj",
+  "warmup_calls": 24
+}

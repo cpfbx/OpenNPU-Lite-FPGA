@@ -1,0 +1,113 @@
+{
+  "audio_frontend_independently_reimplemented": false,
+  "board_access": false,
+  "checks": {
+    "feature_values": 5880,
+    "op0_accumulator_values": 96000,
+    "op0_output_values": 96000,
+    "op10_output_values": 768,
+    "op11_accumulator_values": 144,
+    "op11_output_values": 144,
+    "op1_accumulator_values": 96000,
+    "op1_output_values": 96000,
+    "op2_accumulator_values": 96000,
+    "op2_output_values": 96000,
+    "op3_accumulator_values": 96000,
+    "op3_output_values": 96000,
+    "op4_accumulator_values": 96000,
+    "op4_output_values": 96000,
+    "op5_accumulator_values": 96000,
+    "op5_output_values": 96000,
+    "op6_accumulator_values": 96000,
+    "op6_output_values": 96000,
+    "op7_accumulator_values": 96000,
+    "op7_output_values": 96000,
+    "op8_accumulator_values": 96000,
+    "op8_output_values": 96000,
+    "op9_output_values": 768,
+    "pointwise_raw_values": 192000,
+    "shared_board_files": 264,
+    "wire_jobs": 48
+  },
+  "features_sha256": "5435a1342b7040b12fed5711a0e9c8e2197f3ded2ad343e467bc091d74bd1b5d",
+  "implementation": "stdlib scalar graph 0..11; no candidate/reference imports",
+  "logits_sha256": "aac5c4bda5d9124d49a09add9421f08e97475cbf740416a13bd419fb2641c19f",
+  "operation_success": true,
+  "promotion": false,
+  "quantized_softmax_op12_executed": false,
+  "vad_recomputed": false,
+  "windows": [
+    {
+      "action_allowed": true,
+      "feature_sha256": "6767321f1466d5e533f3e478ce8e1f87e3ba49891b49c0fdbd549490eedced6a",
+      "index": 0,
+      "logits_sha256": "0b95ef35a89a843866dbf8b13b46778fc484e6d06f631036c3c986f5361470bd"
+    },
+    {
+      "action_allowed": false,
+      "feature_sha256": "84a3573c7c00965538cb195b5b8e24aaf885b93a9f9d599ddbd5bf1333076795",
+      "index": 30,
+      "logits_sha256": "c9a0d8859900346287cef7840959ce465693ec1898dce940e356a46f24a38772"
+    },
+    {
+      "action_allowed": true,
+      "feature_sha256": "8adb3868d9ce45b5dfd2a64cf41f17f7b10b393d10c67085e8c33b3f5b771df9",
+      "index": 60,
+      "logits_sha256": "d29c7c160990365f5448ed227a8896a12d3cab193b597af424a1fb1cc0a8d2d7"
+    },
+    {
+      "action_allowed": true,
+      "feature_sha256": "40a11a83cb1296a3b28f733946c5f393bc6d7bb3af19650b9cf582ddb0fa0618",
+      "index": 90,
+      "logits_sha256": "e4f6a979c193fbf546f3c70abc66789fe2df3e41def32227ca75324740db157f"
+    },
+    {
+      "action_allowed": true,
+      "feature_sha256": "69db2c6b2d81dd53d2301e8ad147ffdd29cea9725b0280b6247fd04481d74d2e",
+      "index": 120,
+      "logits_sha256": "2b8a60f292a88e6732aa5846ead21929ff0513ec22cc48c07031751615a20903"
+    },
+    {
+      "action_allowed": false,
+      "feature_sha256": "e0b72325e239abc73ef785dc93ede0f3f11a074f7c98625b660d676bf61dd65a",
+      "index": 150,
+      "logits_sha256": "4868777e58e17a987cf932d2d72744e75f189780df4c1bcbac692a858cdd276e"
+    },
+    {
+      "action_allowed": true,
+      "feature_sha256": "a9104644ad7ceb11f6d12a9f9431dda16b36097656cf7767a9d23e38c858ca5c",
+      "index": 180,
+      "logits_sha256": "41fae6878ccbf8ede47557357966cbbb6f88717b5dee019ee0f626f9f2bb38a8"
+    },
+    {
+      "action_allowed": true,
+      "feature_sha256": "3967c6a3ded122653ef84227ae4f66d93269ef9130f9a141804bb2c5827e1d11",
+      "index": 210,
+      "logits_sha256": "d6d50f98ff8984713b52d83d28b69e141382e6926d78e41f3d370c89e9ce7fd0"
+    },
+    {
+      "action_allowed": true,
+      "feature_sha256": "9764ff917a628d9ffe6648197ef2c428807b7be29c011726705fecdea292241b",
+      "index": 240,
+      "logits_sha256": "2acedc744cf311b69f8b94a8e05556662605192d758c2d6959ceb67628679933"
+    },
+    {
+      "action_allowed": true,
+      "feature_sha256": "a27952fbdf4927d1ef199dd3dc38261c29bb00f4f9e7000c5140839d4cc60178",
+      "index": 270,
+      "logits_sha256": "a56b0b5e9511999ed5ab60428bc1a3ced6c149a966e98ed95420c60b9f0ce50f"
+    },
+    {
+      "action_allowed": false,
+      "feature_sha256": "e6bdb585d19d59a9da436d6e5f17fe490514abe1cf0e70e6eaaf560941ffeccc",
+      "index": 300,
+      "logits_sha256": "360680fb64682cfc488d5ebcc4f3f2bdec66655f99e06a34da864abec9390f38"
+    },
+    {
+      "action_allowed": false,
+      "feature_sha256": "dc35e0f61d16850dc3b53d0921f95c968f1c4528769aee6a8caa545cc97c5818",
+      "index": 400,
+      "logits_sha256": "069b397bf1d450ef70ade06093ee8b40b7ca70d7b0d17452bda32e46ab917082"
+    }
+  ]
+}

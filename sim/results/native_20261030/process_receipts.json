@@ -1,0 +1,47 @@
+[
+  {
+    "label": "00_compile",
+    "actual_exit": 0,
+    "elapsed_s": 1.766
+  },
+  {
+    "label": "01_elaborate",
+    "actual_exit": 0,
+    "elapsed_s": 1.969
+  },
+  {
+    "label": "01_simulate",
+    "actual_exit": 0,
+    "elapsed_s": 3.062
+  },
+  {
+    "label": "02_elaborate",
+    "actual_exit": 0,
+    "elapsed_s": 2.0
+  },
+  {
+    "label": "02_simulate",
+    "actual_exit": 0,
+    "elapsed_s": 3.094
+  },
+  {
+    "label": "03_elaborate",
+    "actual_exit": 0,
+    "elapsed_s": 2.844
+  },
+  {
+    "label": "03_simulate",
+    "actual_exit": 0,
+    "elapsed_s": 3.218
+  },
+  {
+    "label": "04_elaborate",
+    "actual_exit": 0,
+    "elapsed_s": 1.672
+  },
+  {
+    "label": "04_simulate",
+    "actual_exit": 0,
+    "elapsed_s": 3.078
+  }
+]

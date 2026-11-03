@@ -1,0 +1,258 @@
+{
+  "all_executable_contents_unchanged_except_root_pin": true,
+  "board_access": false,
+  "changed_files": {
+    "provenance/canonical_filename_exceptions.json": {
+      "after": {
+        "bytes": 6798,
+        "sha256": "e709c70eea085cd018a9285299d04014939e338623023b90b05cff2a189cd528"
+      },
+      "before": {
+        "bytes": 5067,
+        "sha256": "6d0ac5608d4ae428b22385324bc6b3722efded1a8a0dc7605465bc1ea78dbe0a"
+      }
+    },
+    "provenance/release_gates.md": {
+      "after": {
+        "bytes": 788,
+        "sha256": "3e8b449f3952a4e8674475a4049b2700e9c8d8d87f979ad4ceadff10aa5a7a08"
+      },
+      "before": {
+        "bytes": 633,
+        "sha256": "601a8f7cc548663b43c6ad2a5dd637f2fe4853b0787c4df43de5b62b6ca9c22f"
+      }
+    },
+    "provenance/source_to_export.json": {
+      "after": {
+        "bytes": 131705,
+        "sha256": "f416da0a087b6215afef76cf361ed84e6974868f66f04f30996f2caa26bcf485"
+      },
+      "before": {
+        "bytes": 133960,
+        "sha256": "a3d8b3503d146a70638c4b6af6686c005eb75ffb148785019275dd59ca2e2e6f"
+      }
+    },
+    "readme.md": {
+      "after": {
+        "bytes": 1433,
+        "sha256": "3ded146e6f0b7dc636adeca3f16819ef980827c39c25cf96833fc410e786da7a"
+      },
+      "before": {
+        "bytes": 1433,
+        "sha256": "f2273b98b0dfa420a783194959e7632827c6dc57671bd51636f40fb5f2d76250"
+      }
+    },
+    "report/collaboration_interactions.md": {
+      "after": {
+        "bytes": 8764,
+        "sha256": "190cc9b20b13425199c2646aa564b85c3bb45815530ec281b791cbf55428bf76"
+      },
+      "before": {
+        "bytes": 4223,
+        "sha256": "57e5ca36daa544adcb23d84aff6e785dcd578e3e7343b11355a50eb735605f63"
+      }
+    },
+    "report/design_report.md": {
+      "after": {
+        "bytes": 92283,
+        "sha256": "98198af813479a4ae9ddbaf50fad2f4a773e4bc2f6279f39efa5fb2555f8fdbc"
+      },
+      "before": {
+        "bytes": 85121,
+        "sha256": "3ebeccdb485a0767e3bf09a1c2f67e2ff54c6f5d3b064f2a88b9f4f0bc8a3043"
+      }
+    },
+    "report/design_report.pdf": {
+      "after": {
+        "bytes": 8492720,
+        "sha256": "39fe375954b2fb897fb051d1afc5755138cfbb448d88771976d3997200d781cf"
+      },
+      "before": {
+        "bytes": 8119913,
+        "sha256": "90b9813063b240570c0d97795f435df6551a1010182d8bfdc0807f716e0bf53c"
+      }
+    },
+    "report/evidence/e43.md": {
+      "after": {
+        "bytes": 8764,
+        "sha256": "190cc9b20b13425199c2646aa564b85c3bb45815530ec281b791cbf55428bf76"
+      },
+      "before": {
+        "bytes": 4223,
+        "sha256": "57e5ca36daa544adcb23d84aff6e785dcd578e3e7343b11355a50eb735605f63"
+      }
+    },
+    "report/evidence/e43_excerpt_index.json": {
+      "after": {
+        "bytes": 3510,
+        "sha256": "d29dae35d9301cc88217bc0e9e6d42012d9a06d1db58eeb4f7de15dc5aa4fb4c"
+      },
+      "before": {
+        "bytes": 1948,
+        "sha256": "2c872167bc8e13253c413fcfd090f613118d122c384eba63fd84f162ccfdc0ff"
+      }
+    },
+    "report/technical_source_index.csv": {
+      "after": {
+        "bytes": 3331,
+        "sha256": "e7bda3ecb30c51fb7fae6362916e3e8e7ebdfb1f16799362cfebadf302940226"
+      },
+      "before": {
+        "bytes": 3318,
+        "sha256": "afe38faf31456a690645b392fdd3cbb3e03580452ff6fb225534603d7ae7bf97"
+      }
+    },
+    "reproduce.py": {
+      "after": {
+        "bytes": 3328,
+        "sha256": "8eeafea0dafbc4fb766cca2c2a9ee5d92c0b495f1b718d610f6b81d9c61c8c1b"
+      },
+      "before": {
+        "bytes": 3328,
+        "sha256": "2056b9e9230cd1e5803df92c6d8f009741a10752d58cceb1df2b08d0135f9c87"
+      }
+    },
+    "reproduction_guide.md": {
+      "after": {
+        "bytes": 11400,
+        "sha256": "199d99a9b967bc02e20bdd3a97993b2a8b6fbd286337ddb1d44e9f6c70678cdd"
+      },
+      "before": {
+        "bytes": 11400,
+        "sha256": "bb1fa8dfc7ecd8135887292febb1051af092d0f3dc70f89bb75d4cb23f1eddc8"
+      }
+    },
+    "src/pc_validation/inputs/skill_v3_review.zip": {
+      "after": {
+        "bytes": 65125,
+        "sha256": "d96a542035cf5c7a72498705c5f547e62fa77d5949f35e100719a900c1989d51"
+      },
+      "before": {
+        "bytes": 62999,
+        "sha256": "950c11cacff8b26bd8ed794041a792084b8e8621258a2e8d8e6f072aed49dd67"
+      }
+    },
+    "src/pc_validation/manifest.json": {
+      "after": {
+        "bytes": 1068,
+        "sha256": "34726419ca5177f19fadd3043348ac3641c274ec3e8cc414ce51c67a67b83a02"
+      },
+      "before": {
+        "bytes": 1068,
+        "sha256": "36a5ddcdfb40b810782e25dc29413428502e9cc658a86a3e9fff6a729b2ddd6e"
+      }
+    }
+  },
+  "component_move": {
+    "from": "skill/reviewed_v3",
+    "to": "src/skill_validation"
+  },
+  "new_files": [
+    "report/requirements_checklist.md",
+    "report/system_report.md",
+    "report/system_report.pdf",
+    "skill/development_record.md",
+    "skill/README.md",
+    "report/figures/fig10_software_functions.drawio",
+    "report/figures/fig10_software_functions.pdf",
+    "report/figures/fig10_software_functions.png",
+    "report/figures/fig10_software_functions.svg",
+    "skill/engineering-evidence-review/LICENSE",
+    "skill/engineering-evidence-review/SKILL.md",
+    "skill/pynq-dma-validation/LICENSE",
+    "skill/pynq-dma-validation/SKILL.md",
+    "skill/pynq-gemm-validation/LICENSE",
+    "skill/pynq-gemm-validation/SKILL.md",
+    "skill/engineering-evidence-review/references/casebook.md",
+    "skill/engineering-evidence-review/references/link_format.md",
+    "skill/engineering-evidence-review/references/measurement_checklist.md",
+    "skill/engineering-evidence-review/scripts/check_evidence_links.py",
+    "skill/pynq-dma-validation/references/transport_contract.md",
+    "skill/pynq-dma-validation/scripts/inspect_overlay.py",
+    "skill/pynq-dma-validation/scripts/inspect_overlay_strict.py",
+    "skill/pynq-gemm-validation/references/arithmetic_and_adapters.md",
+    "skill/pynq-gemm-validation/scripts/compare_int8_gemm.py",
+    "skill/pynq-gemm-validation/scripts/validate_gemm_evidence.py",
+    "skill/pynq-gemm-validation/scripts/validate_resilience_evidence.py",
+    "src/skill_validation/LICENSE",
+    "src/skill_validation/limitations.md",
+    "src/skill_validation/MANIFEST.json",
+    "src/skill_validation/provenance.json",
+    "src/skill_validation/provenance.md",
+    "src/skill_validation/README.md",
+    "src/skill_validation/verify_candidate.py",
+    "src/skill_validation/collaboration/process_record.md",
+    "src/skill_validation/evaluation/link_example.json",
+    "src/skill_validation/evaluation/tasks.json",
+    "src/skill_validation/skill/README.md",
+    "src/skill_validation/tests/run_tests.py",
+    "src/skill_validation/tests/test_final_boundaries.py",
+    "src/skill_validation/tests/test_helpers.py",
+    "src/skill_validation/tests/test_review_regressions.py",
+    "src/skill_validation/evaluation/fixtures/advice_lineage.json",
+    "src/skill_validation/evaluation/fixtures/chain_excerpt.py",
+    "src/skill_validation/evaluation/fixtures/measurements.json",
+    "src/skill_validation/evaluation/fixtures/model_records.json",
+    "src/skill_validation/evaluation/fixtures/request_excerpt.py",
+    "src/skill_validation/skill/engineering-evidence-review/LICENSE",
+    "src/skill_validation/skill/engineering-evidence-review/SKILL.md",
+    "src/skill_validation/skill/pynq-dma-validation/LICENSE",
+    "src/skill_validation/skill/pynq-dma-validation/SKILL.md",
+    "src/skill_validation/skill/pynq-gemm-validation/LICENSE",
+    "src/skill_validation/skill/pynq-gemm-validation/SKILL.md",
+    "src/skill_validation/skill/engineering-evidence-review/references/casebook.md",
+    "src/skill_validation/skill/engineering-evidence-review/references/link_format.md",
+    "src/skill_validation/skill/engineering-evidence-review/references/measurement_checklist.md",
+    "src/skill_validation/skill/engineering-evidence-review/scripts/check_evidence_links.py",
+    "src/skill_validation/skill/pynq-dma-validation/references/transport_contract.md",
+    "src/skill_validation/skill/pynq-dma-validation/scripts/inspect_overlay.py",
+    "src/skill_validation/skill/pynq-dma-validation/scripts/inspect_overlay_strict.py",
+    "src/skill_validation/skill/pynq-gemm-validation/references/arithmetic_and_adapters.md",
+    "src/skill_validation/skill/pynq-gemm-validation/scripts/compare_int8_gemm.py",
+    "src/skill_validation/skill/pynq-gemm-validation/scripts/validate_gemm_evidence.py",
+    "src/skill_validation/skill/pynq-gemm-validation/scripts/validate_resilience_evidence.py"
+  ],
+  "new_files_manifested_by_root": true,
+  "published": false,
+  "removed_paths": [
+    "skill/readme.md",
+    "skill/reviewed_v3/LICENSE",
+    "skill/reviewed_v3/MANIFEST.json",
+    "skill/reviewed_v3/README.md",
+    "skill/reviewed_v3/collaboration/process_record.md",
+    "skill/reviewed_v3/evaluation/fixtures/advice_lineage.json",
+    "skill/reviewed_v3/evaluation/fixtures/chain_excerpt.py",
+    "skill/reviewed_v3/evaluation/fixtures/measurements.json",
+    "skill/reviewed_v3/evaluation/fixtures/model_records.json",
+    "skill/reviewed_v3/evaluation/fixtures/request_excerpt.py",
+    "skill/reviewed_v3/evaluation/link_example.json",
+    "skill/reviewed_v3/evaluation/tasks.json",
+    "skill/reviewed_v3/limitations.md",
+    "skill/reviewed_v3/provenance.json",
+    "skill/reviewed_v3/provenance.md",
+    "skill/reviewed_v3/skill/README.md",
+    "skill/reviewed_v3/skill/engineering-evidence-review/LICENSE",
+    "skill/reviewed_v3/skill/engineering-evidence-review/SKILL.md",
+    "skill/reviewed_v3/skill/engineering-evidence-review/references/casebook.md",
+    "skill/reviewed_v3/skill/engineering-evidence-review/references/link_format.md",
+    "skill/reviewed_v3/skill/engineering-evidence-review/references/measurement_checklist.md",
+    "skill/reviewed_v3/skill/engineering-evidence-review/scripts/check_evidence_links.py",
+    "skill/reviewed_v3/skill/pynq-dma-validation/LICENSE",
+    "skill/reviewed_v3/skill/pynq-dma-validation/SKILL.md",
+    "skill/reviewed_v3/skill/pynq-dma-validation/references/transport_contract.md",
+    "skill/reviewed_v3/skill/pynq-dma-validation/scripts/inspect_overlay.py",
+    "skill/reviewed_v3/skill/pynq-dma-validation/scripts/inspect_overlay_strict.py",
+    "skill/reviewed_v3/skill/pynq-gemm-validation/LICENSE",
+    "skill/reviewed_v3/skill/pynq-gemm-validation/SKILL.md",
+    "skill/reviewed_v3/skill/pynq-gemm-validation/references/arithmetic_and_adapters.md",
+    "skill/reviewed_v3/skill/pynq-gemm-validation/scripts/compare_int8_gemm.py",
+    "skill/reviewed_v3/skill/pynq-gemm-validation/scripts/validate_gemm_evidence.py",
+    "skill/reviewed_v3/skill/pynq-gemm-validation/scripts/validate_resilience_evidence.py",
+    "skill/reviewed_v3/tests/run_tests.py",
+    "skill/reviewed_v3/tests/test_final_boundaries.py",
+    "skill/reviewed_v3/tests/test_helpers.py",
+    "skill/reviewed_v3/tests/test_review_regressions.py",
+    "skill/reviewed_v3/verify_candidate.py"
+  ],
+  "source_manifest_sha256": "8899d1a89613cc56d1965e38573b36b5de7fae0bfb70aa60c69e5ae1070334a7"
+}

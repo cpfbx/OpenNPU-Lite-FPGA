@@ -1,0 +1,326 @@
+{
+  "scope": "frozen hardware source snapshot, not a Git checkout or new measured result",
+  "historical_commit": "35d4db623091dfc7a63459d07f04e4484dbbd999",
+  "original_build_input_sha256": {
+    "constraints/d007_p_hold_margin.xdc": "6f222e457a1342b22d8c0193fc55836737d89b6e64af425156875e6f7a667901",
+    "constraints/mode11_implementation_hold_margin.xdc": "144c1acedda65af851a5029fe762fd8be51af9222ddadef10770b6baeb47d93e",
+    "constraints/pynq_z2.xdc": "b088356f0536b2b6925212bf4272847a4ad2f694da7cf2691b84f968e405e701",
+    "rtl/axi_lite_regs.sv": "6997c557e3ce18c756799b90f6d88f11fd737a37f2e6a24f5a51a978a5267c2f",
+    "rtl/axis_dma_loopback_top.sv": "8ca628bccb4e02a603a3d657fb18f9b3602a1625295e4fd18989bde42a0bf851",
+    "rtl/axis_gemm_accelerator_top.sv": "4671c64c8f044743ad1d748f1d66ab5f0a19947acaec8f04b591722b0c102a20",
+    "rtl/axis_gemm_mode11_experiment_top.sv": "0b8d8f356edf4a045ae90fa31cc3414ec6a8b04a80578f9098135ef5e24fa765",
+    "rtl/axis_packet_guard.sv": "7408ac7ee0bcd81adae4422031476952998d07f3606199d95d00e41e53623147",
+    "rtl/axis_tile_gemm_core.sv": "374fcdfb8fb9299630e89b91ef265a47c1e10b645fe09dc3cb87796c920b7752",
+    "rtl/c_accum_bram_xpm.sv": "8191e30e8a3fd897f96486c8fac5788f7dc5a80e688f21460c62b11da6fe3294",
+    "rtl/controller_fsm.v": "53488904869134915ab173d510f836e8fd40cd5de54c609400c53c11bbf93871",
+    "rtl/d005_chain_header_parser.sv": "18e206a289fdb47e207251cef92f003852f584e3429c036d548e2ac78dad1d77",
+    "rtl/d005_gemm_execution_core.sv": "327a543f8aff3f84838039dcca05829656b7c319704d0193dba1865e0d739635",
+    "rtl/d007_c_buffer_chain_experiment.sv": "486ee73df1bfb66b45b3bbec212baabd7dae9d745b3a6b481811100972c7d3b6",
+    "rtl/d007_c_buffer_controller_experiment.sv": "296e3c5b54e85b5347e7c67675fb1bec38c693ab03cdcf7874cd486ce3622101",
+    "rtl/d007_c_buffer_drain_experiment.sv": "579d503a97a6abbfb36bddb7eaffab731717a8b36d76a4150d59b452779dcc9a",
+    "rtl/d007_c_buffer_integrated_core_experiment.sv": "e895fef269f198e659ae032693475649610ac540ba0b864d40f93b225421f3bd",
+    "rtl/d007_c_buffer_memory_experiment.sv": "45d4337010c98375eda30309db58ca442f5ca934fca6d015445f251413e7b6b7",
+    "rtl/d007_c_buffer_owned_drain_experiment.sv": "21b04ae7732c6b306a725ecde5d632d4299ed8d9b194f916abd8f29216ccfc40",
+    "rtl/d007_dual_c_mode_mux_experiment.sv": "b76d710b164bca50c3dfb8c21410ac4347e91c608b2d879ca9e04d36dfc92a3c",
+    "rtl/d007_mode11_work_counters_experiment.sv": "5ec41fc7cd97d113c2807d22cab2561afd0147d9fdabdad4e60c5147d0f32780",
+    "rtl/d007_result_fifo.sv": "2a80d9a08f72ab637265d758a9cc6ce83a92f3f13fee5d8abcf73fca4c19a869",
+    "rtl/d007_shared_core_axis_router_experiment.sv": "3a8718b7ce0fa475264a91db9157a9d4a856a0e1addce29659473eaec46be953",
+    "rtl/d007_shared_core_one_physical_experiment.sv": "aae785920f5bbdf77e4cbfc47ae24e6f200d709bae9300a871ae0feb8f46ff2d",
+    "rtl/d007_shared_core_session_arbiter_experiment.sv": "46aa533deaedf4c731ab4b173d588d8358d9324adb42d72d53c9a423485224ee",
+    "rtl/ibuf_mock.v": "978a702b17da5e42030f1de0b712672af6f675d1418d82ef1b894431772aaffe",
+    "rtl/input_BRAM.v": "e9a9d65311b59db2b1b0f606b05658bb5ca6ad750d4386351046f80bd719ce6b",
+    "rtl/input_buffer.v": "fc05b11ac22f16bf1097ad16b5b1749812d170e777b92e144cff9b86373593aa",
+    "rtl/obuf_mock.v": "842d18dfd20c911aeb3fce82432f27952e5c0a393ac9469dd7e2fec344591728",
+    "rtl/opennpu_top.v": "d9fc574b679a292de9e7f6b8552144cbe61e8c07ff6d14a2bb9090f8e8e3c580",
+    "rtl/output_BRAM.v": "81d4d28378e8b00eb43ddd6638293325d0a84280f7a800b6ce3f334e9c87f127",
+    "rtl/output_buffer.v": "1f50c795588fb5efd34e5de372e6d4a1a3cf1201479bb8bb659373d0630c8ac2",
+    "rtl/pe_array_4x4.v": "64bf5f08e842a4bc8dd96d794669ede53e69bc9e8966b57144dabae155780da1",
+    "rtl/pe_array_mock.v": "beb42257d54a89859cba4854657439b591a1a7aecaaf8efbaf2247ca16df188b",
+    "rtl/PE_array.v": "67b1942275cbbdfb7c128d65f1acb2bfc23fd4d320a033aaf3393103d30651eb",
+    "rtl/pe.v": "1ca547866ca862ff34fb8e1a3b2ba141346a2457e0ac9e3344d7cb462a975147",
+    "rtl/requantize_int8_pipeline.sv": "2e863d8c8f0bb4ee3fb906ec3b674d9a3062e3d48cbad9f478179fd755d5a45f",
+    "rtl/uart_controller_top.v": "2bb687e974cec85ac5b4757641c7e1f01e95b1914d427c91cd8a6170c809ac5e",
+    "rtl/uart_loopback.v": "bd15cb163309c15e488c7d5b7fb698d051ba18c1a94ddcb396f17f83acb35ffb",
+    "rtl/uart_rx.v": "45dede258ff048630a74516a95181c831988eb9c5cfddc43bb76ca6677340cc7",
+    "rtl/uart_tx.v": "f5af42c85b5d250f2abe64c5a50d068e473b87030a1a4fff00ef528aede7bd52",
+    "rtl/wbuf_mock.v": "ce0fabadf938309e3b3f014bbf06a92f159cb1ec59f7339821385e2957bebfff",
+    "rtl/weight_BRAM.v": "21bef4749fdc1850c2d9cd174ea0afbfd66a7787d3ef4d6308f7571a6f1d98ef",
+    "rtl/weight_buffer.v": "513c06a0365b11d990c3074860c237fa1186569ece07d2e346260e8956df1864",
+    "synth/build_dma_loopback.tcl": "97433d70bbf071ce7c9fea821ed9bfe2ec3e46a38b1b8b7ecdeaad03e630d0ab",
+    "synth/finalize_gemm_build_identity.py": "4aed8e2bc7abceac97c6903aa27a756e13af143c73f33f7455204476c41bfe96",
+    "synth/run_gemm_overlay_build.ps1": "d7eec08b2816de26e27622937ee1576167d07522ce8c94de87667e3fc33d162f"
+  },
+  "git_blob_sha256": {
+    "constraints/d007_p_hold_margin.xdc": "6dcdb28294f81a62f488013c9b868e291ffbf1ee12735ac3065454bac782229c",
+    "constraints/mode11_implementation_hold_margin.xdc": "c973a1b722ea55f7307ca40f3a0e37edf01caf75abb806ab506c0a094f7b3f24",
+    "constraints/pynq_z2.xdc": "145f124e9f33bb15c8fc82599d400370736c9db1019a57b6f5fb07b8a7bd39de",
+    "rtl/axi_lite_regs.sv": "c63399502f07b9fa9f9a3ba0fbd2cb1aa814b23997b0fce9fef219f19f12d0ad",
+    "rtl/axis_dma_loopback_top.sv": "436556ebeda4f25d80eabbd7fd71e91b214a09a5176665c5fa11374ef8b222ce",
+    "rtl/axis_gemm_accelerator_top.sv": "bc41e5efb11ff33eecb9795049d116fbdaabee446ac599b87c7b93d8e9527e7a",
+    "rtl/axis_gemm_mode11_experiment_top.sv": "f488fe1d4247d0eb25635ca3348a6b68f83f5212bc9f547b44a71d259bdb93e7",
+    "rtl/axis_packet_guard.sv": "5a78be7efc69d5c4f7444b81d01e405961e8ae8bf13b5adb92d508410f37ccb9",
+    "rtl/axis_tile_gemm_core.sv": "5e567aa3d838483720526c03ee8b0082849842627ba988da9857ec43dc61669e",
+    "rtl/c_accum_bram_xpm.sv": "02809982d7a17bffbefe0e0cf49f906018d249ea77722c281c37bc8621464c10",
+    "rtl/controller_fsm.v": "11802fad49a9a02403a9ad136ed86d3e38455ef58dfe042f7fbd10e59e7dbf16",
+    "rtl/d005_chain_header_parser.sv": "568d3a4e0833aaa61831a93876e047b27d10bc11445eb53d5a309987574c4f01",
+    "rtl/d005_gemm_execution_core.sv": "97f57149d764a1852e62e9d41df499a94aa9cbadfe4b7cb14f071299a6c26a6f",
+    "rtl/d007_c_buffer_chain_experiment.sv": "db36370a2839ac4b918261e8d5a9235630c1615446db9e4380f7e1b52f7aabe0",
+    "rtl/d007_c_buffer_controller_experiment.sv": "a85194e7066b3029787e423c35c0fc9176aa8d9efa91837796d7e98c6a68f164",
+    "rtl/d007_c_buffer_drain_experiment.sv": "a62786a2c7475a4e8d4ae08a7bc6de3bb7195bb48148fbf4d10a8bb3fe61e8fc",
+    "rtl/d007_c_buffer_integrated_core_experiment.sv": "f6ae6288e810db475bcf57e2fdc9613f1b04fe8c2e62c4d7f7f52ea5c8221ab0",
+    "rtl/d007_c_buffer_memory_experiment.sv": "36f63f5b73590ee7f7dcb4a4a6a153d5f29bbe78411d05cf0c024e34e0afe716",
+    "rtl/d007_c_buffer_owned_drain_experiment.sv": "46564da424db55d2852691cea34222f94541e671599044d334984c4f08b34eb8",
+    "rtl/d007_dual_c_mode_mux_experiment.sv": "8c7cf07b917eb35190d03af5e230627367fbcfc8c9298920ef8bbc566784e7e5",
+    "rtl/d007_mode11_work_counters_experiment.sv": "1d57fedb0ec3596c2339dbf50bbbba299bbd8757175b1326dd0fff38363fb879",
+    "rtl/d007_result_fifo.sv": "4dd193cd9db60bc6a1471a028ae5d756eb35b5346d06d1281b10ce32e60cd534",
+    "rtl/d007_shared_core_axis_router_experiment.sv": "846f71629e3992581b8cc9955bfa05e9a999741447e426abe91c6c3e71032f58",
+    "rtl/d007_shared_core_one_physical_experiment.sv": "f75bcf7c884d8329c46de71d96fa580827f1c9d0b7124e970392ef3bdec695f7",
+    "rtl/d007_shared_core_session_arbiter_experiment.sv": "3457e8157bfd74ed73b748a0832cbf59a2d02de8bba64978b34b9d3a9dac2d0c",
+    "rtl/ibuf_mock.v": "d99d88973288c3c1b396eb078a33944e7dddf0e48f4b1f549ff61d34fd49146c",
+    "rtl/input_BRAM.v": "c242aa77504e584f6887fcd9b4c1c0b08d1461573382586f1d48af87747797b5",
+    "rtl/input_buffer.v": "ee166411516fb0a8902d7d87788339f783ded2e9c1c075f0b740966c9552bc32",
+    "rtl/obuf_mock.v": "b57c87aa7b247ee216c33b746220df1e2feb2134c6beaf3aaecb03a2e63e7ca4",
+    "rtl/opennpu_top.v": "2e07b827224d62dabbeeaf55217571fc2e53c74f06d28d99e69f16c14c0ab646",
+    "rtl/output_BRAM.v": "250caa20f1c1cd310e0a5f76b1dbac12fdf6ffa6250ad2b9020d24454ec5b3a9",
+    "rtl/output_buffer.v": "47da4549e0594af7c8e2305d1bed6deccc3511d3b997f3d4552ed1d67c168825",
+    "rtl/pe_array_4x4.v": "838df522169f7e5841eab44df77c801a9bdf7a2a7cc384d86b58601af6fad6f3",
+    "rtl/pe_array_mock.v": "9b6bfc23fe8f4eb00087899bd020ba1db282d1d3ceb4560860a2ede7b6b17f73",
+    "rtl/PE_array.v": "c4dc920406605ff85c87991daed3bbf14422e2dc2d28c10b83492f06cc18c4b1",
+    "rtl/pe.v": "986dc398ed507ffa7cd46488a624235a749880e081669ebd07fd1eb8c5170498",
+    "rtl/requantize_int8_pipeline.sv": "01ebf0bc1934b5b083f6d4abee1b0d0ae798390eb836a07df2efa684f79e970b",
+    "rtl/uart_controller_top.v": "a8d1e59d9a2476ee0df1d502587b3b150c40eecdbd9f115db5dbae553d337c8b",
+    "rtl/uart_loopback.v": "a38e1ea487fa156111c6a3e7105a654b54e51807d9efbec985cc98b79b9f8602",
+    "rtl/uart_rx.v": "f00c3f64cdb5de0beadbe20f50c14123f14135bbfc4d2090b94d1b51080e87e6",
+    "rtl/uart_tx.v": "e47575c4fb405de2e8d8f2a5489af1c9ca47a0bee5ec9988fe8301bddede3f85",
+    "rtl/wbuf_mock.v": "dab2eaa647574b0553e798acdbf4c4d73aa55d4c9ec248695d0896b9503ce3c5",
+    "rtl/weight_BRAM.v": "cfe9cb70d5e624a6c1ccf7986ec08c15effcee0b390106addfd49dcbc51e593e",
+    "rtl/weight_buffer.v": "baa2cf3505655786a8e710ce629d291999e9b268a80784b041eded91199a823f",
+    "synth/build_dma_loopback.tcl": "39aff5d3244f199bc82b9ad9349afc2459f3322afdf314772bd9c60d99dd921c",
+    "synth/finalize_gemm_build_identity.py": "ea29b89db60575e49c37bae89c9d3b2183b5042ec2424e9a39d5e4a5eb13c76f",
+    "synth/run_gemm_overlay_build.ps1": "81b12244a373739ec96747aebb94a0887095b4dc85d11647ef94427e3d5e4935",
+    "LICENSE": "6f561a52e421fd36b13b9f042814df52376c361bfeb79d1b523dcd251d9933b8",
+    "synth/fetch_pynq_z2_board_files.ps1": "194d9d3745447baaf65a350f3cbe4097072dbcd23ef7e367b3efd95bffa92c82"
+  },
+  "checkout_line_endings_preserved": true,
+  "files": {
+    "license": {
+      "bytes": 1103,
+      "sha256": "360ed4925f51bdd65f36b0c880e7d9998845bc3136c5badf8035f4556b1b865e"
+    },
+    "constraints/d007_p_hold_margin.xdc": {
+      "bytes": 835,
+      "sha256": "6f222e457a1342b22d8c0193fc55836737d89b6e64af425156875e6f7a667901"
+    },
+    "constraints/mode11_implementation_hold_margin.xdc": {
+      "bytes": 447,
+      "sha256": "144c1acedda65af851a5029fe762fd8be51af9222ddadef10770b6baeb47d93e"
+    },
+    "constraints/pynq_z2.xdc": {
+      "bytes": 986,
+      "sha256": "b088356f0536b2b6925212bf4272847a4ad2f694da7cf2691b84f968e405e701"
+    },
+    "rtl/pe_array.v": {
+      "bytes": 6600,
+      "sha256": "67b1942275cbbdfb7c128d65f1acb2bfc23fd4d320a033aaf3393103d30651eb"
+    },
+    "rtl/axi_lite_regs.sv": {
+      "bytes": 21748,
+      "sha256": "6997c557e3ce18c756799b90f6d88f11fd737a37f2e6a24f5a51a978a5267c2f"
+    },
+    "rtl/axis_dma_loopback_top.sv": {
+      "bytes": 9167,
+      "sha256": "8ca628bccb4e02a603a3d657fb18f9b3602a1625295e4fd18989bde42a0bf851"
+    },
+    "rtl/axis_gemm_accelerator_top.sv": {
+      "bytes": 10856,
+      "sha256": "4671c64c8f044743ad1d748f1d66ab5f0a19947acaec8f04b591722b0c102a20"
+    },
+    "rtl/axis_gemm_mode11_experiment_top.sv": {
+      "bytes": 14821,
+      "sha256": "0b8d8f356edf4a045ae90fa31cc3414ec6a8b04a80578f9098135ef5e24fa765"
+    },
+    "rtl/axis_packet_guard.sv": {
+      "bytes": 4098,
+      "sha256": "7408ac7ee0bcd81adae4422031476952998d07f3606199d95d00e41e53623147"
+    },
+    "rtl/axis_tile_gemm_core.sv": {
+      "bytes": 81230,
+      "sha256": "374fcdfb8fb9299630e89b91ef265a47c1e10b645fe09dc3cb87796c920b7752"
+    },
+    "rtl/c_accum_bram_xpm.sv": {
+      "bytes": 2177,
+      "sha256": "8191e30e8a3fd897f96486c8fac5788f7dc5a80e688f21460c62b11da6fe3294"
+    },
+    "rtl/controller_fsm.v": {
+      "bytes": 57763,
+      "sha256": "53488904869134915ab173d510f836e8fd40cd5de54c609400c53c11bbf93871"
+    },
+    "rtl/d005_chain_header_parser.sv": {
+      "bytes": 15352,
+      "sha256": "18e206a289fdb47e207251cef92f003852f584e3429c036d548e2ac78dad1d77"
+    },
+    "rtl/d005_gemm_execution_core.sv": {
+      "bytes": 46476,
+      "sha256": "327a543f8aff3f84838039dcca05829656b7c319704d0193dba1865e0d739635"
+    },
+    "rtl/d007_c_buffer_chain_experiment.sv": {
+      "bytes": 24128,
+      "sha256": "486ee73df1bfb66b45b3bbec212baabd7dae9d745b3a6b481811100972c7d3b6"
+    },
+    "rtl/d007_c_buffer_controller_experiment.sv": {
+      "bytes": 6930,
+      "sha256": "296e3c5b54e85b5347e7c67675fb1bec38c693ab03cdcf7874cd486ce3622101"
+    },
+    "rtl/d007_c_buffer_drain_experiment.sv": {
+      "bytes": 4404,
+      "sha256": "579d503a97a6abbfb36bddb7eaffab731717a8b36d76a4150d59b452779dcc9a"
+    },
+    "rtl/d007_c_buffer_integrated_core_experiment.sv": {
+      "bytes": 15718,
+      "sha256": "e895fef269f198e659ae032693475649610ac540ba0b864d40f93b225421f3bd"
+    },
+    "rtl/d007_c_buffer_memory_experiment.sv": {
+      "bytes": 7364,
+      "sha256": "45d4337010c98375eda30309db58ca442f5ca934fca6d015445f251413e7b6b7"
+    },
+    "rtl/d007_c_buffer_owned_drain_experiment.sv": {
+      "bytes": 6534,
+      "sha256": "21b04ae7732c6b306a725ecde5d632d4299ed8d9b194f916abd8f29216ccfc40"
+    },
+    "rtl/d007_dual_c_mode_mux_experiment.sv": {
+      "bytes": 8213,
+      "sha256": "b76d710b164bca50c3dfb8c21410ac4347e91c608b2d879ca9e04d36dfc92a3c"
+    },
+    "rtl/d007_mode11_work_counters_experiment.sv": {
+      "bytes": 3375,
+      "sha256": "5ec41fc7cd97d113c2807d22cab2561afd0147d9fdabdad4e60c5147d0f32780"
+    },
+    "rtl/d007_result_fifo.sv": {
+      "bytes": 3022,
+      "sha256": "2a80d9a08f72ab637265d758a9cc6ce83a92f3f13fee5d8abcf73fca4c19a869"
+    },
+    "rtl/d007_shared_core_axis_router_experiment.sv": {
+      "bytes": 2961,
+      "sha256": "3a8718b7ce0fa475264a91db9157a9d4a856a0e1addce29659473eaec46be953"
+    },
+    "rtl/d007_shared_core_one_physical_experiment.sv": {
+      "bytes": 34063,
+      "sha256": "aae785920f5bbdf77e4cbfc47ae24e6f200d709bae9300a871ae0feb8f46ff2d"
+    },
+    "rtl/d007_shared_core_session_arbiter_experiment.sv": {
+      "bytes": 2983,
+      "sha256": "46aa533deaedf4c731ab4b173d588d8358d9324adb42d72d53c9a423485224ee"
+    },
+    "rtl/ibuf_mock.v": {
+      "bytes": 2315,
+      "sha256": "978a702b17da5e42030f1de0b712672af6f675d1418d82ef1b894431772aaffe"
+    },
+    "rtl/input_bram.v": {
+      "bytes": 3745,
+      "sha256": "e9a9d65311b59db2b1b0f606b05658bb5ca6ad750d4386351046f80bd719ce6b"
+    },
+    "rtl/input_buffer.v": {
+      "bytes": 10478,
+      "sha256": "fc05b11ac22f16bf1097ad16b5b1749812d170e777b92e144cff9b86373593aa"
+    },
+    "rtl/obuf_mock.v": {
+      "bytes": 2559,
+      "sha256": "842d18dfd20c911aeb3fce82432f27952e5c0a393ac9469dd7e2fec344591728"
+    },
+    "rtl/opennpu_top.v": {
+      "bytes": 5405,
+      "sha256": "d9fc574b679a292de9e7f6b8552144cbe61e8c07ff6d14a2bb9090f8e8e3c580"
+    },
+    "rtl/output_bram.v": {
+      "bytes": 4217,
+      "sha256": "81d4d28378e8b00eb43ddd6638293325d0a84280f7a800b6ce3f334e9c87f127"
+    },
+    "rtl/output_buffer.v": {
+      "bytes": 11899,
+      "sha256": "1f50c795588fb5efd34e5de372e6d4a1a3cf1201479bb8bb659373d0630c8ac2"
+    },
+    "rtl/pe.v": {
+      "bytes": 5566,
+      "sha256": "1ca547866ca862ff34fb8e1a3b2ba141346a2457e0ac9e3344d7cb462a975147"
+    },
+    "rtl/pe_array_4x4.v": {
+      "bytes": 9032,
+      "sha256": "64bf5f08e842a4bc8dd96d794669ede53e69bc9e8966b57144dabae155780da1"
+    },
+    "rtl/pe_array_mock.v": {
+      "bytes": 2933,
+      "sha256": "beb42257d54a89859cba4854657439b591a1a7aecaaf8efbaf2247ca16df188b"
+    },
+    "rtl/requantize_int8_pipeline.sv": {
+      "bytes": 5588,
+      "sha256": "2e863d8c8f0bb4ee3fb906ec3b674d9a3062e3d48cbad9f478179fd755d5a45f"
+    },
+    "rtl/uart_controller_top.v": {
+      "bytes": 11317,
+      "sha256": "2bb687e974cec85ac5b4757641c7e1f01e95b1914d427c91cd8a6170c809ac5e"
+    },
+    "rtl/uart_loopback.v": {
+      "bytes": 4853,
+      "sha256": "bd15cb163309c15e488c7d5b7fb698d051ba18c1a94ddcb396f17f83acb35ffb"
+    },
+    "rtl/uart_rx.v": {
+      "bytes": 9453,
+      "sha256": "45dede258ff048630a74516a95181c831988eb9c5cfddc43bb76ca6677340cc7"
+    },
+    "rtl/uart_tx.v": {
+      "bytes": 5420,
+      "sha256": "f5af42c85b5d250f2abe64c5a50d068e473b87030a1a4fff00ef528aede7bd52"
+    },
+    "rtl/wbuf_mock.v": {
+      "bytes": 5138,
+      "sha256": "ce0fabadf938309e3b3f014bbf06a92f159cb1ec59f7339821385e2957bebfff"
+    },
+    "rtl/weight_bram.v": {
+      "bytes": 2568,
+      "sha256": "21bef4749fdc1850c2d9cd174ea0afbfd66a7787d3ef4d6308f7571a6f1d98ef"
+    },
+    "rtl/weight_buffer.v": {
+      "bytes": 8335,
+      "sha256": "513c06a0365b11d990c3074860c237fa1186569ece07d2e346260e8956df1864"
+    },
+    "synth/build_dma_loopback.tcl": {
+      "bytes": 15445,
+      "sha256": "97433d70bbf071ce7c9fea821ed9bfe2ec3e46a38b1b8b7ecdeaad03e630d0ab"
+    },
+    "synth/fetch_pynq_z2_board_files.ps1": {
+      "bytes": 1158,
+      "sha256": "4e711e1339815e75d1fa318df66cc3ba78a4fe13442afc42e58c0d4d3124360c"
+    },
+    "synth/finalize_gemm_build_identity.py": {
+      "bytes": 3722,
+      "sha256": "4aed8e2bc7abceac97c6903aa27a756e13af143c73f33f7455204476c41bfe96"
+    },
+    "synth/run_gemm_overlay_build.ps1": {
+      "bytes": 6807,
+      "sha256": "d7eec08b2816de26e27622937ee1576167d07522ce8c94de87667e3fc33d162f"
+    }
+  },
+  "board_definition": {
+    "url": "https://dpoauwgwqsy2x.cloudfront.net/Download/pynq-z2.zip",
+    "sha256": "6fba4c40db5a0c480ca96b2f41719f57e83728a54ac9823578ac21667b2e4e7f",
+    "bytes": 165993,
+    "redistributed_in_this_kit": false
+  },
+  "historical_reference": {
+    "configuration_payload_bytes": 4045564,
+    "configuration_payload_sha256": "f9b9c1e63d735d66df3f43d15f3e2202c11568a54277ef0b23ea1213c9440361",
+    "wns_ns": ".118",
+    "whs_ns": ".066",
+    "lut": 26762,
+    "ff": 27575,
+    "bram": "11",
+    "dsp": 72
+  },
+  "original_ps1_and_finalizer_retained_but_not_invoked_by_new_wrapper": true,
+  "distribution_to_build_path": {
+    "rtl/input_bram.v": "rtl/input_BRAM.v",
+    "rtl/output_bram.v": "rtl/output_BRAM.v",
+    "rtl/pe_array.v": "rtl/PE_array.v",
+    "rtl/weight_bram.v": "rtl/weight_BRAM.v"
+  }
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb_d007_c_buffer_real_overlap.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_d007_c_buffer_real_overlap" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject type="divider" fp_name="divider1">
+      <obj_property name="label">CLOCK / TILE SCHEDULE</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/clk" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+      <obj_property name="label">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/start" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">start</obj_property>
+      <obj_property name="ObjectShortName">start</obj_property>
+      <obj_property name="label">start</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/c_bank_select" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">c_bank_select</obj_property>
+      <obj_property name="ObjectShortName">c_bank_select</obj_property>
+      <obj_property name="label">next_compute_bank</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/compute_complete" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">compute_complete</obj_property>
+      <obj_property name="ObjectShortName">compute_complete</obj_property>
+      <obj_property name="label">compute_complete</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider6">
+      <obj_property name="label">COMPUTE WRITE / OTHER BANK READ</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/cfg_c_bank" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">cfg_c_bank</obj_property>
+      <obj_property name="ObjectShortName">cfg_c_bank</obj_property>
+      <obj_property name="label">compute_bank</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/u_core/store_write_valid" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">store_write_valid</obj_property>
+      <obj_property name="ObjectShortName">store_write_valid</obj_property>
+      <obj_property name="label">store_write_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/c_read_bank" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">c_read_bank</obj_property>
+      <obj_property name="ObjectShortName">c_read_bank</obj_property>
+      <obj_property name="label">drain_bank</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/c_read_enable" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">c_read_enable</obj_property>
+      <obj_property name="ObjectShortName">c_read_enable</obj_property>
+      <obj_property name="label">read_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/c_read_ready" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">c_read_ready</obj_property>
+      <obj_property name="ObjectShortName">c_read_ready</obj_property>
+      <obj_property name="label">read_ready</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider12">
+      <obj_property name="label">AXIS OUTPUT / BACKPRESSURE</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/out_valid" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">out_valid</obj_property>
+      <obj_property name="ObjectShortName">out_valid</obj_property>
+      <obj_property name="label">out_valid</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/out_ready" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">out_ready</obj_property>
+      <obj_property name="ObjectShortName">out_ready</obj_property>
+      <obj_property name="label">out_ready</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/out_data" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">out_data[63:0]</obj_property>
+      <obj_property name="ObjectShortName">out_data[63:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="label">out_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/out_last" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">out_last</obj_property>
+      <obj_property name="ObjectShortName">out_last</obj_property>
+      <obj_property name="label">out_last</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/output_beats" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">output_beats[31:0]</obj_property>
+      <obj_property name="ObjectShortName">output_beats[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">output_beats</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_d007_c_buffer_real_overlap/pe_read_overlap" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">pe_read_overlap[31:0]</obj_property>
+      <obj_property name="ObjectShortName">pe_read_overlap[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">overlap_count</obj_property>
+   </wvobject>
+</wave_config>

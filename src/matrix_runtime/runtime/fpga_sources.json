@@ -1,0 +1,26 @@
+{
+  "schema": "threeway-fpga-originals-v1",
+  "files": [
+    {
+      "path": "runtime_fpga/kws_device_recovery_candidate.py",
+      "member": "candidate/core/frozen/baseline/python/kws_device_recovery_candidate.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "bytes": 5982,
+      "sha256": "4ed5dd99edc58047a4fcae6c8e3f0bc16bacad14aea85c570e343792b5ea8347"
+    },
+    {
+      "path": "runtime_fpga/opennpu_gemm_accelerator.bit",
+      "member": "candidate/core/frozen/baseline/hardware/opennpu_gemm_accelerator.bit",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "bytes": 4045769,
+      "sha256": "47ae0a3640ef6d31db467118fd1822c04d465cd31171275fc04824824a20451c"
+    },
+    {
+      "path": "runtime_fpga/opennpu_gemm_accelerator.hwh",
+      "member": "candidate/core/frozen/baseline/hardware/opennpu_gemm_accelerator.hwh",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "bytes": 288097,
+      "sha256": "d727688adc43d526b853e158648023f230fab081dd84e2c8e86437c60d747294"
+    }
+  ]
+}

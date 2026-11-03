@@ -1,0 +1,29 @@
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Fri Oct 30 14:51:17 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/native_tb_pe_array/xsim_script.tcl
+# xsim {native_tb_pe_array} -wdb {tb_pe_array.wdb} -autoloadwcfg -tclbatch {tb_pe_array_capture.tcl}
+Time resolution is 1 ps
+source tb_pe_array_capture.tcl
+## log_wave -r /
+## open_vcd tb_pe_array_capture.vcd
+## log_vcd /tb_pe_array/*
+## run all
+T1: PE(0,0).weight_reg=0
+T2: PE(0,0) west=5 multi=0 south=0
+T2+1: west=5 multi=0 south=0
+T3: accum=-4
+  [PASS] OS accum=-4: -4
+
+PASS:1 FAIL:0
+ALL PASS
+$stop called at time : 189 ns : File "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb/tb_pe_array.v" Line 96
+## close_vcd
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri Oct 30 14:51:19 2026...

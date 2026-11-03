@@ -1,0 +1,18 @@
+{
+  "board_idle_verified": false,
+  "request": {
+    "bank_sha": "af893b4381e8c72a667b772b3d40aa7b2db03739232e9f60b21bbb1ef1c939a8",
+    "board_serial_declared": "",
+    "image_declared": "pynq-z2-v3.1.1",
+    "manifest_sha": "ae68762a77042a61aea4c61d6b8e9c0ca9dd0c7620a848de6f259ed45bb10b54",
+    "operator": "bx",
+    "operator_confirmed": false,
+    "plan_sha": "6089684494eca581f38af0b6595a920cbb39ac6f03f17b4b87845433e0246fff",
+    "schema": "panel-private-runtime-request-v1",
+    "scope": "48-formal-complete-request-latency-only"
+  },
+  "schema": "threeway-round-launch-config-v1",
+  "separate_scope_approved": false,
+  "single_supply_verified": false,
+  "utc_verified": false
+}

@@ -1,0 +1,5 @@
+{
+  "synthetic": true,
+  "candidate": {"model": "new_cnn", "weights_id": "w_new", "preprocessing_id": "prep_new", "platform": "pc", "input_set": "set_new", "reference": "runtime_a", "intermediate_values_equal": 123456, "preprocessing_windows_different": 9, "board_execution": false},
+  "legacy": {"model": "old_dense", "weights_id": "w_old", "preprocessing_id": "prep_old", "platform": "arm_fpga", "input_set": "single_live", "expected": "yes", "prediction": "off", "score": "0.78", "threshold": "0.95", "feedback_count": 0}
+}

@@ -1,0 +1,9 @@
+{
+  "synthetic": true,
+  "history_a": {"session": "a", "shape_mnk": [128, 128, 128], "full_ms": "240", "construction_ms": "60", "reconstruction_ms": "20", "dma_pl_ms": "25", "nested": true},
+  "history_b": {"session": "b", "shape_mnk": [128, 128, 128], "fpga_full_ms": "230", "arm_2t_full_ms": "150"},
+  "owned_profile": {"session": "c", "owned_ms": "120", "chain_total_ms": "45", "dma_pl_ms": "25", "jobs": 16, "k_blocks_per_job": 4},
+  "energy": {"session": "c", "completed_per_backend": 100, "boundary": "buffered_capture_envelope", "arm": {"seconds": "100", "mean_W": "2.1", "J": "210"}, "fpga": {"seconds": "125", "mean_W": "1.8", "J": "225"}, "idle_power_measured": false},
+  "paired_demo": {"session": "d", "same_inputs": true, "shape_mnk": [32, 32, 32], "boundary": "complete_request_excluding_oracle", "old_ms": [12, 13, 14, 13], "new_ms": [10, 11, 12, 11], "all_outputs_exact": true, "promotion_approved": false},
+  "energy_demo": {"session": "e", "completed_per_backend": 50, "boundary": "same_declared_batch", "arm": {"seconds": "10", "mean_W": "3", "J": "30"}, "fpga": {"seconds": "12", "mean_W": "2", "J": "24"}, "uncertainty_evaluated": false}
+}

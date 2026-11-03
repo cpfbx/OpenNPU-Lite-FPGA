@@ -1,0 +1,18 @@
+{
+  "accumulator_dtype": "int32",
+  "cases": 100,
+  "generator": "python/generate_gemm_vectors.py",
+  "input_dtype": "int8",
+  "layout": "case-major, row-major within each 4x4 matrix",
+  "seed": 20260908,
+  "sha256": {
+    "a": "56fbffd42b60921bc33b2684029a9c49c94461d4de76f3989b3c93adf8c5101c",
+    "b": "b9a04190f4a8a446ccb4397259c7bec0fa13c7455d70550229862e81d6b5027e",
+    "c": "091bb10588e31e4946ef422e48eaee218b41304b2e35c9fa5499092fe7536e9f"
+  },
+  "shape": [
+    4,
+    4,
+    4
+  ]
+}

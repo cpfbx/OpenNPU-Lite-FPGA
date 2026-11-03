@@ -1,0 +1,7 @@
+{
+  "synthetic": true,
+  "summary_x": {"statement": "The latency is dominated by an oracle within the timer", "raw_sources_read": []},
+  "agent_a": {"statement": "Removing the oracle will solve latency", "inputs": ["summary_x"]},
+  "agent_b": {"statement": "I agree the oracle should be removed", "inputs": ["summary_x", "agent_a"]},
+  "agent_c": {"statement": "Two agents independently verified an oracle bottleneck", "inputs": ["agent_a", "agent_b"]}
+}

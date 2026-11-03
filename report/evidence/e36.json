@@ -1,0 +1,28 @@
+{
+  "D075": {
+    "identity": {
+      "bytes": 11939,
+      "sha256": "c6539b63a0c1dd2724af77ccef9294abfc039fa1db54a530758b798c168d82e4"
+    },
+    "resources": {
+      "BRAM": 11.0,
+      "DSP": 72.0,
+      "FF": 27575.0,
+      "LUT": 26762.0
+    },
+    "source": "metrics/mode11_preflight_20260930/gemm_accelerator_implementation_utilization.rpt"
+  },
+  "P": {
+    "identity": {
+      "bytes": 11879,
+      "sha256": "43e691e920132b23aebbc3bec69372858f7d8d19c37e2be09fc87947af43b5fd"
+    },
+    "resources": {
+      "BRAM": 7.0,
+      "DSP": 72.0,
+      "FF": 25050.0,
+      "LUT": 24289.0
+    },
+    "source": "metrics/d007_p_margin_promotion_20260926/gemm_accelerator_implementation_utilization.rpt"
+  }
+}

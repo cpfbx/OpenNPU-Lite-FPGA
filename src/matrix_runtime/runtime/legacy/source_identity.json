@@ -1,0 +1,169 @@
+{
+  "human_owner": "bx",
+  "author": "Codex/root",
+  "files": [
+    {
+      "path": "frozen_source/kws_threeway_entry_support_draft.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/baseline/python/kws_threeway_entry_support_draft.py",
+      "bytes": 7039,
+      "sha256": "745d63f23ef6db51e6cc10ca63290b542bcbbf775b9ed7e41468a8668cc321c3"
+    },
+    {
+      "path": "frozen_source/kws_device_supervision_candidate.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/baseline/python/kws_device_supervision_candidate.py",
+      "bytes": 3441,
+      "sha256": "d9e009d3a138bdbd9fa0bed8b530a185141c398a2f5fb9132c99721241cc2c21"
+    },
+    {
+      "path": "frozen_source/chain_protocol.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/baseline/python/chain_protocol.py",
+      "bytes": 12010,
+      "sha256": "60236cd1251014ffcafc30257acef6b50a181b08443b715315d78312450630bf"
+    },
+    {
+      "path": "frozen_source/tiled_gemm.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/baseline/python/tiled_gemm.py",
+      "bytes": 29948,
+      "sha256": "d2355e421f7befeb5852e3c80cffbfd19f838ec4922711fee8ebedc98b3f2482"
+    },
+    {
+      "path": "frozen_source/pynq_gemm.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/baseline/python/pynq_gemm.py",
+      "bytes": 58095,
+      "sha256": "1b222fe239d3637667ebd57071a642d06686e99b9b041155772de586da311574"
+    },
+    {
+      "path": "frozen_source/pynq_dma_loopback.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/baseline/python/pynq_dma_loopback.py",
+      "bytes": 17235,
+      "sha256": "198f562df6f54a6328967d66471ba579ab5c9af71c1d4ef9d80a42b3642f871e"
+    },
+    {
+      "path": "frozen_source/d007_mode11_contract.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/baseline/python/d007_mode11_contract.py",
+      "bytes": 3813,
+      "sha256": "ae44458e37aff91c36b43fba4815e28db9eb670df1749c002d13f42886426074"
+    },
+    {
+      "path": "frozen_source/matrix_panel_builder_candidate.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/baseline/scripts/matrix_panel_builder_candidate.py",
+      "bytes": 3047,
+      "sha256": "8d7b8353bcc208f407dfe7b2f67b84abaae22b3b6a79ae669fac3eb8ac681363"
+    },
+    {
+      "path": "frozen_source/batch_owner.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/src/batch_owner.py",
+      "bytes": 12093,
+      "sha256": "9aa4af721da0acc07c5792596796e4b0cb01521ec097abb157ff4e163e5301a6"
+    },
+    {
+      "path": "frozen_source/batch_policy.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/src/batch_policy.py",
+      "bytes": 2445,
+      "sha256": "89afba02d7a241bf5f3e34e5e4ad852d339d87bbf65410c687378adab56a08b3"
+    },
+    {
+      "path": "frozen_source/batch_call.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/src/batch_call.py",
+      "bytes": 5634,
+      "sha256": "840f4c9c61017469b21501fd8d955fdf7ca683641e363ef091711a4e40511819"
+    },
+    {
+      "path": "frozen_source/os_evidence.py",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/adapter/os_evidence.py",
+      "bytes": 7899,
+      "sha256": "4849bd4276a4b1724df5be39ba53e90d90d9e8e260cfb20678c8d4b886a0150a"
+    },
+    {
+      "path": "bank/input_42_a.bin",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/bank/input_42_a.bin",
+      "bytes": 262144,
+      "sha256": "dfb5e2b1f0a45b76103fafca4a5ff6d6eeb3c8d94e6eb89f0f51d078b05b3b6c"
+    },
+    {
+      "path": "bank/input_42_b.bin",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/bank/input_42_b.bin",
+      "bytes": 262144,
+      "sha256": "93d3dc9e294b9d17d1c205a66182df041cba3dcb536b16cbcd2351f094cd0ea7"
+    },
+    {
+      "path": "bank/input_42_expected.bin",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/bank/input_42_expected.bin",
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "path": "bank/input_43_a.bin",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/bank/input_43_a.bin",
+      "bytes": 262144,
+      "sha256": "0d434946bfc2b5b506e035a97f305be6045da2501aaddba62e988f1265beb2ae"
+    },
+    {
+      "path": "bank/input_43_b.bin",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/bank/input_43_b.bin",
+      "bytes": 262144,
+      "sha256": "22377e0e6a2b20190bf4ac85f29564dbfd1c5e0996d59c282e635e4bca62c852"
+    },
+    {
+      "path": "bank/input_43_expected.bin",
+      "archive_sha256": "1564a21a016630561e5abd1063b1e304a450ad144aeb95d290afe339f397dab4",
+      "member": "candidate/core/frozen/bank/input_43_expected.bin",
+      "bytes": 1048576,
+      "sha256": "8e74ffe97ea4f44912cbd38dbc68201319b780eb425e6783f18a8070d4177201"
+    },
+    {
+      "path": "pack_chain_flat_candidate.py",
+      "archive_sha256": "8bd09cf215a28185af5065c029539aca1002628212089fef5eeef98d6a7a839a",
+      "member": "legacy/.offline-results/matrix-source-diagnostic-20261020_01/pack_chain_flat_candidate.py",
+      "bytes": 891,
+      "sha256": "29216e02505f91aae30a1c6e13df58543c43bc3d762d685cf262dd3ba610816d"
+    },
+    {
+      "path": "test_flat_candidate.py",
+      "archive_sha256": "8bd09cf215a28185af5065c029539aca1002628212089fef5eeef98d6a7a839a",
+      "member": "legacy/.offline-results/matrix-source-diagnostic-20261020_01/test_flat_candidate.py",
+      "bytes": 7516,
+      "sha256": "e6fd5f9b2781e6f4247cac806d5e1a91b924fa9e86ed75725b487f907754f19a"
+    },
+    {
+      "path": "frozen_tests/test_chain_protocol.py",
+      "archive_sha256": "8bd09cf215a28185af5065c029539aca1002628212089fef5eeef98d6a7a839a",
+      "member": "legacy/.offline-results/matrix-source-diagnostic-20261020_01/frozen_tests/test_chain_protocol.py",
+      "bytes": 4842,
+      "sha256": "d63be4ee3fcd4665eec95e831fc293c77c5def33438353f32c718f5e035fa114"
+    },
+    {
+      "path": "frozen_tests/test_k_major.py",
+      "archive_sha256": "8bd09cf215a28185af5065c029539aca1002628212089fef5eeef98d6a7a839a",
+      "member": "legacy/.offline-results/matrix-source-diagnostic-20261020_01/frozen_tests/test_k_major.py",
+      "bytes": 11711,
+      "sha256": "f9520b112025b763f318f15a8a467856fff7ecde666067507b70e2d9018736fb"
+    },
+    {
+      "path": "frozen_tests/test_d007_mode11_contract.py",
+      "archive_sha256": "8bd09cf215a28185af5065c029539aca1002628212089fef5eeef98d6a7a839a",
+      "member": "legacy/.offline-results/matrix-source-diagnostic-20261020_01/frozen_tests/test_d007_mode11_contract.py",
+      "bytes": 2878,
+      "sha256": "ae1877c5d362d7c5927b7a8a6a37e2e1909c8ac1e9fbbda5bdf44776a9cca6c7"
+    }
+  ],
+  "board_access": false,
+  "source_scope": "exact snapshots, no Git checkout or new board result"
+}

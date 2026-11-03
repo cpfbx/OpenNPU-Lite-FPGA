@@ -1,0 +1,22 @@
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Fri Oct 30 14:51:23 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/native_tb_d007_c_buffer_real_overlap/xsim_script.tcl
+# xsim {native_tb_d007_c_buffer_real_overlap} -wdb {tb_d007_c_buffer_real_overlap.wdb} -autoloadwcfg -tclbatch {tb_d007_c_buffer_real_overlap_capture.tcl}
+Time resolution is 1 ps
+source tb_d007_c_buffer_real_overlap_capture.tcl
+## log_wave -r /
+## open_vcd tb_d007_c_buffer_real_overlap_capture.vcd
+## log_vcd /tb_d007_c_buffer_real_overlap/*
+## run all
+D007_REAL_C_OVERLAP_SUMMARY tiles=2 beats=64 pe_read_overlap=16 compute_pulses=2 fail=0
+$finish called at time : 7105 ns : File "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb/tb_d007_c_buffer_real_overlap.sv" Line 204
+## close_vcd
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri Oct 30 14:51:25 2026...

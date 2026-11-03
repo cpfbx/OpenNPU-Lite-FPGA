@@ -1,0 +1,44 @@
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Fri Oct 30 14:51:28 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/native_tb_axis_packet_guard/xsim_script.tcl
+# xsim {native_tb_axis_packet_guard} -wdb {tb_axis_packet_guard.wdb} -autoloadwcfg -tclbatch {tb_axis_packet_guard_capture.tcl}
+Time resolution is 1 ps
+source tb_axis_packet_guard_capture.tcl
+## log_wave -r /
+## open_vcd tb_axis_packet_guard_capture.vcd
+## log_vcd /tb_axis_packet_guard/*
+## run all
+[PASS] packet active after START = 0x00000001
+[PASS]  follows downstream backpressure = 0x00000000
+[PASS] M valid held during backpressure = 0x00000001
+[PASS] no bytes accepted while stalled = 0x00000000
+[PASS] TKEEP byte count = 0x0000000d
+[PASS] exact packet no error = 0x00000000
+[PASS] exact packet returns idle = 0x00000000
+[PASS] exact packet DONE pulse = 0x00000001
+[PASS] early TLAST sticky error = 0x00000001
+[PASS] early TLAST error code = 0x00000004
+[PASS] error packet no DONE = 0x00000001
+[PASS] missing TLAST sticky error = 0x00000001
+[PASS] missing TLAST error code = 0x00000005
+[PASS] missing TLAST stops packet = 0x00000000
+[PASS] long packet sticky error = 0x00000001
+[PASS] long packet error code = 0x00000005
+[PASS] START while busy sticky error = 0x00000001
+[PASS] START while busy error code = 0x00000003
+[PASS] START while busy aborts packet = 0x00000000
+[PASS] abort returns idle = 0x00000000
+[PASS] abort does not pulse DONE = 0x00000001
+AXIS_PACKET_GUARD_SUMMARY pass=21 fail=0
+ALL AXIS PACKET GUARD TESTS PASSED
+$finish called at time : 435 ns : File "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb/tb_axis_packet_guard.sv" Line 158
+## close_vcd
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri Oct 30 14:51:30 2026...

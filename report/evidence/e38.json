@@ -1,0 +1,477 @@
+{
+  "source_archive_sha256": "d4358fe86aac049818f929434d38a5a1613bef21b33f6b7e4f6ce9606b298bca",
+  "archive_files": 95,
+  "round_indexed_files": 78,
+  "checked_timing_rows": 72,
+  "formal_rows": 48,
+  "warmup_rows": 24,
+  "checked_os_children": 12,
+  "checked_fpga_metric_and_output_sha_rows": 48,
+  "pc_int64_bank_checks": [
+    {
+      "dimension": 256,
+      "input_id": 42,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "dimension": 256,
+      "input_id": 43,
+      "sha256": "25afb557e0a0a07f45970d75b5d988738504b1471926a2d76352fe55e077a64b"
+    },
+    {
+      "dimension": 512,
+      "input_id": 42,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "dimension": 512,
+      "input_id": 43,
+      "sha256": "8e74ffe97ea4f44912cbd38dbc68201319b780eb425e6783f18a8070d4177201"
+    }
+  ],
+  "retained_full_output_checks": [
+    {
+      "block": 0,
+      "dimension": 256,
+      "input_id": 42,
+      "bytes": 262144,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "block": 1,
+      "dimension": 256,
+      "input_id": 42,
+      "bytes": 262144,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "block": 2,
+      "dimension": 256,
+      "input_id": 42,
+      "bytes": 262144,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "block": 3,
+      "dimension": 256,
+      "input_id": 42,
+      "bytes": 262144,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "block": 4,
+      "dimension": 256,
+      "input_id": 42,
+      "bytes": 262144,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "block": 5,
+      "dimension": 256,
+      "input_id": 42,
+      "bytes": 262144,
+      "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+    },
+    {
+      "block": 6,
+      "dimension": 512,
+      "input_id": 42,
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "block": 7,
+      "dimension": 512,
+      "input_id": 42,
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "block": 8,
+      "dimension": 512,
+      "input_id": 42,
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "block": 9,
+      "dimension": 512,
+      "input_id": 42,
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "block": 10,
+      "dimension": 512,
+      "input_id": 42,
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    },
+    {
+      "block": 11,
+      "dimension": 512,
+      "input_id": 42,
+      "bytes": 1048576,
+      "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+    }
+  ],
+  "retained_int32_positions": 1966080,
+  "groups": [
+    {
+      "dimension": 256,
+      "backend": "fpga_flat",
+      "formal_n": 8,
+      "wall_ns": {
+        "n": 8,
+        "mean": 57692782.25,
+        "median": 57363301.0,
+        "min": 56835502,
+        "max": 58823268
+      },
+      "process_cpu_ns": {
+        "n": 8,
+        "mean": 54393722.0,
+        "median": 54082878.0,
+        "min": 53594450,
+        "max": 55500122
+      },
+      "nested_attribution_ms": {
+        "stages": {
+          "transaction_generation": "18.139288375",
+          "owned_submission": "24.358619125",
+          "record_reconstruction": "7.5019555",
+          "output_unpack": "4.816397625"
+        },
+        "chain_total": "9.742623875041544875000",
+        "dma_pl": "4.759189874988578625000",
+        "owned_minus_chain": "14.615995249958455125000",
+        "four_stage_sum": "54.816260625",
+        "complete_minus_four_stages": "2.876521625",
+        "input_copy_inside_chain": "1.415906875024575125000"
+      }
+    },
+    {
+      "dimension": 256,
+      "backend": "fpga_old",
+      "formal_n": 8,
+      "wall_ns": {
+        "n": 8,
+        "mean": 57296271.25,
+        "median": 57396199.5,
+        "min": 55821680,
+        "max": 58260702
+      },
+      "process_cpu_ns": {
+        "n": 8,
+        "mean": 53968503.5,
+        "median": 54000284.0,
+        "min": 52528610,
+        "max": 54838727
+      },
+      "nested_attribution_ms": {
+        "stages": {
+          "transaction_generation": "17.3403585",
+          "owned_submission": "25.76664",
+          "record_reconstruction": "7.57908775",
+          "output_unpack": "3.629355375"
+        },
+        "chain_total": "9.280670124979906125000",
+        "dma_pl": "4.829392375029328875000",
+        "owned_minus_chain": "16.485969875020093875000",
+        "four_stage_sum": "54.315441625",
+        "complete_minus_four_stages": "2.980829625",
+        "input_copy_inside_chain": "1.4796376249819331875000"
+      }
+    },
+    {
+      "dimension": 256,
+      "backend": "openblas_2t",
+      "formal_n": 8,
+      "wall_ns": {
+        "n": 8,
+        "mean": 25163400.75,
+        "median": 25144295.5,
+        "min": 24938702,
+        "max": 25391520
+      },
+      "process_cpu_ns": {
+        "n": 8,
+        "mean": 50777680.0,
+        "median": 53722068.0,
+        "min": 44603255,
+        "max": 54862636
+      }
+    },
+    {
+      "dimension": 512,
+      "backend": "fpga_flat",
+      "formal_n": 8,
+      "wall_ns": {
+        "n": 8,
+        "mean": 242822111.875,
+        "median": 242897021.0,
+        "min": 240520455,
+        "max": 244930111
+      },
+      "process_cpu_ns": {
+        "n": 8,
+        "mean": 217793744.875,
+        "median": 217868760.0,
+        "min": 215290155,
+        "max": 220175797
+      },
+      "nested_attribution_ms": {
+        "stages": {
+          "transaction_generation": "78.163880625",
+          "owned_submission": "111.54769975",
+          "record_reconstruction": "31.69284175",
+          "output_unpack": "17.395977125"
+        },
+        "chain_total": "49.732968374968323125000",
+        "dma_pl": "30.988313000023026875000",
+        "owned_minus_chain": "61.814731375031676875000",
+        "four_stage_sum": "238.800399250",
+        "complete_minus_four_stages": "4.021712625",
+        "input_copy_inside_chain": "9.112332874991580000"
+      }
+    },
+    {
+      "dimension": 512,
+      "backend": "fpga_old",
+      "formal_n": 8,
+      "wall_ns": {
+        "n": 8,
+        "mean": 272112641.875,
+        "median": 271862877.0,
+        "min": 268749285,
+        "max": 278110196
+      },
+      "process_cpu_ns": {
+        "n": 8,
+        "mean": 246744487.75,
+        "median": 246817029.5,
+        "min": 243520437,
+        "max": 250428205
+      },
+      "nested_attribution_ms": {
+        "stages": {
+          "transaction_generation": "77.95106525",
+          "owned_submission": "139.97170675",
+          "record_reconstruction": "31.474629125",
+          "output_unpack": "18.6219875"
+        },
+        "chain_total": "51.048404500022569625000",
+        "dma_pl": "31.045423000023220000",
+        "owned_minus_chain": "88.923302249977430375000",
+        "four_stage_sum": "268.019388625",
+        "complete_minus_four_stages": "4.093253250",
+        "input_copy_inside_chain": "9.83010625000702025000"
+      }
+    },
+    {
+      "dimension": 512,
+      "backend": "openblas_2t",
+      "formal_n": 8,
+      "wall_ns": {
+        "n": 8,
+        "mean": 172240538.125,
+        "median": 165310966.0,
+        "min": 164893427,
+        "max": 214395021
+      },
+      "process_cpu_ns": {
+        "n": 8,
+        "mean": 335749574.125,
+        "median": 333408623.0,
+        "min": 332043376,
+        "max": 353881546
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "dimension": 256,
+      "old_ms": "57.29627125",
+      "flat_ms": "57.69278225",
+      "cpu_2t_ms": "25.16340075",
+      "flat_time_reduction_vs_old_pct": "-0.69203630768555466862077870381486648662150069669673",
+      "old_over_flat_speedup": "0.99312719920003511357783407992946986015742029844643",
+      "flat_time_excess_vs_cpu_pct": "129.27259643154552549897294784370510810229018826082"
+    },
+    {
+      "dimension": 512,
+      "old_ms": "272.112641875",
+      "flat_ms": "242.822111875",
+      "cpu_2t_ms": "172.240538125",
+      "flat_time_reduction_vs_old_pct": "10.764119519832948224357464906186472267147768288522",
+      "old_over_flat_speedup": "1.1206254643525964515294000755630319591544405762120",
+      "flat_time_excess_vs_cpu_pct": "40.978491195131361007526462057725297181690978300873"
+    }
+  ],
+  "blocks": [
+    {
+      "block": 0,
+      "dimension": 256,
+      "backend": "fpga_old",
+      "child_pid": 3306,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 57.146106,
+        "median": 57.251021,
+        "min": 55.82168,
+        "max": 58.260702
+      }
+    },
+    {
+      "block": 1,
+      "dimension": 256,
+      "backend": "fpga_flat",
+      "child_pid": 3347,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 58.0902475,
+        "median": 58.1329505,
+        "min": 57.271821,
+        "max": 58.823268
+      }
+    },
+    {
+      "block": 2,
+      "dimension": 256,
+      "backend": "openblas_2t",
+      "child_pid": 3388,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 25.1806,
+        "median": 25.1964215,
+        "min": 25.007009,
+        "max": 25.322548
+      }
+    },
+    {
+      "block": 3,
+      "dimension": 256,
+      "backend": "openblas_2t",
+      "child_pid": 3391,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 25.1462015,
+        "median": 25.127292,
+        "min": 24.938702,
+        "max": 25.39152
+      }
+    },
+    {
+      "block": 4,
+      "dimension": 256,
+      "backend": "fpga_flat",
+      "child_pid": 3411,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 57.295317,
+        "median": 56.9545755,
+        "min": 56.835502,
+        "max": 58.436615
+      }
+    },
+    {
+      "block": 5,
+      "dimension": 256,
+      "backend": "fpga_old",
+      "child_pid": 3436,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 57.4464365,
+        "median": 57.589689,
+        "min": 56.493421,
+        "max": 58.112947
+      }
+    },
+    {
+      "block": 6,
+      "dimension": 512,
+      "backend": "fpga_old",
+      "child_pid": 3479,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 274.1358335,
+        "median": 274.0073565,
+        "min": 270.418425,
+        "max": 278.110196
+      }
+    },
+    {
+      "block": 7,
+      "dimension": 512,
+      "backend": "fpga_flat",
+      "child_pid": 3520,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 242.751392,
+        "median": 242.777501,
+        "min": 240.520455,
+        "max": 244.930111
+      }
+    },
+    {
+      "block": 8,
+      "dimension": 512,
+      "backend": "openblas_2t",
+      "child_pid": 3544,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 177.5183335,
+        "median": 165.3235475,
+        "min": 165.031218,
+        "max": 214.395021
+      }
+    },
+    {
+      "block": 9,
+      "dimension": 512,
+      "backend": "openblas_2t",
+      "child_pid": 3564,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 166.96274275,
+        "median": 165.2723445,
+        "min": 164.893427,
+        "max": 172.412855
+      }
+    },
+    {
+      "block": 10,
+      "dimension": 512,
+      "backend": "fpga_flat",
+      "child_pid": 3584,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 242.89283175,
+        "median": 242.897021,
+        "min": 240.964,
+        "max": 244.813285
+      }
+    },
+    {
+      "block": 11,
+      "dimension": 512,
+      "backend": "fpga_old",
+      "child_pid": 3609,
+      "formal_wall_ms": {
+        "n": 4,
+        "mean": 270.08945025,
+        "median": 269.1505935,
+        "min": 268.749285,
+        "max": 273.307329
+      }
+    }
+  ],
+  "originals_unchanged": true,
+  "readback_pass": true,
+  "board_access": false,
+  "new_hardware_execution": false,
+  "executed_archive_code": false,
+  "energy_evaluated": false,
+  "tail_latency_accepted": false,
+  "promotion": false
+}

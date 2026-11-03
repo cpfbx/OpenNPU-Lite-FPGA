@@ -1,0 +1,280 @@
+{
+  "ARM_tested": false,
+  "acquired_lease_release_verified": true,
+  "actual_exit_code": 0,
+  "actual_wait_observed": true,
+  "automatic_kill": false,
+  "automatic_retry": false,
+  "board_access": true,
+  "child_terminal": {
+    "ARM_tested": false,
+    "artifact_manifest_sha256": "d0386330294a5476e9730c0cfc6b8e9cd5ea875d6e9baabc5e5ed1958299776a",
+    "automatic_kill": false,
+    "automatic_retry": false,
+    "board_access": true,
+    "classification_quality_evaluated": false,
+    "completed_indices": [
+      0,
+      30,
+      60,
+      90,
+      120,
+      150,
+      180,
+      210,
+      240,
+      270,
+      300,
+      400
+    ],
+    "energy_evaluated": false,
+    "error_type": null,
+    "evidence_injected": false,
+    "finite_supervisor_fixture": false,
+    "fixture": false,
+    "operation_success": true,
+    "original_infinite_hold_executed": false,
+    "outer_process_exit_observed": false,
+    "performance_evaluated": false,
+    "pid": 9745,
+    "process": {
+      "kind": "proc-stat-start-ticks",
+      "pid": 9745,
+      "start": 583356
+    },
+    "promotion": false,
+    "real_DMA_executed": true,
+    "real_cross_layer_PL_execution": true,
+    "real_lock_access": true,
+    "request_sha256": "a767128a5a07ab1a85e862bb82f8f8384c363bc13f65262b8cda6c4c18cf819f",
+    "run_id": "84d68a88-4642-4781-af43-c0875c815f95",
+    "run_ready": false,
+    "safety_unresolved": false,
+    "session": {
+      "ARM_tested": false,
+      "automatic_kill": false,
+      "automatic_retry": false,
+      "board_access": true,
+      "classification_quality_evaluated": false,
+      "cleanup_readback": {
+        "last_lock_proof": {
+          "cloexec": true,
+          "device": 45826,
+          "exclusive_flock": true,
+          "fd": 3,
+          "inode": 214963,
+          "path": "/tmp/opennpu-kws-chain.lock",
+          "physical_identity_authenticated": false,
+          "pid": 9745,
+          "process_start_ticks": 583356,
+          "source": "original fd fstat + kernel fdinfo FLOCK"
+        },
+        "resources": {
+          "automatic_free": false,
+          "automatic_retry": false,
+          "board_evidence": false,
+          "failure_types": [],
+          "held": false,
+          "lease_retained": false,
+          "pid": 9745,
+          "root_buffers_retained": 0,
+          "runner_retained": false,
+          "safety_unresolved": false
+        },
+        "source": "owner recovery/readback/freebuffer/helper-close lifecycle",
+        "terminal": {
+          "build_id": 539414645,
+          "error": 0,
+          "phase": 1,
+          "recovery": {
+            "accelerator_reset": true,
+            "confirmed": true,
+            "dma_reset": {
+              "after_reset": {
+                "recv": {
+                  "error_bits": "0x00000000",
+                  "halted": true,
+                  "idle": false,
+                  "raw": "0x00000001"
+                },
+                "send": {
+                  "error_bits": "0x00000000",
+                  "halted": true,
+                  "idle": false,
+                  "raw": "0x00000001"
+                }
+              },
+              "after_restart": {
+                "recv": {
+                  "error_bits": "0x00000000",
+                  "halted": false,
+                  "idle": false,
+                  "raw": "0x00000000"
+                },
+                "send": {
+                  "error_bits": "0x00000000",
+                  "halted": false,
+                  "idle": false,
+                  "raw": "0x00000000"
+                }
+              },
+              "before_reset": {
+                "recv": {
+                  "error_bits": "0x00000000",
+                  "halted": false,
+                  "idle": true,
+                  "raw": "0x00001002"
+                },
+                "send": {
+                  "error_bits": "0x00000000",
+                  "halted": false,
+                  "idle": true,
+                  "raw": "0x00001002"
+                }
+              }
+            },
+            "fresh_accelerator_identity": {
+              "build_id": 539414645,
+              "capabilities": 528126,
+              "counter_contract_version": 1,
+              "error": 0,
+              "expected_counter_contract_version": 1,
+              "phase": "post-soft-reset-before-start"
+            },
+            "fresh_accelerator_status": 1,
+            "fresh_dma_states": [
+              {
+                "control": 69635,
+                "status": 0
+              },
+              {
+                "control": 69635,
+                "status": 0
+              }
+            ]
+          }
+        }
+      },
+      "close_attempts": 1,
+      "completed_driver_returns": 24,
+      "energy_evaluated": false,
+      "evidence_injected": false,
+      "fixture": false,
+      "lease_ticket": {
+        "cloexec": true,
+        "device": 45826,
+        "exclusive_flock": true,
+        "fd": 3,
+        "inode": 214963,
+        "path": "/tmp/opennpu-kws-chain.lock",
+        "physical_identity_authenticated": false,
+        "pid": 9745,
+        "process_start_ticks": 583356,
+        "source": "original fd fstat + kernel fdinfo FLOCK"
+      },
+      "owner_closed": true,
+      "performance_evaluated": false,
+      "promotion": false,
+      "real_DMA_executed": true,
+      "real_cross_layer_PL_execution": true,
+      "real_lock_access": true,
+      "release_readback": {
+        "device": 45826,
+        "inode": 214963,
+        "lock_released_same_inode": true,
+        "path": "/tmp/opennpu-kws-chain.lock",
+        "source": "lstat same inode + no matching FLOCK in proc/locks; no acquisition probe"
+      },
+      "resources": {
+        "automatic_free": false,
+        "automatic_retry": false,
+        "board_evidence": false,
+        "failure_types": [],
+        "held": false,
+        "lease_retained": false,
+        "pid": 9745,
+        "root_buffers_retained": 0,
+        "runner_retained": false,
+        "safety_unresolved": false
+      },
+      "reuse_checks": 49,
+      "run_ready": false,
+      "software_admission": {
+        "active_call_cleared": true,
+        "call_guard_released": true,
+        "consumed": 24,
+        "issued": 24,
+        "producer_cleared": true,
+        "revoked": 0
+      }
+    },
+    "signals": {
+      "handler_errors": [],
+      "handler_restore_errors": [],
+      "original_supervisor_unchanged": true,
+      "stop_signals": []
+    },
+    "summary_sha256": "2dae8f45b57f38fb0ac8ec1efde892baaa6cd00539e74fe3296c156de2b186b6",
+    "ticket": {
+      "cloexec": true,
+      "device": 45826,
+      "exclusive_flock": true,
+      "fd": 3,
+      "inode": 214963,
+      "path": "/tmp/opennpu-kws-chain.lock",
+      "physical_identity_authenticated": false,
+      "pid": 9745,
+      "process_start_ticks": 583356,
+      "source": "original fd fstat + kernel fdinfo FLOCK"
+    }
+  },
+  "classification_quality_evaluated": false,
+  "cleanup_verified": true,
+  "energy_evaluated": false,
+  "error_type": null,
+  "evidence_injected": false,
+  "finite_supervisor_fixture": false,
+  "fixture": false,
+  "group_query_injected": false,
+  "last_stage": "validate_terminal",
+  "live_ticket_observed": true,
+  "lock_released_same_inode": true,
+  "operation_success": true,
+  "original_infinite_hold_executed": false,
+  "parent_go_sent": true,
+  "parent_guardian": {
+    "held": false,
+    "lease_retained": false,
+    "pid": 9710,
+    "root_buffers_retained": 0,
+    "runner_retained": false,
+    "safety_unresolved": false
+  },
+  "performance_evaluated": false,
+  "process_group_absent": true,
+  "process_group_proof_real": true,
+  "promotion": false,
+  "real_DMA_executed": true,
+  "real_cross_layer_PL_execution": true,
+  "real_lock_access": true,
+  "release_readback": {
+    "device": 45826,
+    "inode": 214963,
+    "lock_released_same_inode": true,
+    "path": "/tmp/opennpu-kws-chain.lock",
+    "source": "lstat same inode + no matching FLOCK in proc/locks; no acquisition probe"
+  },
+  "request_sha256": "a767128a5a07ab1a85e862bb82f8f8384c363bc13f65262b8cda6c4c18cf819f",
+  "run_id": "84d68a88-4642-4781-af43-c0875c815f95",
+  "run_ready": false,
+  "signals": {
+    "handler_errors": [],
+    "handler_restore_errors": [],
+    "original_supervisor_unchanged": true,
+    "stop_signals": []
+  },
+  "source": "Popen.wait then read-only process-group query",
+  "sources_unchanged": true,
+  "stop_seen": false,
+  "wait_intervals": 222
+}

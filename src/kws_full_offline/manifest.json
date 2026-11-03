@@ -1,0 +1,37 @@
+{
+  "claims": {
+    "board_access": false,
+    "promotion": false,
+    "real_DMA_executed": false,
+    "real_cross_layer_PL_execution": false,
+    "run_ready": false,
+    "vad_recomputed": false,
+    "vad_source": "historical_fixed_pcm"
+  },
+  "files": {
+    "hybrid_contract.py": {
+      "bytes": 15868,
+      "sha256": "34270040aafd6f0611732994eea8e6e0b86018a9b8c225f6611a739c726dbbef"
+    },
+    "hybrid_graph.py": {
+      "bytes": 41527,
+      "sha256": "249d220c773db2a720b339345d26617cf844fedf2f24040ede9509a1ebf10372"
+    },
+    "readme.md": {
+      "bytes": 4539,
+      "sha256": "2fd691233c84a4487dc9a54ccb3ad9bedca5fa5eece94d569ccf2717adfbc0df"
+    },
+    "run_hybrid_candidate.py": {
+      "bytes": 8918,
+      "sha256": "6ee65e356f2f6edf204ce22673c52dfbf192fdd7e0d3e3adb19628168a446fa6"
+    },
+    "test_hybrid_candidate.py": {
+      "bytes": 19391,
+      "sha256": "e7a4de9c93fd6cd7539b34228e5fd884db2abdc1db2b01f8901a39f10c5d7ef1"
+    }
+  },
+  "package_id": "opennpu_kws_full_hybrid_candidate_v1",
+  "prerequisite_manifest_sha256": "524927755ea6e403c834fee7a518a0c9d2816b499a305a2c154a27b32f55e357",
+  "schema": "kws-full-hybrid-candidate-v1",
+  "status": "candidate_default_off"
+}

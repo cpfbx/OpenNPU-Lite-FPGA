@@ -1,0 +1,138 @@
+{
+  "schema": "comparison-bank-v1",
+  "byte_order": "little",
+  "rows": [
+    {
+      "dimension": 256,
+      "input_id": 42,
+      "assets": {
+        "a": {
+          "path": "bank256/input_42_a.bin",
+          "bytes": 65536,
+          "sha256": "290169fc2c4d6819128ae9906ddae63af251e1ab0bc4865033955142b0536a26"
+        },
+        "b": {
+          "path": "bank256/input_42_b.bin",
+          "bytes": 65536,
+          "sha256": "7b85b3cfd5555347a0de2ad36dc1ba38babbb9125cc85c950b3446cacb5f5085"
+        },
+        "expected": {
+          "path": "bank256/input_42_expected.bin",
+          "bytes": 262144,
+          "sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4"
+        }
+      }
+    },
+    {
+      "dimension": 256,
+      "input_id": 43,
+      "assets": {
+        "a": {
+          "path": "bank256/input_43_a.bin",
+          "bytes": 65536,
+          "sha256": "1c99ed1b9532221711f7bbae448422120c856407ced7114d468f65248c12b229"
+        },
+        "b": {
+          "path": "bank256/input_43_b.bin",
+          "bytes": 65536,
+          "sha256": "f50fca35e8e8f13787583d35b4687f64888a3277a4e0f21bdcdf6e0ef14c8d0d"
+        },
+        "expected": {
+          "path": "bank256/input_43_expected.bin",
+          "bytes": 262144,
+          "sha256": "25afb557e0a0a07f45970d75b5d988738504b1471926a2d76352fe55e077a64b"
+        }
+      }
+    },
+    {
+      "dimension": 512,
+      "input_id": 42,
+      "assets": {
+        "a": {
+          "path": "legacy/bank/input_42_a.bin",
+          "bytes": 262144,
+          "sha256": "dfb5e2b1f0a45b76103fafca4a5ff6d6eeb3c8d94e6eb89f0f51d078b05b3b6c"
+        },
+        "b": {
+          "path": "legacy/bank/input_42_b.bin",
+          "bytes": 262144,
+          "sha256": "93d3dc9e294b9d17d1c205a66182df041cba3dcb536b16cbcd2351f094cd0ea7"
+        },
+        "expected": {
+          "path": "legacy/bank/input_42_expected.bin",
+          "bytes": 1048576,
+          "sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842"
+        }
+      }
+    },
+    {
+      "dimension": 512,
+      "input_id": 43,
+      "assets": {
+        "a": {
+          "path": "legacy/bank/input_43_a.bin",
+          "bytes": 262144,
+          "sha256": "0d434946bfc2b5b506e035a97f305be6045da2501aaddba62e988f1265beb2ae"
+        },
+        "b": {
+          "path": "legacy/bank/input_43_b.bin",
+          "bytes": 262144,
+          "sha256": "22377e0e6a2b20190bf4ac85f29564dbfd1c5e0996d59c282e635e4bca62c852"
+        },
+        "expected": {
+          "path": "legacy/bank/input_43_expected.bin",
+          "bytes": 1048576,
+          "sha256": "8e74ffe97ea4f44912cbd38dbc68201319b780eb425e6783f18a8070d4177201"
+        }
+      }
+    }
+  ],
+  "derivation": [
+    {
+      "dimension": 256,
+      "input_id": 42,
+      "source_operands_sha256": [
+        "dfb5e2b1f0a45b76103fafca4a5ff6d6eeb3c8d94e6eb89f0f51d078b05b3b6c",
+        "93d3dc9e294b9d17d1c205a66182df041cba3dcb536b16cbcd2351f094cd0ea7"
+      ],
+      "rule": "owning C-order upper-left cube operands; independent INT64 GEMM then checked little-endian INT32",
+      "expected_sha256": "0d102825e0868ae45fb51bc6f1a8707236ab84d5f0d42a8178ddd61fd9cb53c4",
+      "is_truncated_512_expected": false
+    },
+    {
+      "dimension": 256,
+      "input_id": 43,
+      "source_operands_sha256": [
+        "0d434946bfc2b5b506e035a97f305be6045da2501aaddba62e988f1265beb2ae",
+        "22377e0e6a2b20190bf4ac85f29564dbfd1c5e0996d59c282e635e4bca62c852"
+      ],
+      "rule": "owning C-order upper-left cube operands; independent INT64 GEMM then checked little-endian INT32",
+      "expected_sha256": "25afb557e0a0a07f45970d75b5d988738504b1471926a2d76352fe55e077a64b",
+      "is_truncated_512_expected": false
+    },
+    {
+      "dimension": 512,
+      "input_id": 42,
+      "source_operands_sha256": [
+        "dfb5e2b1f0a45b76103fafca4a5ff6d6eeb3c8d94e6eb89f0f51d078b05b3b6c",
+        "93d3dc9e294b9d17d1c205a66182df041cba3dcb536b16cbcd2351f094cd0ea7"
+      ],
+      "rule": "owning C-order upper-left cube operands; independent INT64 GEMM then checked little-endian INT32",
+      "expected_sha256": "aeac6bfc2e40ca48ef2e49623c55ca3c69506ba9d0e39939d514e3dac12c2842",
+      "is_truncated_512_expected": null
+    },
+    {
+      "dimension": 512,
+      "input_id": 43,
+      "source_operands_sha256": [
+        "0d434946bfc2b5b506e035a97f305be6045da2501aaddba62e988f1265beb2ae",
+        "22377e0e6a2b20190bf4ac85f29564dbfd1c5e0996d59c282e635e4bca62c852"
+      ],
+      "rule": "owning C-order upper-left cube operands; independent INT64 GEMM then checked little-endian INT32",
+      "expected_sha256": "8e74ffe97ea4f44912cbd38dbc68201319b780eb425e6783f18a8070d4177201",
+      "is_truncated_512_expected": null
+    }
+  ],
+  "raw_audio": false,
+  "board_execution": false
+}

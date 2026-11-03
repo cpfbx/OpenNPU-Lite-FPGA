@@ -1,0 +1,68 @@
+
+****** xsim v2026.1 (64-bit)
+  **** SW Build 6511674 on Tue Jun 16 11:02:23 MDT 2026
+  **** IP Build 6504888 on Tue Jun 09 09:05:25 MDT 2026
+  **** SharedData Build 6501428 on Mon Jun 08 17:34:18 MDT 2026
+  **** Start of session at: Fri Oct 30 14:51:12 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source xsim.dir/native_tb_pe/xsim_script.tcl
+# xsim {native_tb_pe} -wdb {tb_pe.wdb} -autoloadwcfg -tclbatch {tb_pe_capture.tcl}
+Time resolution is 1 ps
+source tb_pe_capture.tcl
+## log_wave -r /
+## run all
+============================================
+ PE (MAC) Testbench — 乘加单元验证
+ 精度: INT8 × INT8 → INT32
+============================================
+── TEST 1: 复位行为 ──
+[PASS] T1: east_act = 0
+[PASS] T1: south_data = 0
+[PASS] T1: accum_OS = 0
+[PASS] T1: ������������������������ (east_act=0, south_data=0, accum_OS=0)
+── TEST 2: WS 权重加载 + 单次 MAC ──
+[PASS] T2: ��× 6 = 42�������������� + MAC�������)
+── TEST 3: WS 累加链 ──
+[PASS] T3: ���������: 10���2����45 (���������������������������)
+── TEST 4: WS 带 north_data 外部输入 ──
+[PASS] T4: ���� 10 + 100 = 130 (WS + north_data�������)
+── TEST 5: WS 激活值直通 ──
+[PASS] T5: ������ east_act=0 (bypas�����������)
+[PASS] T5: east_act=15 = west_act ������� �����������)
+[PASS] T5: east_act=88 = west_ac���������������)
+── TEST 6: WS 有符号计算 ──
+[PASS] T6: +7��� +3 = +21
+[PASS] T6: -5��� +6 = -30
+[PASS] T6: -8��� -9 = +72
+── TEST 7: WS 边界值 ──
+[PASS] T7: -128��� 127 = -16256
+[PASS] T7: 127 �� -128 = -16256
+[PASS] T7: -128 �� -128 = +16384
+── TEST 8: OS 单次累加 ──
+[PASS] T8: ���������: 5��3=15 (accum_OS�������)
+── TEST 9: OS 多次累加 ──
+[PASS] T9: O�����������×1+3��2+���3=20 �������)
+── TEST 10: OS accum_out 清零验证 ──
+[PASS] T10: ������������������=2����������=2���������������)
+── TEST 11: 模式切换 WS→OS→WS ──
+[PASS] T11: WS�������:����5=15
+[PASS] T11: O�����������×2=8
+[PASS] T11: ������ WS:����10=3���������������,�������������������)
+── TEST 12: 计算中途换权重 ──
+[PASS] T12: ���������:����2=10
+[PASS] T12: ���������:����3=15�����������)
+[PASS] T12: ���������: ���4=36 �������������������)
+── TEST 13: 复位中断恢复 ──
+[PASS] T13: ���������:����3=21
+[PASS] T13: ��������� south_data=0
+[PASS] T13: ��������� east_act=0
+[PASS] T13: ��������� accum_OS=0
+[PASS] T13: ������������×6=2���������������)
+============================================
+ ✅ 全部 30 项测试通过
+============================================
+$finish called at time : 3125 ns : File "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb/tb_pe.v" Line 195
+## quit
+INFO: [Common 17-206] Exiting xsim at Fri Oct 30 14:51:14 2026...

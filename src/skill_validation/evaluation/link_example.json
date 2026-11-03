@@ -1,0 +1,21 @@
+{
+  "format": "skill-review-links-v1",
+  "claims": [
+    {
+      "id": "timer-edge-observation",
+      "statement": "The excerpt places elapsed calculation before independent_reference.",
+      "classification": "observed",
+      "references": [
+        {
+          "path": "request_excerpt.py",
+          "sha256": "c1bc0ab3f0594cc47ffdb96a8e46605182b2047d69996eef20e6d114270ff597",
+          "lines": [
+            5,
+            6
+          ],
+          "quote": "elapsed = monotonic() - started\n    expected = independent_reference(a, b)"
+        }
+      ]
+    }
+  ]
+}

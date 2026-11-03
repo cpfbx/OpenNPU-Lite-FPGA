@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb_pe.wdb" id="1">
+         <top_modules>
+            <top_module name="tb_pe" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="13" />
+   <wvobject type="divider" fp_name="divider1">
+      <obj_property name="label">CLOCK / RESET</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_pe/clk" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+      <obj_property name="label">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_pe/rst_n" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+      <obj_property name="label">rst_n</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider4">
+      <obj_property name="label">INPUT / CONTROL</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_pe/mode" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">mode</obj_property>
+      <obj_property name="ObjectShortName">mode</obj_property>
+      <obj_property name="label">mode</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_pe/west_act" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">west_act[7:0]</obj_property>
+      <obj_property name="ObjectShortName">west_act[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">west_act</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_pe/north_data" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">north_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">north_data[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">north_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_pe/accum_out" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">accum_out</obj_property>
+      <obj_property name="ObjectShortName">accum_out</obj_property>
+      <obj_property name="label">accum_out</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider9">
+      <obj_property name="label">PE PIPELINE / OUTPUT</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_pe/dut/multi_reg" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">multi_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">multi_reg[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">multi_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_pe/dut/accum_reg" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">accum_reg[31:0]</obj_property>
+      <obj_property name="ObjectShortName">accum_reg[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">accum_reg</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_pe/accum_OS" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">accum_OS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">accum_OS[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">accum_OS</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_pe/south_data" type="array">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">south_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">south_data[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="label">south_data</obj_property>
+   </wvobject>
+</wave_config>

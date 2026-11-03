@@ -1,0 +1,135 @@
+{
+  "edited_prompts": [
+    {
+      "case": "C01",
+      "kind": "editorial consolidation of actual requirements",
+      "sha256": "0368ad0f41f9bd5b840d2a48f497db20f41c0035c0ece21472b7c10dbbdc25ad",
+      "source_excerpt_sha256": [
+        "02c2486d137c198419a47719b9f1af171849aeb69bfdd4c206fd36f4f480160a"
+      ]
+    },
+    {
+      "case": "C02",
+      "kind": "editorial consolidation of actual requirements",
+      "sha256": "1db8091ac54a26557ec29309d3e741fcd9137d6d86e3f28d3abee15ee3d8965a",
+      "source_excerpt_sha256": [
+        "6383856fd7b1e8e49e7badf4417a5a3413ba836c3d1c4b1297ccc3596dfdf3de"
+      ]
+    },
+    {
+      "case": "C03",
+      "kind": "editorial consolidation of actual requirements",
+      "sha256": "82e060495ba9873111d424959797f31575acba6846c29c16d6d4ca36881f0bd9",
+      "source_excerpt_sha256": [
+        "6254d5972d35e8a9dc9033dbca49b9c76cb9844c945da1937ac4c2ac68320f85"
+      ]
+    }
+  ],
+  "full_private_chat_included": false,
+  "presentation": {
+    "date": "2026-11-02",
+    "later_discoveries_kept_in_model_correction": true,
+    "model_excerpts_retained": 9,
+    "opening_disclosure": "依据实际交互整理，对措辞和重复内容作编辑性归并",
+    "original_team_excerpts": "e43_original_excerpts.md",
+    "prompt_count": 3
+  },
+  "verbatim_excerpts": [
+    {
+      "case": "C01",
+      "excerpt_sha256": "02c2486d137c198419a47719b9f1af171849aeb69bfdd4c206fd36f4f480160a",
+      "kind": "verbatim",
+      "label": "团队当时的要求",
+      "role": "user",
+      "timestamp": "2026-10-20T00:42:27.367Z"
+    },
+    {
+      "case": "C01",
+      "excerpt_sha256": "a26f395e0d950d67a11f73a15128a76996745957a6bdea6f319b498ad16d28ff",
+      "kind": "verbatim",
+      "label": "模型对归因边界的修正",
+      "role": "assistant",
+      "timestamp": "2026-10-20T00:43:03.935Z"
+    },
+    {
+      "case": "C01",
+      "excerpt_sha256": "3a7921c330b83df9a5983dbe43aa458f2e3d1a288b2ba200da713fd6e9294000",
+      "kind": "verbatim",
+      "label": "模型安排的实现步骤",
+      "role": "assistant",
+      "timestamp": "2026-10-20T00:43:03.935Z"
+    },
+    {
+      "case": "C02",
+      "excerpt_sha256": "6383856fd7b1e8e49e7badf4417a5a3413ba836c3d1c4b1297ccc3596dfdf3de",
+      "kind": "verbatim",
+      "label": "团队提交的调用示例",
+      "role": "user",
+      "timestamp": "2026-10-21T07:11:31.963Z"
+    },
+    {
+      "case": "C02",
+      "excerpt_sha256": "b0386b041484ddb4d1ce52a6b34b4f37c4c09c911937da5f47c7c31c07480873",
+      "kind": "verbatim",
+      "label": "模型的答复与判定修正",
+      "role": "assistant",
+      "timestamp": "2026-10-21T07:11:48.681Z"
+    },
+    {
+      "case": "C02",
+      "excerpt_sha256": "fc206ed1a3f9db73aa04e56af5bacbfa469edb8b5b8aa3041f1d78cde257cf78",
+      "kind": "verbatim",
+      "label": "模型对全量核对顺序的落实",
+      "role": "assistant",
+      "timestamp": "2026-10-21T07:14:04.183Z"
+    },
+    {
+      "case": "C03",
+      "excerpt_sha256": "6254d5972d35e8a9dc9033dbca49b9c76cb9844c945da1937ac4c2ac68320f85",
+      "kind": "verbatim",
+      "label": "团队逐项检查的调用与诊断要求",
+      "role": "user",
+      "timestamp": "2026-10-24T11:07:21.081Z"
+    },
+    {
+      "case": "C03",
+      "excerpt_sha256": "ba765b1e4ffcd0f1906e1b047fa09f1435a4d4f121faf1e57ec57f3feb4a1f1a",
+      "kind": "verbatim",
+      "label": "11:07 UTC　模型确认实现范围",
+      "role": "assistant",
+      "timestamp": "2026-10-24T11:07:25.561Z"
+    },
+    {
+      "case": "C03",
+      "excerpt_sha256": "02677870b3ddd9246fe640ce4750dd033783fabfce5b3099a4a58de1888fa4c0",
+      "kind": "verbatim",
+      "label": "11:11 UTC　模型完成第一版接线",
+      "role": "assistant",
+      "timestamp": "2026-10-24T11:11:07.588Z"
+    },
+    {
+      "case": "C03",
+      "excerpt_sha256": "f410c5c98aa3f3d578039f2d0df6e4c45845bee3e0ccd2b1620d7a53227d27f8",
+      "kind": "verbatim",
+      "label": "11:15 UTC　首轮测试发现引用问题并修正",
+      "role": "assistant",
+      "timestamp": "2026-10-24T11:15:55.412Z"
+    },
+    {
+      "case": "C03",
+      "excerpt_sha256": "6399ee38328e9847747c4f0207e6701a8ff50ed926f366698d95463e48e0a85b",
+      "kind": "verbatim",
+      "label": "11:25 UTC　封包复查发现采集顺序问题",
+      "role": "assistant",
+      "timestamp": "2026-10-24T11:25:57.981Z"
+    },
+    {
+      "case": "C03",
+      "excerpt_sha256": "cdd5914d277dc0dc3ea97ad41ca9a53b7f542abff833c8186ccbfe96af242459",
+      "kind": "verbatim",
+      "label": "11:31 UTC　补充反例与最终回归",
+      "role": "assistant",
+      "timestamp": "2026-10-24T11:31:48.199Z"
+    }
+  ]
+}

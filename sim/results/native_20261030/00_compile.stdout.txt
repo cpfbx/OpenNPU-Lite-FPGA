@@ -1,0 +1,88 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/uart_rx.v" into library work
+INFO: [VRFC 10-311] analyzing module uart_rx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/uart_tx.v" into library work
+INFO: [VRFC 10-311] analyzing module uart_tx
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/uart_loopback.v" into library work
+INFO: [VRFC 10-311] analyzing module uart_loopback
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/controller_fsm.v" into library work
+INFO: [VRFC 10-311] analyzing module controller_fsm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/uart_controller_top.v" into library work
+INFO: [VRFC 10-311] analyzing module uart_controller_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/opennpu_top.v" into library work
+INFO: [VRFC 10-311] analyzing module opennpu_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/pe.v" into library work
+INFO: [VRFC 10-311] analyzing module PE
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/PE_array.v" into library work
+INFO: [VRFC 10-311] analyzing module PE_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/pe_array_4x4.v" into library work
+INFO: [VRFC 10-311] analyzing module pe_array_4x4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/weight_buffer.v" into library work
+INFO: [VRFC 10-311] analyzing module weight_buffer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/weight_BRAM.v" into library work
+INFO: [VRFC 10-311] analyzing module weight_BRAM
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/input_buffer.v" into library work
+INFO: [VRFC 10-311] analyzing module input_buffer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/input_BRAM.v" into library work
+INFO: [VRFC 10-311] analyzing module input_BRAM
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/output_buffer.v" into library work
+INFO: [VRFC 10-311] analyzing module output_buffer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/output_BRAM.v" into library work
+INFO: [VRFC 10-311] analyzing module output_BRAM
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/ibuf_mock.v" into library work
+INFO: [VRFC 10-311] analyzing module ibuf_mock
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/wbuf_mock.v" into library work
+INFO: [VRFC 10-311] analyzing module wbuf_mock
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/obuf_mock.v" into library work
+INFO: [VRFC 10-311] analyzing module obuf_mock
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/pe_array_mock.v" into library work
+INFO: [VRFC 10-311] analyzing module pe_array_mock
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/axi_lite_regs.sv" into library work
+INFO: [VRFC 10-311] analyzing module axi_lite_regs
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/axis_packet_guard.sv" into library work
+INFO: [VRFC 10-311] analyzing module axis_packet_guard
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/axis_dma_loopback_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module axis_dma_loopback_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/c_accum_bram_xpm.sv" into library work
+INFO: [VRFC 10-311] analyzing module c_accum_bram_xpm
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/requantize_int8_pipeline.sv" into library work
+INFO: [VRFC 10-311] analyzing module requantize_int8_pipeline
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d005_chain_header_parser.sv" into library work
+INFO: [VRFC 10-311] analyzing module d005_chain_header_parser
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d007_result_fifo.sv" into library work
+INFO: [VRFC 10-311] analyzing module d007_result_fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d007_mode11_work_counters_experiment.sv" into library work
+INFO: [VRFC 10-311] analyzing module d007_mode11_work_counters_experiment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d007_c_buffer_controller_experiment.sv" into library work
+INFO: [VRFC 10-311] analyzing module d007_c_buffer_controller_experiment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d007_c_buffer_drain_experiment.sv" into library work
+INFO: [VRFC 10-311] analyzing module d007_c_buffer_drain_experiment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d007_c_buffer_owned_drain_experiment.sv" into library work
+INFO: [VRFC 10-311] analyzing module d007_c_buffer_owned_drain_experiment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d007_shared_core_session_arbiter_experiment.sv" into library work
+INFO: [VRFC 10-311] analyzing module d007_shared_core_session_arbiter_experiment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d007_shared_core_axis_router_experiment.sv" into library work
+INFO: [VRFC 10-311] analyzing module d007_shared_core_axis_router_experiment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d007_shared_core_one_physical_experiment.sv" into library work
+INFO: [VRFC 10-311] analyzing module d007_shared_core_one_physical_experiment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/axis_tile_gemm_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module axis_tile_gemm_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d007_c_buffer_integrated_core_experiment.sv" into library work
+INFO: [VRFC 10-311] analyzing module d007_c_buffer_integrated_core_experiment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d007_c_buffer_chain_experiment.sv" into library work
+INFO: [VRFC 10-311] analyzing module d007_c_buffer_chain_experiment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d005_gemm_execution_core.sv" into library work
+INFO: [VRFC 10-311] analyzing module d005_gemm_execution_core
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/d007_dual_c_mode_mux_experiment.sv" into library work
+INFO: [VRFC 10-311] analyzing module d007_dual_c_mode_mux_experiment
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/axis_gemm_accelerator_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module axis_gemm_accelerator_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/rtl/axis_gemm_mode11_experiment_top.sv" into library work
+INFO: [VRFC 10-311] analyzing module axis_gemm_mode11_experiment_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb/tb_pe.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_pe
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb/tb_pe_array.v" into library work
+INFO: [VRFC 10-311] analyzing module tb_pe_array
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb/tb_axis_packet_guard.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_axis_packet_guard
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/Work/CodexProjects/Active/fpga/.offline-results/report-evidence-revision-20261030_01/simulation_waveforms_04/tb/tb_d007_c_buffer_real_overlap.sv" into library work
+INFO: [VRFC 10-311] analyzing module tb_d007_c_buffer_real_overlap

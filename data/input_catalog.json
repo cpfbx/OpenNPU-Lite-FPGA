@@ -1,0 +1,23 @@
+{
+  "energy_readback_review.zip": {
+    "bytes": 26161982,
+    "export_path": "data/packages/energy_readback_review.zip",
+    "redistribution": "pending human license/privacy decision; internal review only",
+    "sha256": "2c2f19873341836c1156418174df44143e34ee1c9be96be41c76b247f4d04068",
+    "source": ".offline-results/candidate-energy-board-readback-20261024_01/opennpu_candidate_energy_board_readback_v1_review.zip"
+  },
+  "kws_full_hybrid_return.zip": {
+    "bytes": 7525597,
+    "export_path": "data/packages/kws_full_hybrid_return.zip",
+    "redistribution": "pending human license/privacy decision; internal review only",
+    "sha256": "9bf656729adb4fdd65f549b825c9c6bb66d5ca847352fc25e9f99504c4a96664",
+    "source": ".offline-results/KWS-full-hybrid-review-20261027_01/original/opennpu_kws_full_hybrid_candidate_v1_return.zip"
+  },
+  "kws_prerequisites.zip": {
+    "bytes": 22120547,
+    "export_path": "data/packages/kws_prerequisites.zip",
+    "redistribution": "pending human license/privacy decision; internal review only",
+    "sha256": "fae95a89a7bbefc4a26f281e05997b1ff7df8e9b68d44735a954e61c6ac49bd4",
+    "source": ".offline-results/KWS-full-hybrid-handoff-20261027_01/opennpu_kws_full_hybrid_prerequisites_v1.zip"
+  }
+}

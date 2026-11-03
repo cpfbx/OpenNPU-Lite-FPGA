@@ -1,0 +1,33 @@
+{
+  "files": {
+    "cleanup_audit.py": {
+      "bytes": 5455,
+      "sha256": "efcb650e799ca59705c1c14f56a40a109fbcc0c735cd4d84016c06f5b35aeab9"
+    },
+    "inputs/shared12_evidence_v1.tar.gz": {
+      "bytes": 1956826,
+      "sha256": "7786d5eee69b1cd17c1296beee522d324ca5d7fff9cc3e6e1a3aea39010651b7"
+    },
+    "inputs/shared_readback_review.zip": {
+      "bytes": 16778817,
+      "sha256": "21d71f676812ff5bcf9f8523497be725151f20ad4d130dda92a59e3de8630f40"
+    },
+    "inputs/skill_v3_review.zip": {
+      "bytes": 64268,
+      "sha256": "f5b6b047207c4adfbb371acc89de43e85037deb43f1e51ca86e1c27d96de61d3"
+    },
+    "readme.md": {
+      "bytes": 2939,
+      "sha256": "d133cb249d97ead1e18ce00cce513f76553d6bff11de373b46f53e8060890291"
+    },
+    "run_pc.py": {
+      "bytes": 8080,
+      "sha256": "f4b965c995df28d299f942174bee4189d8bedecfba6a90d54fa83813f5f68ad6"
+    },
+    "test_cleanup_audit.py": {
+      "bytes": 3916,
+      "sha256": "e9b49cf619b11ef0d8532b0ced440e43395a7a6176877fb10936b611ce179c04"
+    }
+  },
+  "schema": "offline-closeout-candidate-v1"
+}

@@ -1,0 +1,181 @@
+{
+  "scope": "engineering audit, no waiver/default change/board run",
+  "original_project_opened": true,
+  "original_project_mode": "read_only",
+  "historical_checkpoint_opened": true,
+  "methodology_and_drc_counts": {
+    "methodology": {
+      "DPIR-1": 2709,
+      "TIMING-46": 152,
+      "RTGT-1": 4
+    },
+    "drc": {
+      "DPIP-1": 63,
+      "DPOP-1": 67,
+      "DPOP-2": 70,
+      "REQP-165": 2,
+      "REQP-181": 2
+    }
+  },
+  "timing46_paths_checked": 152,
+  "timing46_setup_requirement_ns": 10.0,
+  "timing46_hold_requirement_ns": 0.0,
+  "timing46_min_setup_slack_ns": 5.646,
+  "timing46_min_hold_slack_ns": 0.122,
+  "physical_inventory": {
+    "tile_core": 1,
+    "pe_array": 1,
+    "shared_core": 1,
+    "mac_dsp": 64,
+    "requantize_dsp": 7,
+    "work_counter_dsp": 1,
+    "total_dsp": 72
+  },
+  "historical_natural_timing": {
+    "wns_ns": 0.118,
+    "tns_ns": 0.0,
+    "setup_failing_endpoints": 0,
+    "whs_ns": 0.066,
+    "ths_ns": 0.0,
+    "hold_failing_endpoints": 0,
+    "wpws_ns": 3.75,
+    "tpws_ns": 0.0,
+    "pulse_failing_endpoints": 0,
+    "check_timing": {
+      "no_clock": 0,
+      "constant_clock": 0,
+      "pulse_width_clock": 0,
+      "unconstrained_internal_endpoints": 0,
+      "no_input_delay": 0,
+      "no_output_delay": 0,
+      "multiple_clock": 0,
+      "generated_clocks": 0,
+      "loops": 0,
+      "partial_input_delay": 0,
+      "partial_output_delay": 0,
+      "latch_loops": 0
+    }
+  },
+  "warning_waivers_created": false,
+  "warnings_retained": true,
+  "board_access": false,
+  "promotion": false,
+  "original_source_inputs_verified": true,
+  "historical_reports_sha256": {
+    "historical_as_saved_exceptions.rpt": "3585a578afc4ee486e5273b9e0015e52d5e43cf64e029898dfa2a95a3a4b85ec",
+    "historical_as_saved_timing.rpt": "86461d5a5e06de86e299811f6f70b04da7ec4599ca65f068f81c85a627fff99b",
+    "historical_drc.rpt": "fd3c077bddf1002b8dcc19175ff19dea2cff99834164a0417f4ffa218678a312",
+    "historical_hierarchy_utilization.rpt": "604b888a0ff5b6662506b1ec628a31519b76d224f23da56b0736a9643decefb5",
+    "historical_methodology.rpt": "03749fbae87ef0cf17b9885b5de6e993276f6c0e487f414d098729186ef7d0e2",
+    "historical_natural_exceptions.rpt": "73fc1e30bb1427c90364a79a05fd548eec1483de0037c2ba6d93cea797ed8432",
+    "historical_natural_timing.rpt": "99e4b10e9287b2e742a8f9fe1dd0c27dc9a45de3b743ccb57a8a591154fa31cd",
+    "original_project_ip_status.rpt": "59799f62ffa8e6e4749ef29bd7e78b15dca9731d2c61178daa58677079aa7cd6",
+    "original_project_open.txt": "24d14d3ced3fbc9c020af11fbdbb3cc60afa40eef8b29cdbc10e748fe8e051d8",
+    "physical_core_inventory.tsv": "0ff81b3250adc0f0447235ebeed8f569cec59e30d2bfa890d2cbb5d55eb390b7",
+    "timing46_all_paths.tsv": "45480c81f42b3942df7729f8f45fec622d9ba6f4d61717c37a96b16858a49b03"
+  },
+  "inherited_ps_critical_warning_observations": {
+    "CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.051 . PS DDR interfaces might fail when entering negative DQS skew values. ": 3,
+    "CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.006 . PS DDR interfaces might fail when entering negative DQS skew values. ": 3,
+    "CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. ": 3,
+    "CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. ": 3
+  },
+  "ps_critical_warning_scope": "same frozen board preset; not suppressed, no DDR/FSBL/boot-image signoff",
+  "fresh_build_completed": true,
+  "fresh_complete_timing": {
+    "wns_ns": 0.118,
+    "tns_ns": 0.0,
+    "setup_failing_endpoints": 0,
+    "whs_ns": 0.066,
+    "ths_ns": 0.0,
+    "hold_failing_endpoints": 0,
+    "wpws_ns": 3.75,
+    "tpws_ns": 0.0,
+    "pulse_failing_endpoints": 0,
+    "check_timing": {
+      "no_clock": 0,
+      "constant_clock": 0,
+      "pulse_width_clock": 0,
+      "unconstrained_internal_endpoints": 0,
+      "no_input_delay": 0,
+      "no_output_delay": 0,
+      "multiple_clock": 0,
+      "generated_clocks": 0,
+      "loops": 0,
+      "partial_input_delay": 0,
+      "partial_output_delay": 0,
+      "latch_loops": 0
+    }
+  },
+  "rebuilt_artifacts_with_checkpoint": {
+    "bit": {
+      "path": ".board-work/full_overlay/reports/opennpu_gemm_accelerator.bit",
+      "size": 4045769,
+      "sha256": "d913b3b3fe676c49ac432131b1ef285e8b1cf8724d6eaeab30d2bfafc5ebeb11"
+    },
+    "hwh": {
+      "path": ".board-work/full_overlay/reports/opennpu_gemm_accelerator.hwh",
+      "size": 288097,
+      "sha256": "bac446d5711f212beb6a05617ed6cb05ae5d8e021508b92e617ab5abdde6569a"
+    },
+    "xsa": {
+      "path": ".board-work/full_overlay/reports/opennpu_gemm_accelerator.xsa",
+      "size": 1474638,
+      "sha256": "71e24c562689d45443e9a709ff11e1ac02cd4861227d7a668936ff237e91d079"
+    },
+    "timing": {
+      "path": ".board-work/full_overlay/reports/gemm_accelerator_implementation_timing_summary.rpt",
+      "size": 35239,
+      "sha256": "356b179b79720c064fa0a43c5f9a61e5c3b001a840edc40ba96c44cea3bfdbb2"
+    },
+    "utilization": {
+      "path": ".board-work/full_overlay/reports/gemm_accelerator_implementation_utilization.rpt",
+      "size": 11969,
+      "sha256": "9d0da52a835b42a1528f58cd8bb9e6ab8ea9b9757a66c73ea642d9b580fc4a54"
+    },
+    "constrained_timing": {
+      "path": ".board-work/full_overlay/reports/gemm_accelerator_implementation_constrained_timing_summary.rpt",
+      "size": 30598,
+      "sha256": "2e93bf8c0b8ebd0f280ddeb7079c5446bb92693ba217089abd8730fc3c2b268d"
+    },
+    "postroute_dcp": {
+      "path": ".board-work/full_overlay/vivado_gemm_accelerator/opennpu_gemm_accelerator.runs/impl_1/system_wrapper_postroute_physopt.dcp",
+      "size": 22111945,
+      "sha256": "b59acdc06e2ea4c852201e528c83b251343058531b00fdcd667ffa7efadd5e3d"
+    },
+    "vivado_project": {
+      "path": ".board-work/full_overlay/vivado_gemm_accelerator/opennpu_gemm_accelerator.xpr",
+      "size": 34645,
+      "sha256": "4fbba75249ef149c2f01608bec8dbbaae8f29b0e1d433f5d6302bbc90430e6b6"
+    }
+  },
+  "fresh_artifact_identity_sha256": "f360ab234cda54dc8e2f1e93eaf933ad52b8fdabeba4c981d3af2577469061af",
+  "rebuilt_bit_sha256": "d913b3b3fe676c49ac432131b1ef285e8b1cf8724d6eaeab30d2bfafc5ebeb11",
+  "original_bit_sha256": "47ae0a3640ef6d31db467118fd1822c04d465cd31171275fc04824824a20451c",
+  "full_bit_bytes_equal": false,
+  "configuration_payload_equal": true,
+  "configuration_payload_sha256": "f9b9c1e63d735d66df3f43d15f3e2202c11568a54277ef0b23ea1213c9440361",
+  "bit_header_differences": {
+    "c": {
+      "old": "2026/09/30",
+      "new": "2026/10/13"
+    },
+    "d": {
+      "old": "14:33:55",
+      "new": "14:34:13"
+    }
+  },
+  "hwh_only_timestamp_differs": true,
+  "hwh_timestamps": {
+    "old": "Wed Sep 30 14:21:36 2026",
+    "new": "Tue Oct 13 14:16:16 2026"
+  },
+  "report_body_exact": {
+    "gemm_accelerator_implementation_utilization.rpt": true,
+    "gemm_accelerator_implementation_timing_summary.rpt": true
+  },
+  "new_xsa_exported_bit_payload_exact": true,
+  "rebuilt_postroute_dcp_sha256": "b59acdc06e2ea4c852201e528c83b251343058531b00fdcd667ffa7efadd5e3d",
+  "new_bit_deployed": false,
+  "new_bit_board_tested": false
+}

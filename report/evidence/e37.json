@@ -1,0 +1,36 @@
+{
+  "shape": [
+    512,
+    512,
+    512
+  ],
+  "useful_MACs": 134217728,
+  "peak_64_MAC_per_cycle_100MHz_GMAC_s": 6.4,
+  "ideal_cycles": 2097152,
+  "ideal_ms": 20.97152,
+  "PL_window_cycles": 3004483,
+  "effective_peak_ratio_percent": 69.8007610627186,
+  "input_matrix_bytes": 524288,
+  "output_int32_bytes": 1048576,
+  "wire_payload": 4194304,
+  "wire_headers": 4096,
+  "wire_input": 4198400,
+  "AI_input_only_MAC_per_byte": 256.0,
+  "AI_compulsory_input_and_output_MAC_per_byte": 85.33333333333333,
+  "AI_actual_wire_input_and_output_MAC_per_byte": 25.580015612802498,
+  "unique_A_pack_calls": 64,
+  "unique_B_pack_calls": 64,
+  "wire_panel_occurrences": 1024,
+  "matrix_output_int32_elements": 262144,
+  "pointwise_output_bytes": 32000,
+  "pointwise_output_int32_elements": 8000,
+  "FP32_sum_absolute_product_bound": 8388608,
+  "FP32_all_integer_exact_limit": 16777216,
+  "preprocess_seconds_per_second_audio": 2.031107,
+  "CPU_minus_FPGA_mean_energy_J": 3.7151999999999816,
+  "cross_ABBA_energy_pair_differences_J": [
+    3.196799999999996,
+    4.233600000000024
+  ],
+  "interpretation": "Derived arithmetic only. No removed-overhead speed prediction, bottleneck classification, independent error bar or new experiment."
+}

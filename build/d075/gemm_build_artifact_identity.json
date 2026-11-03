@@ -1,0 +1,51 @@
+{
+  "schema": "opennpu.build-artifact-identity.v1",
+  "captured_utc": "2026-09-30T06:34:14.028634+00:00",
+  "source_identity": {
+    "path": ".board-work/full_overlay/reports/gemm_build_source_identity.json",
+    "bytes": 5340,
+    "sha256": "ffe3d4037b444abee81b8c1cf3895b4973f151c8afadde02c8ab776d44e4107f",
+    "schema": "opennpu.build-source-identity.v1",
+    "git_commit": "35d4db623091dfc7a63459d07f04e4484dbbd999",
+    "git_dirty": false,
+    "parameters": {
+      "input_fifo_depth": 0,
+      "array_size": 8,
+      "d007_p_hold_margin": false,
+      "mode11_experiment": true,
+      "mode11_implementation_min_delay_ns": 0.06
+    }
+  },
+  "artifacts": {
+    "bit": {
+      "path": ".board-work/full_overlay/reports/opennpu_gemm_accelerator.bit",
+      "bytes": 4045769,
+      "sha256": "47ae0a3640ef6d31db467118fd1822c04d465cd31171275fc04824824a20451c"
+    },
+    "hwh": {
+      "path": ".board-work/full_overlay/reports/opennpu_gemm_accelerator.hwh",
+      "bytes": 288097,
+      "sha256": "d727688adc43d526b853e158648023f230fab081dd84e2c8e86437c60d747294"
+    },
+    "xsa": {
+      "path": ".board-work/full_overlay/reports/opennpu_gemm_accelerator.xsa",
+      "bytes": 1474640,
+      "sha256": "bad5e24885d4d404fe180a8b16c757d41aba7945495868a9e82737ce822e4c4d"
+    },
+    "timing": {
+      "path": ".board-work/full_overlay/reports/gemm_accelerator_implementation_timing_summary.rpt",
+      "bytes": 35209,
+      "sha256": "cb2acaf9599babfe0a07c11284ffab3debbd3ebd48c4a58a9238b25be1d547e2"
+    },
+    "utilization": {
+      "path": ".board-work/full_overlay/reports/gemm_accelerator_implementation_utilization.rpt",
+      "bytes": 11939,
+      "sha256": "c6539b63a0c1dd2724af77ccef9294abfc039fa1db54a530758b798c168d82e4"
+    },
+    "constrained_timing": {
+      "path": ".board-work/full_overlay/reports/gemm_accelerator_implementation_constrained_timing_summary.rpt",
+      "bytes": 30568,
+      "sha256": "a7a4d6d23aba2795604bc2ccd51246691c61b0858da2eb837ac2de7dddca2905"
+    }
+  }
+}

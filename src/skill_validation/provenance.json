@@ -1,0 +1,49 @@
+{
+  "base_commit": "fb6b2f7b94de81a821bb08ebde0660d12752ba66",
+  "source_includes_preexisting_dirty_files": true,
+  "earliest_located_skill_commit": "342576c8f3b097e9036d2b68b4d32abc9299337a",
+  "copied_scripts_unchanged": {
+    "skill/pynq-dma-validation/scripts/inspect_overlay.py": "0d169c1c3c4f7326b12248e91ded3e7a5d67df3bb0db5e7ca0916b2a290aac00",
+    "skill/pynq-gemm-validation/scripts/validate_gemm_evidence.py": "b0f6e0d9197f8eb240388c45e6b89063d8e99bac2458d47e58a79bae288e8acf",
+    "skill/pynq-gemm-validation/scripts/validate_resilience_evidence.py": "6e7e9261afd1cc933a539235eb911f946e1e271d0188b38a69ec6fc321f06d1e"
+  },
+  "original_skill_snapshot_sha256": "53e1ed78ad892201c10d4808bb46c950e8596f36c67698c9cb0d59f2f7b303e6",
+  "original_skill_files_sha256": {
+    "skill/pynq-dma-validation/agents/openai.yaml": "55ef70f3fa4145d15c1cbfc42d70712bd7086ca744e8d663d3148ce8fde44b54",
+    "skill/pynq-dma-validation/references/evidence-schema.md": "a28c0be56bc0b90e8a1bcbc77f1ce369b1f7f5bd7954045450f4e2f1aecc97b1",
+    "skill/pynq-dma-validation/scripts/inspect_overlay.py": "0d169c1c3c4f7326b12248e91ded3e7a5d67df3bb0db5e7ca0916b2a290aac00",
+    "skill/pynq-dma-validation/SKILL.md": "b5a87d6b44663b359fc20b687bf511b7ec185c9a60cd625b3b0af733a15df546",
+    "skill/pynq-gemm-validation/agents/openai.yaml": "9f9e087c7f2ed2357914db8d2c8cd36c551177dcb78cc9171ba9a4041c436c05",
+    "skill/pynq-gemm-validation/references/evidence-schema.md": "ce41f4a8f685d7328310a54971e454b9bfe68ff90d08f699ca8279070f07041c",
+    "skill/pynq-gemm-validation/scripts/validate_gemm_evidence.py": "b0f6e0d9197f8eb240388c45e6b89063d8e99bac2458d47e58a79bae288e8acf",
+    "skill/pynq-gemm-validation/scripts/validate_resilience_evidence.py": "6e7e9261afd1cc933a539235eb911f946e1e271d0188b38a69ec6fc321f06d1e",
+    "skill/pynq-gemm-validation/SKILL.md": "25e2453cd8e9ccef6f07141e3f0c140d420245d75d9145682b5df6a1d7aa07d7",
+    "skill/README.md": "fa67c4494fd0f6f94f64c9e209c2860ea35d461fbb7619e4eef710d7a31e7a28"
+  },
+  "license_sha256": "6f561a52e421fd36b13b9f042814df52376c361bfeb79d1b523dcd251d9933b8",
+  "human_owner": "bx",
+  "offline_author": "Codex/root",
+  "independent_reviewer": null,
+  "publication_approved": false,
+  "candidate_revision": "candidate_03",
+  "parent_zip_sha256": "8abddf3c6637de3eac0e16beaee07b5e357948906d9c3efff665b28226027ef9",
+  "v1_reviews_received": {
+    "review_a": "four local files, one reviewer",
+    "review_b": "initially user-pasted; v1/v2 raw Linux logs subsequently received in candidate_03 review inputs"
+  },
+  "candidate_02_independent_review_completed": true,
+  "candidate_03_independent_review_completed": false,
+  "v2_linux_logs_received": {
+    "sha256": "ae3c30c03f85efd568caebec1bf3ca1d8df78d36ecb2c30d4fc7c02bea44a6c1",
+    "reported_tests": 82,
+    "reported_failures": 1,
+    "reported_skips": 0,
+    "author_ran_linux": false
+  },
+  "v2_reviews_received": {
+    "review_a": "three local files, one reviewer; review inputs preserved outside candidate",
+    "review_b": "external Linux/gVisor logs with matching v2 ZIP/manifest; v2 tests exit 1",
+    "v3_review_completed": false
+  },
+  "candidate_02_review_disposition": "review received, Linux assertion failure and strict-input defects require revision; not approved as release"
+}

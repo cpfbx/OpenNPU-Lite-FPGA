@@ -1,0 +1,236 @@
+{
+  "revision": "submission_v6",
+  "parent_manifest_sha256": "0c0fe291eb94387cd5a17560eee87438d494957f04f82e24d67f5a91b7e3a473",
+  "human_owner": "bx",
+  "executor": "Codex/root",
+  "date": "2026-11-02",
+  "additional_renames": 11,
+  "cumulative_renames": 27,
+  "remaining_standard_entries": 7,
+  "renames": {
+    "sim/d075/rtl/input_BRAM.v": "sim/d075/rtl/input_bram.v",
+    "sim/d075/rtl/output_BRAM.v": "sim/d075/rtl/output_bram.v",
+    "sim/d075/rtl/PE_array.v": "sim/d075/rtl/pe_array.v",
+    "sim/d075/rtl/weight_BRAM.v": "sim/d075/rtl/weight_bram.v",
+    "src/hardware/source/rtl/input_BRAM.v": "src/hardware/source/rtl/input_bram.v",
+    "src/hardware/source/rtl/output_BRAM.v": "src/hardware/source/rtl/output_bram.v",
+    "src/hardware/source/rtl/PE_array.v": "src/hardware/source/rtl/pe_array.v",
+    "src/hardware/source/rtl/weight_BRAM.v": "src/hardware/source/rtl/weight_bram.v",
+    "src/matrix_runtime/REQUEST.template.json": "src/matrix_runtime/request.template.json",
+    "src/matrix_runtime/runtime/runtime_cpu/LICENSE": "src/matrix_runtime/runtime/runtime_cpu/license",
+    "src/skill_validation/MANIFEST.json": "src/skill_validation/manifest.json"
+  },
+  "changes": [
+    {
+      "before": "readme.md",
+      "after": "readme.md",
+      "before_sha256": "9481dab58fd63a9129f54189b9f5a32a74511a9cde3080b341aedef55ccb4c5d",
+      "after_sha256": "d745b885efb919ad3c1872b4800703ac20fbd636c35a385288094694b90a5aa4",
+      "content_changed": true
+    },
+    {
+      "before": "reproduction_guide.md",
+      "after": "reproduction_guide.md",
+      "before_sha256": "7ec906eed0b5ac1f490ca5210cfa7e6f41781daf72bab9ce973c80ea767281cd",
+      "after_sha256": "32fcfe6ab2951da6f3735b2cffeb91903ee4f677a9bf5502d38d25c0b24f57d2",
+      "content_changed": true
+    },
+    {
+      "before": "provenance/canonical_filename_exceptions.json",
+      "after": "provenance/canonical_filename_exceptions.json",
+      "before_sha256": "4da0d53515a105e447146a2fe5dab0ce9d924959a425f3158938e8026f575801",
+      "after_sha256": "fc51960445223c639760631a4e1909ceaca0e4a5e5b12a7818c9ad57ad79caec",
+      "content_changed": true
+    },
+    {
+      "before": "provenance/naming_policy.md",
+      "after": "provenance/naming_policy.md",
+      "before_sha256": "af57d057e60f2ae7ac42a838151979bc044a32c6575be7a501e92fadfe7c0e27",
+      "after_sha256": "a8a031bde52937f8605fb01ca695b433ba9f779d99c05da355e597b24e252593",
+      "content_changed": true
+    },
+    {
+      "before": "sim/d075/rtl/input_BRAM.v",
+      "after": "sim/d075/rtl/input_bram.v",
+      "before_sha256": "c242aa77504e584f6887fcd9b4c1c0b08d1461573382586f1d48af87747797b5",
+      "after_sha256": "c242aa77504e584f6887fcd9b4c1c0b08d1461573382586f1d48af87747797b5",
+      "content_changed": false
+    },
+    {
+      "before": "sim/d075/rtl/output_BRAM.v",
+      "after": "sim/d075/rtl/output_bram.v",
+      "before_sha256": "250caa20f1c1cd310e0a5f76b1dbac12fdf6ffa6250ad2b9020d24454ec5b3a9",
+      "after_sha256": "250caa20f1c1cd310e0a5f76b1dbac12fdf6ffa6250ad2b9020d24454ec5b3a9",
+      "content_changed": false
+    },
+    {
+      "before": "sim/d075/rtl/PE_array.v",
+      "after": "sim/d075/rtl/pe_array.v",
+      "before_sha256": "c4dc920406605ff85c87991daed3bbf14422e2dc2d28c10b83492f06cc18c4b1",
+      "after_sha256": "c4dc920406605ff85c87991daed3bbf14422e2dc2d28c10b83492f06cc18c4b1",
+      "content_changed": false
+    },
+    {
+      "before": "sim/d075/rtl/weight_BRAM.v",
+      "after": "sim/d075/rtl/weight_bram.v",
+      "before_sha256": "cfe9cb70d5e624a6c1ccf7986ec08c15effcee0b390106addfd49dcbc51e593e",
+      "after_sha256": "cfe9cb70d5e624a6c1ccf7986ec08c15effcee0b390106addfd49dcbc51e593e",
+      "content_changed": false
+    },
+    {
+      "before": "sim/d075/sim/run_regression.ps1",
+      "after": "sim/d075/sim/run_regression.ps1",
+      "before_sha256": "7fa02d8e7473e5415198714468dafd89f3c7401437164ae3e0588213fb224604",
+      "after_sha256": "3d2fa7a7e8d8a157e62f58d4137b34a926e70c92fbcd3365aac57cb1b236b26c",
+      "content_changed": true
+    },
+    {
+      "before": "sim/d075/sim/simulate.tcl",
+      "after": "sim/d075/sim/simulate.tcl",
+      "before_sha256": "3c64fdb5378cdc4a7dd99b08556124dce6adfe8de522741c3423bd19a05631ce",
+      "after_sha256": "bbd3b6d3befce803ead7a0cef8d5105b6fe9ddac801c88ff495e65ca0fd29e79",
+      "content_changed": true
+    },
+    {
+      "before": "src/hardware/readme.md",
+      "after": "src/hardware/readme.md",
+      "before_sha256": "dd09790442f3b787fecf74757bd215e7d4be7cad1083677fe486e12aceadd87d",
+      "after_sha256": "add5ebb4eb24261738eae1ef28cf790057987232e13b1d0ecc9382b91215a613",
+      "content_changed": true
+    },
+    {
+      "before": "src/hardware/rebuild.py",
+      "after": "src/hardware/rebuild.py",
+      "before_sha256": "ce0d561901a439eb5cda586af2187c05bf911bf26d86d8e9193683f17cf0c1d3",
+      "after_sha256": "8dd9d339e0dc20e4f75ccf1efc5626554b834e81ce83a385597a8c9bd09a216b",
+      "content_changed": true
+    },
+    {
+      "before": "src/hardware/review_manifest.json",
+      "after": "src/hardware/review_manifest.json",
+      "before_sha256": "7cbf9638c59033cc9536fc728a84b0fe44634f1d5d0961385afa9495c025fb74",
+      "after_sha256": "dd285240f410598ef0d26612b4c15c97833ef515600bd5de6dd65bd9abfb2838",
+      "content_changed": true
+    },
+    {
+      "before": "src/hardware/source_identity.json",
+      "after": "src/hardware/source_identity.json",
+      "before_sha256": "6ee13addc8c567b3fd60e52e7afc8d9e6d1d3094a3fca836c66a0936ddb09641",
+      "after_sha256": "dd0a3fde29d8e23dab551c772a90f804e87ce87f43d58a22d132b2e901f4a640",
+      "content_changed": true
+    },
+    {
+      "before": "src/matrix_runtime/prepare_request.py",
+      "after": "src/matrix_runtime/prepare_request.py",
+      "before_sha256": "dd7c5c418f32751fc0eb8537a336f88750905c890fad11456eb8307f3309b5b4",
+      "after_sha256": "6d4b9fc4a5176a5e4af4d791549ddaf78861b7614c317d4b3e7b4e05f644aa8c",
+      "content_changed": true
+    },
+    {
+      "before": "src/matrix_runtime/REQUEST.template.json",
+      "after": "src/matrix_runtime/request.template.json",
+      "before_sha256": "60ce2019e428d3ee49b9e828f6824f3a2be36d3e493ce6ce935b774afacaf82c",
+      "after_sha256": "60ce2019e428d3ee49b9e828f6824f3a2be36d3e493ce6ce935b774afacaf82c",
+      "content_changed": false
+    },
+    {
+      "before": "src/matrix_runtime/review_manifest.json",
+      "after": "src/matrix_runtime/review_manifest.json",
+      "before_sha256": "08880f1cb8b9b3203f56cd8964cfb170070bff50e495bce921e099486f1c8bba",
+      "after_sha256": "14f18c2330f3524e905c22f5df1995ed73d6d779fc9ff42eef5d58761d9476c2",
+      "content_changed": true
+    },
+    {
+      "before": "src/skill_validation/MANIFEST.json",
+      "after": "src/skill_validation/manifest.json",
+      "before_sha256": "997e96da4631d4e11585959f983518be44eab95be034cd4d431cf762d9d686e4",
+      "after_sha256": "a64ba82e753b3cb5f404cd74bd852c0f47a7ae46fed73b6b06e3d03a17f9d045",
+      "content_changed": true
+    },
+    {
+      "before": "src/skill_validation/verify_candidate.py",
+      "after": "src/skill_validation/verify_candidate.py",
+      "before_sha256": "b54b3f8a220fb6018239049978997127bbb6b0e9be13de1e0c18b54b992e1b5e",
+      "after_sha256": "e1e26d835146e32e41cdcd5f346381e5b6e1d1234070891fc1da1ca6d2952412",
+      "content_changed": true
+    },
+    {
+      "before": "src/hardware/source/rtl/input_BRAM.v",
+      "after": "src/hardware/source/rtl/input_bram.v",
+      "before_sha256": "e9a9d65311b59db2b1b0f606b05658bb5ca6ad750d4386351046f80bd719ce6b",
+      "after_sha256": "e9a9d65311b59db2b1b0f606b05658bb5ca6ad750d4386351046f80bd719ce6b",
+      "content_changed": false
+    },
+    {
+      "before": "src/hardware/source/rtl/output_BRAM.v",
+      "after": "src/hardware/source/rtl/output_bram.v",
+      "before_sha256": "81d4d28378e8b00eb43ddd6638293325d0a84280f7a800b6ce3f334e9c87f127",
+      "after_sha256": "81d4d28378e8b00eb43ddd6638293325d0a84280f7a800b6ce3f334e9c87f127",
+      "content_changed": false
+    },
+    {
+      "before": "src/hardware/source/rtl/PE_array.v",
+      "after": "src/hardware/source/rtl/pe_array.v",
+      "before_sha256": "67b1942275cbbdfb7c128d65f1acb2bfc23fd4d320a033aaf3393103d30651eb",
+      "after_sha256": "67b1942275cbbdfb7c128d65f1acb2bfc23fd4d320a033aaf3393103d30651eb",
+      "content_changed": false
+    },
+    {
+      "before": "src/hardware/source/rtl/weight_BRAM.v",
+      "after": "src/hardware/source/rtl/weight_bram.v",
+      "before_sha256": "21bef4749fdc1850c2d9cd174ea0afbfd66a7787d3ef4d6308f7571a6f1d98ef",
+      "after_sha256": "21bef4749fdc1850c2d9cd174ea0afbfd66a7787d3ef4d6308f7571a6f1d98ef",
+      "content_changed": false
+    },
+    {
+      "before": "src/matrix_runtime/runtime/comparison_binding.py",
+      "after": "src/matrix_runtime/runtime/comparison_binding.py",
+      "before_sha256": "c84991b5bc9a4f028a7781fe05113a474a22b6e3df21295acfa4ffcc7e9e4adc",
+      "after_sha256": "1676021a8e534f894aec5b0e57c74f6144e8177b97f53d9d62ab9f6be156067d",
+      "content_changed": true
+    },
+    {
+      "before": "src/matrix_runtime/runtime/cpu_sources.json",
+      "after": "src/matrix_runtime/runtime/cpu_sources.json",
+      "before_sha256": "9802a681463a2fb3701cf63350d150b2594b511217403edd4b62ed4944f08b3f",
+      "after_sha256": "81047de74c7232a07182256718a8536f96e6ffdc9a3a31a8050cf1226065f9b2",
+      "content_changed": true
+    },
+    {
+      "before": "src/matrix_runtime/runtime/review_manifest.json",
+      "after": "src/matrix_runtime/runtime/review_manifest.json",
+      "before_sha256": "566a4f4b386a43ffa78726e0052ea2fa19242cc173a488e9439b47db1ac9d900",
+      "after_sha256": "3dc142b1f898bd35597ed8eb71f4b1f45da182c2d2471ca0cfe8b114ef0e714c",
+      "content_changed": true
+    },
+    {
+      "before": "src/matrix_runtime/runtime/runtime_cpu/LICENSE",
+      "after": "src/matrix_runtime/runtime/runtime_cpu/license",
+      "before_sha256": "190b5a9c8d9723fe958ad33916bd7346d96fab3c5ea90832bb02d854f620fcff",
+      "after_sha256": "190b5a9c8d9723fe958ad33916bd7346d96fab3c5ea90832bb02d854f620fcff",
+      "content_changed": false
+    },
+    {
+      "before": "src/skill_validation/tests/test_helpers.py",
+      "after": "src/skill_validation/tests/test_helpers.py",
+      "before_sha256": "82467a9b4a1c83a7a83f27476378f811a928a0c69e805505bbdf779d83d3d978",
+      "after_sha256": "b95d9b3dfdd61e911ef7959714d830383d176d1edf5d8e1a567e34451c7b3e9c",
+      "content_changed": true
+    },
+    {
+      "before": "src/skill_validation/tests/test_review_regressions.py",
+      "after": "src/skill_validation/tests/test_review_regressions.py",
+      "before_sha256": "844823ae7b574ab9c2532896a0b460da17b48817928160ba046104d6b9522fe9",
+      "after_sha256": "8886cfbef6910dbe6eb17bae0dda372cdda84d4a33b92c57b72be9f561cf1d4f",
+      "content_changed": true
+    }
+  ],
+  "historical_build_inputs_kept": 47,
+  "build_adapter": "restore four original RTL names into external build directory",
+  "standard_skill_loading_kept": true,
+  "mathematics_changed": false,
+  "rtl_bytes_changed": false,
+  "bit_hwh_changed": false,
+  "github_visibility_approved": "public",
+  "video_review_approved": true
+}

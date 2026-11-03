@@ -1,0 +1,16 @@
+flowchart TB
+  subgraph PC[Complete graph tested offline on PC]
+    W[Public WAV] --> FE[Frontend]
+    FE --> P[CPU Op0 and Op1]
+    P --> O2[Op2 wire fixture]
+    O2 --> DW[CPU depthwise3]
+    DW --> O4[Op4 wire fixture]
+    O4 --> S[CPU Op5 to Op11]
+    S --> L[Tensor33 logits]
+    L --> G[Frozen classification and gate]
+    V[Historical PCM bound VAD not recomputed] --> G
+  end
+  subgraph BOARD[Historical real board evidence only for this middle chain]
+    B2[FPGA Op2] --> BD[ARM depthwise3]
+    BD --> B4[FPGA Op4]
+  end

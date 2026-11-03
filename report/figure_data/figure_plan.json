@@ -1,0 +1,63 @@
+[
+  {
+    "files": [
+      "architecture.mmd"
+    ],
+    "id": "fig01",
+    "kind": "logical schematic not timing waveform",
+    "subject": "architecture"
+  },
+  {
+    "files": [
+      "hardware_resources.csv",
+      "layout_derived_facts.json"
+    ],
+    "id": "fig02",
+    "limit": "P to D075 are integrated-version comparisons, not a one-mechanism area ablation",
+    "subject": "hardware stages and resources"
+  },
+  {
+    "files": [
+      "complete_request.csv",
+      "request_stages_512.csv"
+    ],
+    "id": "fig03",
+    "limit": "split dates; do not add chain_total or DMA+PL to owned_submission; no CPU stage decomposition invented",
+    "stage_panels": [
+      {
+        "backends": [
+          "fpga_old",
+          "fpga_flat"
+        ],
+        "experiment": "2026-10-21",
+        "source": "e38.json"
+      },
+      {
+        "backends": [
+          "fpga_flat_baseline",
+          "fpga_flat_contiguous"
+        ],
+        "experiment": "2026-10-22",
+        "report_section": "6.4",
+        "source": "e39.json"
+      }
+    ],
+    "subject": "complete request and nested detail"
+  },
+  {
+    "files": [
+      "energy_abba.csv"
+    ],
+    "id": "fig04",
+    "limit": "single ABBA; no uncertainty bar or J/task; Wh and P remain separate",
+    "subject": "four saved ABBA energy envelopes"
+  },
+  {
+    "files": [
+      "kws_evidence_scopes.mmd"
+    ],
+    "id": "fig05",
+    "limit": "PC full graph and real board middle chain separated; historical VAD explicit",
+    "subject": "KWS evidence scopes"
+  }
+]

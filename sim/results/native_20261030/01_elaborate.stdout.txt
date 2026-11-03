@@ -1,0 +1,14 @@
+Vivado Simulator v2026.1
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+Running: D:/AMDFPGA/2026.1/Vivado/bin/unwrapped/win64.o/xelab.exe work.tb_pe -L work -L xpm -debug all -s native_tb_pe 
+Multi-threading is on. Using 22 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module work.PE
+Compiling module work.tb_pe
+Built simulation snapshot native_tb_pe

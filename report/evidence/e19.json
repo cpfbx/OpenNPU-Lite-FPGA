@@ -1,0 +1,21 @@
+{
+  "schema": "hardware-return-source-hash-confirmation-v1",
+  "date": "2026-10-22",
+  "human_owner": "bx",
+  "operator_confirmed_by_bx": "kakane",
+  "filename": "opennpu_hardware_build_return_20261020.zip",
+  "source_hash_source": "bx pasted original-computer PowerShell Get-FileHash output and confirmed it matches the post-packaging record; not observed remotely by Codex",
+  "source_reported_sha256": "3df2e62ecea403affd184e492f8e2c51c4f6a4d8b1f48bc90c4a687300db4bd9",
+  "local_original": ".offline-results/hardware-launcher-20261021_01/received/opennpu_hardware_build_return_20261020.zip",
+  "local_recomputed_sha256": "3df2e62ecea403affd184e492f8e2c51c4f6a4d8b1f48bc90c4a687300db4bd9",
+  "source_reported_hash_matches_local": true,
+  "hardware_transport_hash_item_closed": true,
+  "physical_origin_authenticated": false,
+  "peer_computer_accessed": false,
+  "archive_repacked": false,
+  "vivado_reexecuted": false,
+  "historical_receipts_modified": false,
+  "v3_full_build_validated_by_this_confirmation": false,
+  "separate_PC_reproduction_return_source_hash_confirmed_by_this_record": false,
+  "promotion": false
+}

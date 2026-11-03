@@ -1,0 +1,5 @@
+order,backend,formal_calls,duration_s,wh_endpoint_j,p_integral_j,scope,source
+0,cpu_2t,452,132.7,261.1152,261.04207765,whole_saved_envelope,e12.md
+1,fpga_flat_contiguous,452,138.9,257.9184,257.89818765,whole_saved_envelope,e12.md
+2,fpga_flat_contiguous,452,140.4,260.0388,260.0409347,whole_saved_envelope,e12.md
+3,cpu_2t,452,134.7,264.2724,264.24507285,whole_saved_envelope,e12.md
