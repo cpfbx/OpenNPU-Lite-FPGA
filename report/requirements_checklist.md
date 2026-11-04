@@ -47,7 +47,7 @@
 
 ## 交付条件与待办
 
-报告内容已覆盖七项重点及系统模板五部分。工程通过公开仓库及[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-source-only-20261103)提供，发布提交及新目录获取核验回执保存在工程包外。签字授权书已另做单页扫描PDF，单独交付；最终系统上传由负责人完成。系统视频同步移除队名、编号及可见的个人操作员标识；保留双语字幕、原速/加速/定格标注。海报按当前补充通知交付。
+报告内容已覆盖七项重点及系统模板五部分。工程通过公开仓库及[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-docs-20261104)提供，发布提交及新目录获取核验回执保存在工程包外。签字授权书已另做单页扫描PDF，单独交付；最终系统上传由负责人完成。系统视频同步移除队名、编号及可见的个人操作员标识；保留双语字幕、原速/加速/定格标注。海报按当前补充通知交付。
 工程源码、仿真或验证结果、完整实现及资源/时序报告、BIT/HWH和运行原件、重建及复现脚本由配套代码包提供。Skill说明入口为skill/README.md，三个Skill直接位于skill/下一层；历史评测布局移至src/skill_validation。历史文件名及规范入口例外在provenance/canonical_filename_exceptions.json逐项列明；不能把保留历史名称说明写成全部文档均为运行依赖。
 公开WAV等第三方资产的许可与分发按工程provenance/third_party_notices.md办理。完整私人会话未并入，所选技术提示词和回答已列入E43；归并后的提示词采用统一编辑说明，后续发现按实际先后记录。
 

@@ -6,7 +6,7 @@ OpenNPU-Lite · Hextech · 团队编号41971
 
 针对小型SoC中计算阵列、数据搬运与主机调用难以协同优化的问题，本项目设计并实现OpenNPU-Lite流式矩阵加速平台。系统基于PYNQ-Z2，以8×8输出驻留脉动阵列完成INT8乘法和INT32累加，通过K-major供数、首K块覆写、预取与双结果银行组织计算数据流。ARM负责运行时任务切分、连续缓冲和应用算术，使同一比特流能够承接不同几何的矩阵任务及量化Pointwise算子。
 
-项目以完整请求成本指导优化取舍：先利用硬件计数定位供数和输出阻塞，再通过同场测量识别主机事务构造的影响，逐步形成硬件与运行时协同优化路径。D075在100 MHz下完整实现收敛，使用26,762 LUT、27,575 FF、11个BRAM Tile及72个DSP。同BIT MODE11使512³的DMA+PL均值由36.221 ms降至31.262 ms；两轮独立主机实验分别使512³完整请求减少10.76%与9.54%，连续面板路径在256³也减少10.32%。这些结果验证了以请求级测量选择优化对象的有效性，并给出与双线程OpenBLAS的系统成本对照。
+项目按供数、执行重叠和主机组织逐层优化。K-major同BIT对照将512³ DMA+PL由106.687 ms降至63.972 ms；首K覆写和预取分别减少262,144及459,200个周期，双C-bank的MODE11进一步将同BIT DMA+PL由36.221 ms降至31.262 ms。D075在100 MHz下完整实现收敛，使用26,762 LUT、27,575 FF、11个BRAM Tile和72个DSP。请求内面板与布局复用将另一场512³完整请求由714.535 ms降至284.216 ms，减少60.22%；后续flat和连续面板在各自同场512³对照中再获10.76%和9.54%改善。项目以同场CPU对照、阶段分解和原件复算说明每项收益的来源。
 
 在应用层，平台完成固定12窗PL Op2→ARM depthwise3→PL Op4的真实共享资源执行，768,000个标量检查点零差异；ARM CPU420建立了端侧前处理和完整整数参考，完整WAV到分类建议另在PC离线图中完成动态接线。项目进一步将布局、计时和接口检查经验整理为验证Skill，形成从可重建硬件、请求级优化到应用接线的完整工程主线。平台实现、同场性能对照及可执行复现入口共同支撑其设计价值。
 
@@ -40,7 +40,7 @@ OpenNPU-Lite · Hextech · 团队编号41971
 
 ## 1.3 以系统成本驱动的设计贡献
 
-**将优化决策从阵列窗口推进到完整请求。** 团队把PL、DMA+PL和请求外层置于相互对应的测量体系，识别优化收益落在何处。512³的硬件窗口已接近31 ms时，后续改进重点转向面板与构帧；两轮完整请求获得10.76%和9.54%的同场改善。PC局部更快而实板退化47.07%的原生候选，则促使团队保留完整请求作为采用依据。这条路径给出了小型Zynq上可执行的协同优化方法及实例，而非以局部吞吐代替系统表现。[E08–E11]
+**将优化决策从阵列窗口推进到完整请求。** 团队先按供数、清零、预取和结果排出逐项改进硬件，再以完整请求定位主机瓶颈。请求内面板与布局复用使512³完整请求从714.535 ms降至284.216 ms；后续flat与连续面板分别获得10.76%和9.54%的同场改善。引入优化CPU基线后，完整请求仍需进一步缩短；原生候选47.07%的退化也被保留并用于取舍。硬件计数、外层计时与强CPU对照共同构成这条协同优化方法。[E02–E11]
 
 **以存储所有权实现可观察的数据流重叠。** K-major、首K块覆写和预取减少接收、清零与等待成本，双C-bank在不同银行间协调计算与输出。全局工作计数把并行事件闭合到总周期，硬件机制可以由对应版本和实测检验。该实现将流式调度落实在同一套可重建的矩阵硬件中。[E02–E05]
 
@@ -56,7 +56,7 @@ OpenNPU-Lite · Hextech · 团队编号41971
 | --- | --- | --- |
 | 能做什么 | 运行时尺寸/链任务配置，INT8输入、INT32累加，同一硬件承接矩阵和Pointwise | 第2–3章 |
 | 如何优化 | 供数、累加初值、预取、结果重叠与主机面板组织协同改进 | 第3–4章 |
-| 实际效果 | D075完整实现100 MHz；两轮512³请求减少10.76%和9.54%，分别以同场FPGA基线比较 | 第4章 |
+| 实际效果 | 从K-major、预取和重叠到请求复用；512³请求复用实验减少60.22%，后续两场各减少10.76%和9.54% | 第4章 |
 | 应用验证 | ARM CPU420、真实共享12窗中段及完整图PC离线动态接线 | 第6章 |
 | 如何复核 | 工具报告、原运行包、实测原件及参考比对，加上统一PC入口 | 第8章及完整工程 |
 
@@ -240,6 +240,20 @@ total_cycles = work_union_cycles + no_work_cycles
 # 4 优化设计与受控实验
 
 ## 4.1 实验方法
+
+优化路线总览（各行使用独立对照，不累计收益）
+
+| 层次 | 机制与解决的问题 | 已有结果及来源 |
+| --- | --- | --- |
+| 计算与供数 | 8×8物理阵列承担64×64逻辑块；K-major按消费顺序送数 | 同BIT512³ DMA+PL 106.687→63.972 ms [E02] |
+| 初始化与预取 | 首K覆写取消独立清零，计算期间预备下一面板 | 512³总周期分别减少262,144与459,200 [E03、E04] |
+| 计算/输出重叠 | 双C-bank及MODE11调度 | 同BIT512³ DMA+PL 36.221→31.262 ms [E05] |
+| 主机请求复用 | 复用面板及不可变布局，减少事务生成 | 512³完整请求714.535→284.216 ms，−60.22% [E06] |
+| 后续主机细化 | flat与连续面板；10/31独立复现 | 两场512³分别−10.76%、−9.54%；复现−8.78% [E09、E10、E42] |
+| 应用与工程 | CPU420→单层→共享中段→完整PC图，配套构建、波形和Skill | 共享12窗768,000检查点一致；完整PC图865,680标量复算 [E16–E22、E30–E34] |
+
+后续各节分别给出硬件、主机与应用证据。总览中的DMA+PL、周期和完整请求采用不同窗口，保留各自版本与基线。
+
 
 实验同时保留正确性和性能两个维度。输入在主机和设备端保持相同整数语义，完整输出由黄金结果核对。性能以固定工作量、预热、线程设置及后端执行次序比较。外部独立INT64重算单列，不给某一后端额外计入独立oracle成本。
 
@@ -649,36 +663,25 @@ SharedCall接收绑定窗口和张量身份的InputEnvelope，经SharedOwner.exe
 
 ## 8.1 取得版本与准备环境
 
-交付按`src/sim/build/board/data/skill/report`组织，`provenance`记录源路径、Git对象及导出文件SHA。每个组件保持原内部路径和冻结清单，报告中的历史实验由各自版本绑定。完整命令、预期输出和故障处理见复现操作指南。本次完整工程opennpu_lite_41971已将综合/实现报告、BIT/HWH及两组实测原件纳入build/board，并以新manifest统一核验。原export_03保持不变。
+交付按`src/sim/build/board/data/skill/report`组织，`provenance`记录源路径、Git对象及导出文件SHA。公开仓库和正式Release提供完整工程，实验原件由各自冻结版本绑定；报告、仿真、构建资料、BIT/HWH与运行原件纳入同一顶层清单。附录B按公开下载、环境准备和逐层执行给出命令，工程内reproduction_guide.md提供可点击入口。
 
 表17  分层复现入口与已有验证
 
 | 层级 | 环境及入口 | 已有验证 |
 | --- | --- | --- |
 | 文件核验 | Python3.12+，导出根`reproduce.py`默认check | 文件集合、尺寸与SHA逐项检查 |
-| PC软件 | 已测Python3.12.14/NumPy2.3.5，`pc`与`hybrid-smoke` | 新导出PC核验及完整图一窗；原12窗独审另列 |
+| PC软件 | 已测Python3.12.14/NumPy2.3.5，`pc`与`hybrid-smoke` | 公开获取后PC、一窗及固定12窗均已复跑；Windows平台跳过单列 |
 | RTL仿真 | 固定D075源与TB，Vivado工具 | 历史完整回归日志；本轮4个固定用例重放 |
 | 完整实现 | Windows Vivado2026.1、器件/IP许可、固定板定义 | 干净D075和构建成员 CMD构建；新v3包装未实际冷构建 |
 | 板端复做 | ARMv7、Python3.10.4、NumPy1.21.5，当前现场新plan | 矩阵/能量/CPU420及共享中段的历史原件 |
 
-接收者先取得指定导出及独立给出的SHA，再在新目录核验。当前完整工程候选为opennpu_lite_41971，顶层manifest SHA256为`<外部checksums.txt中的manifest_sha256>`，索引文件数量以本交付manifest为准。默认入口只读，不运行推理、仿真、构建或板测：
+接收者从正式Release取得源码ZIP及checksums.txt，先校验ZIP，再从公开校验文件读取manifest的SHA256；这一安排避免将清单自身哈希写回被索引的报告。默认入口核对文件，不启动模型。PC、一窗和固定12窗需显式选择profile，并写入工程外的新目录。具体命令见附录B。
 
-```text
-python -I -B <opennpu_lite_41971绝对路径>/reproduce.py --manifest-sha <外部checksums.txt中的manifest_sha256>
-```
+公开获取验收已在新Windows环境中完成文件核验、PC、一窗和固定12窗运行，实际退出均为0；12窗特征与logits保持冻结SHA一致。PC入口的5项Windows平台跳过按实单列。每次正式发布均按对应清单核对获取结果，原始回执随交付资料另附。
 
-PC执行显式指定profile及包外新目录，输出保留stdout、stderr和实际退出回执：
+RTL仿真使用sim/d075/sim/run_regression.ps1，先复制完整sim/d075到包外可写目录。2026-10-30四个固定测试台在隔离目录重放并生成WDB/VCD，原生Vivado窗口提供报告图件；固定硬件输入与仿真RTL仅换行差异的比对另存。现有仿真与实现记录保留，不将文档修改记作新的硬件构建或板测。[E41]
 
-```text
-python -I -B <opennpu_lite_41971绝对路径>/reproduce.py --manifest-sha <上述SHA> --profile pc --enable-offline --output <包外新目录>
-python -I -B <opennpu_lite_41971绝对路径>/reproduce.py --manifest-sha <上述SHA> --profile hybrid-smoke --enable-offline --output <另一个包外新目录>
-```
-
-`hybrid12`为固定12窗profile，复用原候选和前置包。原12窗结果与新导出一窗验证分别记录，避免把历史验收计成新运行。
-
-从零复现先完成环境与文件身份，再进入软件、仿真、完整实现和板端复做。接收者取得完整opennpu_lite_41971及外部pin后，在独立venv安装Python3.12.14/NumPy2.3.5；每条原生命令检查实际退出码，输出写入不存在的新目录。仿真与实现需要对应器件/IP支持和可用的工具许可。2026-10-30在新许可匹配本机后，四个固定测试台在隔离目录完成重放，生成WDB/VCD，并经真实Vivado窗口取图；此前许可及取图脚本失败记录保留在本轮QA目录。[E41]
-
-sim/d075与固定硬件输入的RTL经比较仅换行符不同。字节核验分别使用各自清单，内容对应另存换行归一化结果。原件保持不变，仿真在包外副本执行；本版图件的来源、视图配置和固定测试台另见native_assets。board/quickstart.md要求重读当前boot、环境和锁身份，生成新plan后由操作者确认运行。完整步骤、命令及预期输出见本版复现指南。
+板端复做按board/quickstart.md读取当前boot、环境及锁身份，产生新的预检和计划，由负责人核准范围后操作。历史plan用于回读；附录B列出预期输出与停止条件。
 
 ## 8.2 硬件构建与运行身份
 
@@ -710,7 +713,7 @@ KWS将矩阵接口落实到模型计算图：真实共享中段连接了PL点积
 
 OpenNPU-Lite完成了以INT8输入、INT32累加为基础的可编程矩阵平台。D075在100 MHz下完整实现收敛，链式任务将不同矩阵几何映射到有限阵列，工作计数与独立参考使硬件行为可解释、可核对。
 
-两轮保持硬件不变的主机优化分别取得512³完整请求10.76%和9.54%的同场改善，后者在256³也减少10.32%。真实共享12窗验证了PL Pointwise与ARM depthwise之间的动态量化衔接，完整PC离线图进一步连接到音频输入与分类建议。这些结果与优化CPU对照、负实验及来源原件共同组成项目结论。
+K-major供数、首K覆写、预取与双C-bank逐步缩短接收、初始化和输出等待；D075的512³纯PL有效吞吐达到4.467 GMAC/s。主机请求内复用将对应实验的512³完整请求缩短60.22%，后续flat与连续面板又分别取得10.76%和9.54%的同场改善，10/31独立演示复现了后期改进方向。应用从ARM CPU420和单层映射推进至真实共享12窗中段，并在PC完整图中连接公共音频与分类建议。各阶段的CPU对照、负实验及来源原件共同支撑这些结论。
 
 团队通过接口设计、代码级修订要求、异机构建和现场验证推进实现，使用大模型辅助编码与分析，并将具体失败转成验证Skill。平台、应用接线和复现入口形成相互对应的交付，使读者能够理解设计选择、核对关键结果，并在所列环境与资产条件下逐层复做。
 
@@ -729,7 +732,7 @@ OpenNPU-Lite完成了以INT8输入、INT32累加为基础的可编程矩阵平�
 | 历史性能与长稳 | D074/D075跨BIT旧路径比较保留MODE10大矩阵墙钟约+0.20%、普通KWS约+0.70%及旧尾延迟门失败；历史长稳对应原硬件与入口，分别评价[E05] |
 | 离线工具 | 新增Linux检查通过；Windows旧入口5项平台跳过单列。完整图保留未使用前置清单常量、测试VAD override缺canonical cohort核对两项非阻塞观察；当前固定runner不开放override，扩展API前需补强[E29–E31] |
 | Skill使用 | 现有Linux回归与十个既有案例异机使用支持当前工具交付；新的外部题目、独立评分和效率效果需另作实验 |
-| 对外获取 | 完整工程已合包并统一清单；公开仓库/下载入口、模型与WAV等第三方资产的再分发、接收者权限仍待核定 |
+| 对外获取 | 公开仓库及正式Release已提供完整工程和校验值；第三方模型、公共音频与依赖按provenance/third_party_notices.md所列许可使用 |
 
 # 参考文献
 
@@ -820,47 +823,75 @@ OpenNPU-Lite完成了以INT8输入、INT32累加为基础的可编程矩阵平�
 
 # 附录 B 完整复现操作步骤
 
-## B.1 取得正确输入
+## B.1 下载正式工程
 
-完整复现需要取得配套opennpu_lite_41971。工程包含src、sim、build、board、data、skill、report及provenance，文件数量以本交付manifest为准。公开报告单独交付，工程按独立清单核验。顶层manifest SHA256为：
+打开[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-docs-20261104)，取得两个附件：
 
-```text
-<外部checksums.txt中的manifest_sha256>
-```
+| 附件 | 用途 |
+|---|---|
+| `opennpu_lite_41971_source.zip` | 可直接解压使用的完整工程 |
+| `checksums.txt` | 工程清单与源码 ZIP 的发布校验值 |
 
-本地交付目录和RAR提供完整复现输入及外部校验值。仓库地址为https://github.com/cpfbx/OpenNPU-Lite-FPGA；2026-11-02整理时仓库为私有空仓，公开上传尚待负责人确认。接收者应取得本交付RAR与配套checksums.txt，不能用报告替代工程树。
-
-建议解压到短路径，例如`D:\OpenNPULite\opennpu_lite_41971`；保留其原有文件名与内部相对路径，运行产物写到另一个目录。本指南中的路径变量只需按接收者实际位置填写一次。
-
-## B.2 PC环境与文件核验
-
-已测组合为Windows x86-64、Python3.12.14、NumPy2.3.5。统一入口要求Python3.12+，包括Windows junction识别。先准备可信Python及一个独立环境；以下是供接收者执行的环境准备命令，本轮写作没有安装这些依赖：
+下面的 PowerShell 命令完成下载、校验与解压。工作目录尚不存在时再运行；目录已存在就另选新路径，保留此前结果。需要能够访问 GitHub Releases。
 
 ```powershell
-$pythonBase = 'C:\Python312\python.exe'  # 换为实际Python3.12路径
-$exportRoot = 'D:\OpenNPULite\opennpu_lite_41971'
-$runParent = 'D:\OpenNPULite\runs'
-$envRoot = 'D:\OpenNPULite\python_env_01' # 尚不存在
-
-if (Test-Path -LiteralPath $envRoot) { throw '环境目录已存在，请另选新目录。' }
-& $pythonBase -m venv $envRoot
-if ($LASTEXITCODE -ne 0) { throw '创建环境失败。' }
-$python = Join-Path $envRoot 'Scripts\python.exe'
-& $python -m pip install 'numpy==2.3.5'
-if ($LASTEXITCODE -ne 0) { throw '依赖安装失败，保留日志。' }
-& $python -I -B -c "import sys,numpy; print(sys.version); print(numpy.__version__)"
-if ($LASTEXITCODE -ne 0) { throw '环境检查失败。' }
-
-& $python -I -B "$exportRoot\reproduce.py" `
-  --manifest-sha '<外部checksums.txt中的manifest_sha256>'
-if ($LASTEXITCODE -ne 0) { throw '文件核验失败，停止。' }
+$ErrorActionPreference = 'Stop'
+$releaseBase = 'https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/download/submission-41971-docs-20261104'
+$workspace = Join-Path $env:USERPROFILE 'opennpu_reproduction'
+if (Test-Path -LiteralPath $workspace) { throw '工作目录已存在，请另选新目录。' }
+$inputDir = Join-Path $workspace 'inputs'
+New-Item -ItemType Directory -Path $inputDir | Out-Null
+$checksumFile = Join-Path $inputDir 'checksums.txt'
+$sourceZip = Join-Path $inputDir 'opennpu_lite_41971_source.zip'
+Invoke-WebRequest "$releaseBase/checksums.txt" -UseBasicParsing -OutFile $checksumFile
+Invoke-WebRequest "$releaseBase/opennpu_lite_41971_source.zip" -UseBasicParsing -OutFile $sourceZip
+$checksums = Get-Content -LiteralPath $checksumFile -Raw
+$manifestMatches = [regex]::Matches($checksums, '(?m)^([0-9a-f]{64})  manifest\.json\r?$')
+$zipMatches = [regex]::Matches($checksums, '(?m)^([0-9a-f]{64})  opennpu_lite_41971_source\.zip\r?$')
+if ($manifestMatches.Count -ne 1 -or $zipMatches.Count -ne 1) { throw '校验值缺失或重复。' }
+$manifestSha = $manifestMatches[0].Groups[1].Value
+$sourceZipSha = $zipMatches[0].Groups[1].Value
+if ((Get-FileHash -LiteralPath $sourceZip -Algorithm SHA256).Hash.ToLowerInvariant() -ne $sourceZipSha) {
+    throw '源码ZIP校验失败，请保留下载件并核对来源。'
+}
+Expand-Archive -LiteralPath $sourceZip -DestinationPath $workspace
+$exportRoot = Join-Path $workspace 'opennpu_lite_41971'
+if (-not (Test-Path -LiteralPath (Join-Path $exportRoot 'manifest.json'))) { throw '解压结构不完整。' }
 ```
 
-安装需要接收者可访问适用包源，离线环境应事先在相同OS/架构准备匹配wheel及SHA，再通过`--no-index --find-links`安装。安装目录独立于工程，不能在封包内生成虚拟环境或缓存。
+继续使用同一 PowerShell 窗口，后续命令沿用 `$workspace`、`$exportRoot` 和 `$manifestSha`。`checksums.txt` 位于工程外的 `inputs` 中，校验值也在公开下载页可取。清单索引 README，因此不把清单自身哈希写回 README，避免自引用。
 
-成功输出应有`operation_success=true`、`files`与交付清单一致、`inference_executed=false`、`board_access=false`。该步校验全部索引文件及完整文件集合，未运行模型。
+工程根目录应包含 `src/`、`sim/`、`build/`、`board/`、`data/`、`skill/`、`report/` 和 `provenance/`。虚拟环境、下载附件与运行输出均保存在工程外。
 
-## B.3 PC核验入口
+熟悉 Git 的使用者也可获取 `submission-41971-docs-20261104` 标签。严格字节核验要求关闭换行转换，并从 Git 导出不含 `.git` 的工程目录；推荐首次复现直接使用上面的正式源码 ZIP。自行生成的 ZIP 压缩字节可以不同，工程文件仍按发布的 manifest 哈希及完整清单核验。
+
+## B.2 准备 PC 环境并核对文件
+
+已验证的 PC 组合是 Windows x86-64、Python 3.12.14、NumPy 2.3.5。统一入口要求 Python 3.12+。先在本机安装可信 Python，使 `python --version` 可用，再创建工程外的独立环境：
+
+```powershell
+python -I -B -c "import sys; assert sys.version_info >= (3, 12), 'Python 3.12+ required'; print(sys.version)"
+if ($LASTEXITCODE -ne 0) { throw '请先安装Python 3.12或更新版本。' }
+$envRoot = Join-Path $workspace 'python_env'
+if (Test-Path -LiteralPath $envRoot) { throw '环境目录已存在，请另选新目录。' }
+python -m venv $envRoot
+if ($LASTEXITCODE -ne 0) { throw '创建环境失败。' }
+$python = Join-Path $envRoot 'Scripts\python.exe'
+& $python -m pip install -r (Join-Path $exportRoot 'requirements.txt')
+if ($LASTEXITCODE -ne 0) { throw '依赖安装失败，请检查网络和安装日志。' }
+& $python -I -B -c "import sys,numpy; print(sys.version); print(numpy.__version__)"
+if ($LASTEXITCODE -ne 0) { throw '环境检查失败。' }
+& $python -I -B "$exportRoot\reproduce.py" --manifest-sha $manifestSha
+if ($LASTEXITCODE -ne 0) { throw '工程核验失败，停止。' }
+$runParent = Join-Path $workspace 'runs'
+```
+
+正常输出应包含 `operation_success=true`、`inference_executed=false` 和 `board_access=false`。`files` 为清单索引文件数，不包含 `manifest.json` 自身，比工程总文件数少1。默认入口检查文件集合、大小和 SHA256，不会运行模型。
+
+安装依赖需要可用的包源。离线环境可先在相同操作系统和架构准备匹配的 wheel，再使用 `--no-index --find-links` 安装；保留依赖版本及校验值。
+
+
+## B.3 PC 核验入口
 
 先创建包外输出的父目录，输出目录本身必须不存在。继续使用第2步同一PowerShell窗口里的变量：
 
@@ -871,7 +902,7 @@ if (-not (Test-Path -LiteralPath $runParent)) {
 $pcOut = Join-Path $runParent 'pc_01'
 if (Test-Path -LiteralPath $pcOut) { throw '输出目录已存在，不覆盖。' }
 & $python -I -B "$exportRoot\reproduce.py" `
-  --manifest-sha '<外部checksums.txt中的manifest_sha256>' `
+  --manifest-sha $manifestSha `
   --profile pc --enable-offline --output $pcOut
 if ($LASTEXITCODE -ne 0) { throw 'PC核验失败，检查新输出目录。' }
 Get-Content -LiteralPath (Join-Path $pcOut 'receipt.json')
@@ -879,7 +910,7 @@ Get-Content -LiteralPath (Join-Path $pcOut 'receipt.json')
 
 检查`receipt.json`实际子进程退出0及`immutable_export_verified_after=true`，再查看`stdout.txt`、`stderr.txt`和`results`。内部核验包括保留共享链算术、Skill和补充cleanup；Windows已有5项平台跳过单列，不能改写成0skip。单个方法多次执行不累加为新的独立测试。
 
-## B.4 完整KWS离线计算
+## B.4 完整 KWS 离线计算
 
 先运行一窗，再按需要运行固定12窗。`hybrid-smoke`与`hybrid12`由既有统一入口调取固定候选与前置包：
 
@@ -887,34 +918,42 @@ Get-Content -LiteralPath (Join-Path $pcOut 'receipt.json')
 $smokeOut = Join-Path $runParent 'hybrid_smoke_01'
 if (Test-Path -LiteralPath $smokeOut) { throw '冒烟输出已存在。' }
 & $python -I -B "$exportRoot\reproduce.py" `
-  --manifest-sha '<外部checksums.txt中的manifest_sha256>' `
+  --manifest-sha $manifestSha `
   --profile hybrid-smoke --enable-offline --output $smokeOut
 if ($LASTEXITCODE -ne 0) { throw '一窗失败，保留现场，不继续12窗。' }
 
 $twelveOut = Join-Path $runParent 'hybrid12_01'
 if (Test-Path -LiteralPath $twelveOut) { throw '12窗输出已存在。' }
 & $python -I -B "$exportRoot\reproduce.py" `
-  --manifest-sha '<外部checksums.txt中的manifest_sha256>' `
+  --manifest-sha $manifestSha `
   --profile hybrid12 --enable-offline --output $twelveOut
 if ($LASTEXITCODE -ne 0) { throw '12窗失败，保留stdout、stderr及回执。' }
 ```
 
-这条路径从公共WAV重新计算前处理、CPU前缀、PC夹具中的共享调用和CPU后缀，产生pre-softmax logits及原策略门控。成功应核对候选summary中的完整窗口名单、全值差异和`vad_recomputed=false`，而非只看最外层退出0。历史VAD固定于原PCM，硬件/MMIO由PC夹具模拟。完整12窗原候选已有独立算术与737份二进制验收。当前交付的check、pc、一窗和12窗实际复跑结果单列于交付验证回执；源码、历史场次与新复现日志分别保全。
+这条路径从公共WAV重新计算前处理、CPU前缀、PC夹具中的共享调用和CPU后缀，产生pre-softmax logits及原策略门控。成功应核对候选summary中的完整窗口名单、全值差异和`vad_recomputed=false`，而非只看最外层退出0。历史VAD固定于原PCM，硬件/MMIO由PC夹具模拟。历史候选已有独立算术与737份二进制验收。当前交付的实际复跑记录单列于配套验收回执，包含实际退出码、平台跳过及文件不变性检查。
 
 原始输入位于`data/packages/kws_prerequisites.zip`，完整图候选位于`kws_full_hybrid_return.zip`。解包器先校原清单，再解到包外目录；不能手动修改包内模型、名单或黄金后继续使用旧pin。
 
-## B.5 RTL仿真
+## B.5 RTL 仿真
 
-`sim/d075`保存固定D075 commit的RTL、TB、约束和仿真入口。接收者在独立可写副本运行，避免封包内部增加工具输出。已有脚本为`sim/run_regression.ps1`，接受`-VivadoRoot`和`-WorkLibrary`，需要`xvlog.bat`、`xelab.bat`、`xsim.bat`。
+`sim/d075`保存固定D075 commit的RTL、TB、约束和仿真入口。接收者在独立可写副本运行，避免封包内部增加工具输出。该副本内脚本为`sim/run_regression.ps1`（公开工程中的完整路径为`sim/d075/sim/run_regression.ps1`），接受`-VivadoRoot`和`-WorkLibrary`，需要`xvlog.bat`、`xelab.bat`、`xsim.bat`。
 
-示例：先将`sim/d075`复制到新目录`D:\OpenNPULite\sim_run_01`，保留全部内部结构，在该目录调用：
+下面将`sim/d075`完整复制到工程外的新目录，并在副本中运行；Vivado安装路径按本机情况填写：
 
 ```powershell
-& '.\sim\run_regression.ps1' -VivadoRoot 'C:\AMDDesignTools\2026.1\Vivado'
+$simWork = Join-Path $workspace 'sim_run_01'
+if (Test-Path -LiteralPath $simWork) { throw '仿真目录已存在，请另选新目录。' }
+Copy-Item -LiteralPath (Join-Path $exportRoot 'sim\d075') -Destination $simWork -Recurse
+Push-Location $simWork
+try {
+    & '.\sim\run_regression.ps1' -VivadoRoot 'C:\AMDDesignTools\2026.1\Vivado'
+} finally {
+    Pop-Location
+}
 if ($LASTEXITCODE -ne 0) { throw '仿真入口非零，保留完整日志。' }
 ```
 
-Vivado路径按实际安装填写，PowerShell策略按操作者既有配置处理，指南不修改持久策略。脚本异常同样视为失败。成功还须核对各测试台输出及断言，不能将一个旧UART测试通过当作全部GEMM回归通过。本轮未执行该完整回归入口；为原生取图，在隔离目录重放4个固定测试台，9条编译、展开和运行命令实际退出0，来源见E41。
+Vivado路径按实际安装填写，PowerShell策略按操作者既有配置处理，指南不修改持久策略。脚本异常同样视为失败。成功还须核对各测试台输出及断言，不能将一个旧UART测试通过当作全部GEMM回归通过。既有原生仿真日志及波形见下方结果入口；重新运行将产生接收者自己的仿真结果。
 
 ## B.6 完整硬件构建
 
@@ -928,7 +967,7 @@ Vivado路径按实际安装填写，PowerShell策略按操作者既有配置处�
 
 ```powershell
 $hardware = Join-Path $exportRoot 'src\hardware'
-$hardwarePin = '05d8f20549cf799ee4bacff2f375cd1f17ba78e66d4e3c1f6e0ec6b89c05b4b7'
+$hardwarePin = 'dd285240f410598ef0d26612b4c15c97833ef515600bd5de6dd65bd9abfb2838'
 & $python -I -B "$hardware\verify_kit.py" --manifest-sha $hardwarePin
 if ($LASTEXITCODE -ne 0) { throw '硬件包身份失败。' }
 & $python -I -B "$hardware\rebuild.py" check --manifest-sha $hardwarePin
@@ -951,7 +990,7 @@ if ($LASTEXITCODE -ne 0) { throw '完整构建非零，保留日志及claim，�
 
 ## B.7 板端复做与原件回读
 
-本轮补充板端完整命令模板，从包校验、当前环境预检到新plan、单次run及readback/archive逐步列出。所需原运行包、BIT/HWH和两组历史原件已并入工程board目录。模板现场值重新读取，操作者与环境条件沿用原合同；本轮未执行。
+[板端完整命令模板](../board/quickstart.md)，从包校验、当前环境预检到新plan、单次run及readback/archive逐步列出。所需原运行包、BIT/HWH和两组历史原件已并入[工程board目录](../board/readme.md)。模板现场值重新读取，操作者与环境条件沿用原合同。
 
 板端分为新的实验执行与旧实验的只读回读。回读已有归档不需要接板；新执行需要实际操作者核原接线、UTC、空闲及电源，确认当前包和本次范围后才进行。每次均使用新目录、新preflight和plan，沿用规范锁`/tmp/opennpu-kws-chain.lock`。
 
@@ -968,8 +1007,6 @@ if ($LASTEXITCODE -ne 0) { throw '完整构建非零，保留日志及claim，�
 
 ## B.8 发生错误时
 
-表19  复现错误的检查方法
-
 | 现象 | 应做的检查 |
 | --- | --- |
 | 外部pin、文件集合或尺寸/SHA不符 | 停止，确认取得的版本；保留收到的文件，不在包内补改 |
@@ -981,6 +1018,20 @@ if ($LASTEXITCODE -ne 0) { throw '完整构建非零，保留日志及claim，�
 | 数值正确但状态/清理不通过 | 作为不同门分别记录；先定位合同与返回诊断，避免跳过检查 |
 
 复现完成后应交回环境、命令、实际退出、pass/fail/skip、产物SHA及未覆盖范围。提交方再核公共获取、第三方许可与最终门户要求，形成最后交付清单。
+
+
+## 查看已有仿真与协作记录
+
+仿真原始输出与WDB/VCD见[sim/results/native_20261030](../sim/results/native_20261030/readme.md)；负责人代码级要求与模型修订见[技术交互节选](collaboration_interactions.md)。发布获取与PC复现回执另行保存于发布验收资料。
+
+
+## 提交路径与工具入口
+
+本版保留README.md和SKILL.md标准入口，其余提交文件名使用小写。Skill可按原方式直接安装。仿真脚本已同步小写路径；硬件构建包装器在包外工作目录恢复四个历史RTL文件名，保证47份原始构建输入的名称和字节逐项对应。已有BIT/HWH、约束、RTL内容和实测数据保持原身份。命名及来源适配检查可单独执行：
+
+```powershell
+python -I -B .\provenance\check_naming.py
+```
 
 # 附录 C 团队主导的人机协作记录
 
