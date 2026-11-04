@@ -1,11 +1,9 @@
-# 提交命名口径 · v6
+# 文件命名与构建路径
 
-提交目录采用小写ASCII文件名，仅保留README.md和SKILL.md标准入口。指南3.3.5.2明确要求skill/README.md，3.3.5.4的目录示例亦使用README.md；SKILL.md沿用技能工具的标准入口，保持陌生队伍直接安装使用的兼容性。
+目录和普通文件使用小写ASCII名称。`skill/README.md`与六个`SKILL.md`保留文档及技能加载器的标准入口名称；完整列表见[标准入口清单](canonical_filename_exceptions.json)。
 
-当前共有7个标准入口：1个skill/README.md，以及当前与历史评测目录中的6个SKILL.md。其余原18项中的11项已改为小写，连同v5累计整理27个文件。完整路径和内容对应见naming_revision_v6.json及前轮naming_revision.json。
+仿真脚本使用当前小写路径。硬件构建包装器在工程外的工作目录恢复四个历史RTL文件名，并逐项核对47份原始构建输入；分发路径和构建路径的对应关系由[naming_revision_v6.json](naming_revision_v6.json)及[naming_revision.json](naming_revision.json)记录。
 
-仿真脚本使用新的小写路径。构建包装器在包外工作目录恢复四个历史RTL文件名，并逐项核对47份历史构建输入；原始构建脚本、RTL、约束、BIT/HWH及测量原件均保留字节身份。CPU许可证以小写路径读取，原归档成员名、尺寸及SHA继续精确校验。
+CPU许可证通过当前小写路径读取，同时校验原归档成员名称、尺寸及SHA256。ZIP/TAR内部保留冻结成员名，由各自入口核验后解压到工程外的工作目录。RTL内容、约束、BIT/HWH与历史测量原件保持原身份。
 
-冻结ZIP/TAR内部的原始名称保持不变，由既有入口校验后在包外解包。当前仓库路径与历史来源名通过映射联系，避免把命名整理写成一次新的硬件实现或测量。
-
-标准技能入口参考：https://learn.chatgpt.com/docs/build-skills 。这是本次结合比赛原文与工具兼容性采用的提交口径；赛方如有进一步明确说明，再按其说明调整。
+可执行的路径适配核验入口为`python -I -B provenance/check_naming.py`。

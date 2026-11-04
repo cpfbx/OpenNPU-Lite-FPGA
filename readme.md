@@ -6,7 +6,7 @@
 
 Hextech · 团队编号 41971 · 初级组自主选题
 
-[设计报告](report/design_report.pdf) · [下载工程](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-docs-20261104) · [开始复现](reproduction_guide.md) · [验证 Skill](skill/README.md)
+[设计报告](report/design_report.pdf) · [下载工程](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-public-20261104) · [开始复现](reproduction_guide.md) · [验证 Skill](skill/README.md)
 
 </div>
 
@@ -67,13 +67,13 @@ OpenNPU-Lite 在小型 FPGA 上构建尺寸可配置的整数矩阵计算平台�
 
 ## 下载后先运行什么
 
-1. 从[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-41971-docs-20261104)下载 `opennpu_lite_41971_source.zip`，解压到短路径。
+1. 从[正式下载页](https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/tag/submission-public-20261104)下载 `opennpu_lite_41971_source.zip`，解压到短路径。
 2. 按[环境准备](reproduction_guide.md#2-准备-pc-环境并核对文件)安装 Python 3.12+ 和 NumPy 2.3.5，环境及输出目录放在工程外。
 3. 在解压后的工程根目录打开 PowerShell，运行下面的文件核验。命令从正式下载页获取校验值，无需寻找本地“外部文件”或替换哈希占位符。
 
 ```powershell
 $ErrorActionPreference = 'Stop'
-$releaseBase = 'https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/download/submission-41971-docs-20261104'
+$releaseBase = 'https://github.com/cpfbx/OpenNPU-Lite-FPGA/releases/download/submission-public-20261104'
 $checksums = Invoke-RestMethod "$releaseBase/checksums.txt"
 $manifestMatches = [regex]::Matches($checksums, '(?m)^([0-9a-f]{64})  manifest\.json\r?$')
 if ($manifestMatches.Count -ne 1) { throw '发布校验文件不完整，请重新下载。' }
@@ -99,9 +99,9 @@ PC 入口需要显式 `--enable-offline`，结果写入工程外的新目录。[
 
 团队提出实现要求、审查结果并决定修订范围。选取的提示词、模型答复和实现纠错按实际先后记录在[人机协作案例](report/collaboration_interactions.md)；[三个验证 Skill](skill/README.md)给出各自适用场景、使用方法、失败条件和复用记录。
 
-## 仓库目录与比赛材料对应
+## 工程目录
 
-| 目录 | 内容 | 指南对应项 |
+| 目录 | 内容 | 用途 |
 |---|---|---|
 | [src/](src) | RTL、PS运行时、验证器及硬件重建包装 | 设计源码 |
 | [sim/](sim) | 仿真源码、脚本、原始日志及波形 | 仿真或验证结果 |
@@ -109,7 +109,7 @@ PC 入口需要显式 `--enable-offline`，结果写入工程外的新目录。[
 | [board/](board) | BIT/HWH、运行包、现场命令模板及实板原件 | 上板工程与实测输出 |
 | [data/](data) | 模型、公共输入及冻结参考包 | 测试数据与参考结果 |
 | [skill/](skill/README.md) | 三个可复用验证 Skill 及提炼记录 | 技能包 |
-| [report/](report) | 两份设计报告、图表、技术交互与证据索引 | 设计报告与大模型协作记录 |
+| [report/](report) | 一份详细设计报告（PDF/Markdown）、图表、技术交互与证据索引 | 设计报告与大模型协作记录 |
 | [provenance/](provenance) | 第三方许可、来源及命名适配记录 | 补充来源说明 |
 
-报告七项重点的具体位置见[比赛要求对照](report/requirements_checklist.md)。目录遵循指南 §3.3.5.4 的分类，`README.md`、`SKILL.md`保留标准入口名称，其余实际文件名小写。自有许可见[license](license)，第三方资产按[许可与来源表](provenance/third_party_notices.md)使用。
+设计原理、软硬件接口、优化实验、协作案例及复现方法见[报告导航](report/readme.md)。`README.md`、`SKILL.md`保留标准入口名称，其余实际文件名使用小写。自有许可见[license](license)，第三方资产按[许可与来源表](provenance/third_party_notices.md)使用。
